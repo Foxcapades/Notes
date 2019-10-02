@@ -80,7 +80,7 @@ that point to a gene id which itself points to 2 genes.
 +
 Query used to find this:
 +
-[code, sql]
+[source, sql]
 ----
 -- Find Deletable Links
 WITH
@@ -160,3 +160,15 @@ latest link (as inserted by the tuning manager) we may
 accidentally remove a comment from a gene altogether,
 assuming the tuning manager inserts 2 link records when an
 old gene record is split
+
+14:30::
+
+Meeting with steve about user comment stuff.
++
+Decisions:
++
+. My imagined problem is not actually a problem.
+. The comment should appear on both split genes
+. Separately we need to remove triggers that update the user
+  info stored in the user comment database.  The user data
+  in that table should be a historical snapshot.
