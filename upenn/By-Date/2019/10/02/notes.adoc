@@ -1,0 +1,88 @@
+= Wednesday October 02, 2019
+
+10:15::
+
+Scrum
+
+11:00::
+
+Sorting out email
+
+11:15::
+
+Syncing repos, catching up on slack, setting up workspace to
+continue where i left off yesterday
+
+11:30::
+
+lunch
+
+12:40::
+
+verifying query that would be used by a migrator to remove
+the outdated related links from the user database
+`userlogins5.commentstableid` table.
+
+12:50::
+
+assisted Danica with getting started with git
+
+13:10::
+
+continued working on query, getting results that i don't
+quite understand, 2 queries that should return the same
+count are returning 3 rows off from each other.  Getting a
+comparable resultset is going to be difficult
+
+13:30::
+
+Encountered error from oracle while attempting to
+run half of my test query.
++
+.Oracle Error
+[code]
+----
+[2019-10-02 13:30:15] [08000][17410] No more data to read from socket
+----
+
+13:37::
+
+Issue appears to be a known Oracle JDBC driver bug, will
+attempt switching to the Oracle SQL client to see if the
+problem persists there.
+
+13:37::
+
+Setup new connection on oracle sql developer
+
+13:40::
+
+investigating how to use parametrized queries in
+sqldeveloper
+
+13:45::
+
+gave up on parametrized queries in sql developer
+
+13:50::
+
+gave up on sql developer, lacks too many features
+
+13:55::
+
+Confirmed that the comment-to-commentstableid `WITH` query
+is returning the expected results.
+
+14:11::
+
+Found source of the 3 row discrepancy, there are 3 comments
+that point to a gene id which itself points to 2 genes.
+
+14:15::
+
+Asked Steve what the expected behavior should be, and also
+how we should handle the complication where by selecting the
+latest link (as inserted by the tuning manager) we may
+accidentally remove a comment from a gene altogether,
+assuming the tuning manager inserts 2 link records when an
+old gene record is split
