@@ -1,36 +1,64 @@
--- Find Missing Links
---
--- Returns stable ids and comment ids for comments that
--- reference a gene id that is not present in the
--- apidbtuning.geneid table.
+-- Find Deletable Links
 WITH
+  -- Comment link data for comments which have related
+  -- stable id links and belong to the specified project
+  --
+  -- Returns 3942 rows
   comments AS (
     SELECT
-      cl.comment_id
-    , cl.comment_stable_id
-    , cl.stable_id
+      a.comment_id
+    , a.stable_id
+    , a.comment_stable_id
     FROM
-      userlogins5.commentstableid@rm38488.login_comment cl
-      INNER JOIN userlogins5.comments@rm38488.login_comment co
-        ON cl.comment_id = co.comment_id
+      userlogins5.commentstableid@rm38488.login_comment a
+      INNER JOIN userlogins5.comments@rm38488.login_comment b
+        ON a.comment_id = b.comment_id
     WHERE
-      co.project_name = ?
+      b.project_name = 'PlasmoDB'
   )
-  , filtered AS (
+
+  -- Comment data joined to gene data based on the linked
+  -- gene id matching an id in the app db geneid table.
+  --
+  -- NOTE: This query will exclude comment-to-gene links
+  --   that have an invalid gene id.
+  --
+  -- Returns 3867 rows (less because excludes invalid ids)
+  , cross_join AS (
     SELECT
-      stable_id
+      co.comment_id
+    , co.comment_stable_id
+    , gi.database_name
+    , gi.gene
     FROM
-      comments
-    MINUS
-    SELECT
-      id AS stable_id
-    FROM
-      apidbtuning.geneid
+      comments co
+      INNER JOIN apidbtuning.geneid gi
+        ON co.stable_id = gi.id
   )
+
+  -- Select the most recent link per gene per comment to
+  -- exclude from the link deletion list.
+  --
+  -- Returns 3494 rows (less because excludes duplicate links)
+  , most_recent AS (
+    SELECT
+      comment_id
+    , gene
+    , max(comment_stable_id) AS comment_stable_id
+    FROM
+      cross_join
+    GROUP BY
+      comment_id
+    , gene
+  )
+
 SELECT
-  co.*
+  comment_stable_id
 FROM
-  comments co
-WHERE
-  EXISTS (SELECT 1 FROM filtered WHERE stable_id = co.stable_id)
+  cross_join
+MINUS
+SELECT
+  comment_stable_id
+FROM
+  most_recent
 ;
