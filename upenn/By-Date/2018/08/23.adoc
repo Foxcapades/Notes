@@ -1,0 +1,78 @@
+= Thursday August 23, 2018
+Ellie Harper <eharper@upenn.edu>
+:toc:
+
+== Scrum
+
+=== Yesterday
+
+* Reviewed the endpoints I had written for the step analysis service with Steve
+* Emailed and reviewed proposed JSON schema validation ideas with Steve and Ryan
+* Discussed Jackson with Steve and Ryan
+* Discussed principles we would like to stick to with model (de)serialization
+* Discussed patch endpoint
+* Began work on the 1 of the 2 remaining endpoints which is not blocked
+
+=== Today
+
+* Wrap up and test that endpoint
+* Hopefully get a decision about the patch endpoint
+
+=== FUT
+
+== Tasks
+
+* Do post endpoint for starting result
+* Commit and push up existing endpoints
+
+== Notes
+
+=== Step Analysis Form Param Validation
+
+==== Questions
+
+* [.line-through]#What is the desired workflow?# (reference workflow below)
+* Why does the form param validation modify the datastore?
+* Shouldn't we validate the form params _before_ running the step analysis?
+* Should the set params endpoint have the separate side effect of messing with
+  results/runs?
+
+==== Current Workflow
+
+===== New Step Analysis
+
+. Select Analysis Type
+.. Create step analysis instance
+. Submit form params
+.. Run step analysis
+
+===== Update Existing
+
+. Select Analysis
+.. Render Form
+.. Render Results
+. Submit new form params
+.. Run step analysis
+... Validate form params
+... Run plugin
+... Return status
+
+==== New Workflow
+
+===== New Analysis
+
+. Select Analysis Type
+.. Render form
+. Submit form params
+.. Create step analysis instance
+... Validate form params?
+.. Run step analysis?
+
+===== Update Existing
+
+. Select analysis tab
+.. Render form
+. Submit form
+.. Patch step analysis
+... Validate form params?
+.. ???

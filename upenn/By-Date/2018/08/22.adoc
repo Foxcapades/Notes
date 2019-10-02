@@ -1,0 +1,25 @@
+= Wednesday August 22, 2018
+Ellie Harper <eharper@upenn.edu>
+:toc: left
+
+== SCRUM
+
+=== Yesterday
+
+* Investigated options for JSON Schema testing automatically
+* Tested out option with custom provider and annotations
+
+=== Today
+
+* Patch endpoints w/ Steve
+
+=== FUT
+
+
+== Tasks
+
+. Write email explaining JSON schema validation using custom json provider
+.. maybe Using annotations for schema path
+.. maybe using raml and request path to get schema path
+... still need to see if path is available
+... need to see if raml parser is available

@@ -1,0 +1,31 @@
+= Thursday August 16, 2018
+Ellie Harper <epharper@upenn.edu>
+:toc:
+
+== SCRUM
+
+=== Yesterday
+
+* Worked on the Step Analysis `PATCH` endpoint.
+** Investigated StepAnalysis classes to try and determine what is available for
+   use in diffing the input data against the actual instance.  Since the input
+   fields are optional it is a bit tedious.
+
+=== Today
+
+* Wrap up the Step Analysis `PATCH` endpoint
+* Begin work on the `GET` by id endpoint
+
+=== FUTs
+
+* Static vs dependency injection (Mockito)
+* Testing email
+
+== Notes
+
+* Put `PATCH` endpoint on hold.
+* Explore the struts actions.
+* Explore the step analysis classes, take notes, discuss with Ryan for
+  confirmation of understanding.
+
+include::16/step-analysis-exploration.adoc[leveloffset=2]

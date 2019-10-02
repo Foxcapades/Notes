@@ -1,0 +1,27 @@
+= Friday August 17, 2018
+Ellie Harper <epharper@upenn.edu>
+:toc:
+
+== SCRUM
+
+=== Yesterday
+
+* Knocked out several endpoints other than the patch:
+** Analysis Instances for Step
+** Delete Analysis
+** Get Analysis Instance by ID
+* Started Step Analysis Results Endpoint
+* Did some exporation of the step analysis related classes
+
+=== Today
+
+* Knock out remaining non-patch endpoints
+
+=== FUTs
+
+* Maybe Jackson? +
+  https://www.mkyong.com/webservices/jax-rs/json-example-with-jersey-jackson/[Example Usage]
+
+== Notes
+
+== Tasks

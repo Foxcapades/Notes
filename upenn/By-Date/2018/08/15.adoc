@@ -1,0 +1,33 @@
+= Wednesday August 15, 2018
+Ellie Harper <eharper@upenn.edu>
+:toc: left
+
+== SCRUM
+
+=== Yesterday
+
+* Worked with Karate, discovered some limitations that need to be discussed.
+* Investigated alternatives to Karate, primarily rest-assured
+* Debugged issue with the form JSON endpoint caused by a missing answer
+* Orientation survey
+
+=== Today
+
+* Work on additional step analysis endpoints
+
+=== Possible FUT
+
+* Limitations with Karate
+** does not use JSON schema natively
+** Schema language somewhat limited in comparison to JSON schema
+*** Does not support string format matching
+*** Does not support any of/all of/not branching allowed by JSON schema
+*** Does not easily support type matching on numbers
+** JSON schema is allowed but would require code be added (may not be a deal 
+   breaker, this would likely be needed if we validate input JSON)
+
+== Notes
+
+== Tasks
+
+* Add troubleshooting steps to repo for vagrant scripts.

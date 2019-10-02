@@ -1,0 +1,6 @@
+Path,Notes,DB Link
+ApiCommonModel/Model/lib/wdk/model/questions/queries/geneQueries.xml,GenesWithUserComments,Y
+ApiCommonModel/Model/lib/wdk/model/records/commentTableQueries.xml,"GeneComments, CommunityComments, PopsetComments, GenomeComments",Y
+ApiCommonModel/Model/lib/wdk/model/records/geneAttributeQueries.xml,GeneOverview,Y
+ApiCommonModel/Model/lib/wdk/model/records/geneTableQueries.xml,"Strains, Orthologs",Y
+ApiCommonModel/Model/lib/xml/tuningManager/apiTuningManager.xml,,Y

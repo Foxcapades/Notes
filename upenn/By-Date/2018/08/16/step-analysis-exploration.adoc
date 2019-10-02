@@ -1,0 +1,39 @@
+= Step Analysis Service Exploration Notes
+ifndef::toc[]
+Ellie Harper <epharper@upenn.edu>
+:toc:
+endif::[]
+
+== Endpoints
+
+=== `PUT` `/steps/{stepId}/analyses/{analysisId}/properties`
+
+* What are properties?
+** On a text search:
+*** Word enrichment had none
+*** Go Enrichment had none
+
+==== Steps
+
+. Accepts the body as an input stream
+. Retrieves StepAnalysisInstance
+. Calls a setter method on a factory which takes the step analysis instance as
+  well as the unchecked input stream body
+.. initial setter method is just a helper that gets the ID from the analysis
+   instance and calls an abstract setter method on itself
+... implementation of this setter method calls a datastore setter method with an
+    identical signature
+.... In memory datastore just sets the properties on a map
+.... Database datastore writes the input stream to the database
+
+==== Questions/Concerns
+
+. Why Method consumes media type text/plain?
+.. What does this input look like?  Does it matter?
+. Why is the setter method for properties for a StepAnalysisInstance on a
+  factory and not on the StepAnalysisInstance?
+
+=== `GET` `/steps/{stepID}/analyses/{analysisId}/properties`
+
+
+

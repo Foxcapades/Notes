@@ -1,0 +1,11 @@
+Path,Notes,DB Link
+ApiCommonModel/Model/bin/showNewCommentLinks,,Y
+ApiCommonModel/Model/lib/xml/tuningManager/apiTuningManager.xml,,Y
+ApiCommonModel/Model/src/main/resources/mappers/migrate5/DeleteCommentsMapper.xml,???,N
+ApiCommonModel/Model/src/main/resources/mappers/migrate5/MigrateCommentsMapper.xml,???,N
+ApiCommonWebsite/Model/src/main/java/org/apidb/apicommon/model/comment/repo/FindCommentQuery.java,update table name,N
+ApiCommonWebsite/Model/src/main/java/org/apidb/apicommon/model/comment/repo/GetCommentQuery.java,update table name,N
+WDK/Model/data/initialize_wdk_roles.sql,update table name,N
+ApiCommonWebsite/Model/src/main/java/org/apidb/apicommon/model/comment/repo/InsertStableIdQuery.java,update table name,N
+ApiCommonWebsite/Model/src/main/java/org/apidb/apicommon/model/comment/repo/Table.java,update table name,N
+WDK/Model/data/update_sequences.pl,update table name,N

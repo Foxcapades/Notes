@@ -1,0 +1,65 @@
+= Tuesday August 14, 2018
+
+
+== Scrum
+
+=== Yesterday
+
+* Learning Karate testing tool
+* Working on the patch endpoint
+* Converted endpoint table to RAML
+
+=== Today
+* Some orientation stuff
+* Patch endpoint
+* Testing
+* Continue with Karate?
+
+=== FUT
+
+Getting a null pointer exception out of the analysis plugins:
+
+[source, log]
+----
+  * java.lang.NullPointerException
+        at org.apidb.apicommon.model.stepanalysis.PathwaysEnrichmentPlugin.createFormViewModel(PathwaysEnrichmentPlugin.java:188)
+        at org.apidb.apicommon.model.stepanalysis.PathwaysEnrichmentPlugin.getFormViewModelJson(PathwaysEnrichmentPlugin.java:171)
+        at org.gusdb.wdk.service.service.user.StepAnalysisService.getStepAnalysisTypeDataFromName(StepAnalysisService.java:77)
+----
+
+[source, log]
+----
+  * java.lang.NullPointerException
+        at org.apidb.apicommon.model.stepanalysis.GoEnrichmentPlugin.createFormViewModel(GoEnrichmentPlugin.java:233)
+        at org.apidb.apicommon.model.stepanalysis.GoEnrichmentPlugin.getFormViewModelJson(GoEnrichmentPlugin.java:274)
+        at org.gusdb.wdk.service.service.user.StepAnalysisService.getStepAnalysisTypeDataFromName(StepAnalysisService.java:77)
+----
+
+[source, log]
+----
+  * java.lang.NullPointerException
+        at org.apidb.apicommon.model.stepanalysis.EnrichmentPluginUtil.getDistinctOrgsInAnswer(EnrichmentPluginUtil.java:142)
+        at org.apidb.apicommon.model.stepanalysis.EnrichmentPluginUtil.getOrgOptionList(EnrichmentPluginUtil.java:157)
+        at org.apidb.apicommon.model.stepanalysis.WordEnrichmentPlugin.createFormViewModel(WordEnrichmentPlugin.java:97)
+        at org.apidb.apicommon.model.stepanalysis.WordEnrichmentPlugin.getFormViewModelJson(WordEnrichmentPlugin.java:81)
+        at org.gusdb.wdk.service.service.user.StepAnalysisService.getStepAnalysisTypeDataFromName(StepAnalysisService.java:77)
+----
+  
+These appear to be caused by the fact that an Answer is required before you
+can call the createFormViewModel method.
+
+The struts actions actually create a step analysis instance _before_ showing
+the form data, which may be required if the answer is also required.  Or it
+may require doing some modifications further down in the code
+
+
+Karate does not easily use JSON schema
+
+* Karate does allow 'schema' validation using it's own made up language
+* if we wanted to use JSON schema validation on the inputs we would need to
+  introduce some util/service for the validation and this could also be used
+  by karate to perform the actual validation. +
+   +
+  However this will probably require using karate with cucumber or as part of
+  the build step rather than as a standalone jar.
+

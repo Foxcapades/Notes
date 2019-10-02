@@ -1,0 +1,29 @@
+= Friday August 24, 2018
+Ellie Harper <eharper@upenn.edu>
+:toc:
+
+== Scrum
+
+=== Yesterday
+
+* Worked on endpoint for running a stepAnalysis
+* Worked on patch endpoint
+* Discussed issues found with both with Ryan
+
+=== Today
+
+* Wrap up endpoints, move on to XML task
+
+=== FUTs
+
+* Managing step analysis branch
+** Don't need to maintain backwards compatibility with struts actions so I can
+   potentially alter the step analysis factory without altering the interface.
+
+== Tasks
+
+== Notes
+
+* Gonna hafta change the StepAnalysisFactory:
+** Maybe make a validation method that is actually safe to use
+** Need a way to save params without running the analysis

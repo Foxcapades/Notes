@@ -1,0 +1,18 @@
+= Monday August 20, 2018
+:toc:
+
+== SCRUM
+
+=== Yesterday
+
+* Endpoint documentation
+* Manual testing of API endpoint
+
+=== Today
+
+* Continued endpoint documentation
+* Patch endpoints
+
+=== FUTs
+
+== Notes
