@@ -1,0 +1,11 @@
+= Thursday October 03, 2019
+
+08:30::
+
+Catching up on tasks from yesterday, checking email,
+checking slack.
+
+09:00::
+
+Merging my local changes to eutask with the git fixes pushed
+up by Dave
