@@ -8,4 +8,28 @@ checking slack.
 09:00::
 
 Merging my local changes to eutask with the git fixes pushed
-up by Dave
+up by Dave.
+
+09:10::
+
+Recreating my eutask config.
+
+09:40::
+
+Synced my local workspace with ash.
+
+09:41::
+
+Perform data cleanup on my copy of the user database.
+
+10:00::
+
+Scrum
+
+10:40::
+
+Continued cleanup
+
+11:30::
+
+ended day early for doctor's appt
