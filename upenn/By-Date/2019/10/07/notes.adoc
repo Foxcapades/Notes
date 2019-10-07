@@ -1,0 +1,32 @@
+Monday October 07, 2019
+
+9:50::
+
+Requested db links be added to other bl6n databases for my
+test user database.
+
+10:00::
+
+Scrum
+
+10:40::
+
+Looking at queries to verify that there are none that deal
+in both sequences and genes.
+
+11:40::
+
+Lunch
+
+12:30::
+
+Tested sequence queries on CryptoDB bl6n
+
+1:00::
+
+Continued examining queries
+
+1:50::
+
+Began reworking XML gene queries to use the geneid table.
+
