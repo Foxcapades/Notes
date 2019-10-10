@@ -18,6 +18,13 @@
 
 ==== `commentfile`
 
+[source, sql]
+----
+RENAME userlogins5.commentfile TO comment_file;
+RENAME userlogins5.commentfile_idx01 TO comment_file_id01;
+----
+
+
 Action:: Rename to `comment_file`
 Has Sequence:: [red]#Yes#
 References::
