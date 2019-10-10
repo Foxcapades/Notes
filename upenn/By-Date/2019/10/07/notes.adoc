@@ -30,3 +30,61 @@ Continued examining queries
 
 Began reworking XML gene queries to use the geneid table.
 
+2:15::
+
+Debugging gene query modification, getting different result
+count from the original, not sure which query is 'wrong'.
+
+2:20::
+
+Diffing query results...
+Probably need to rebuild the mappedcomment view.
+
+2:20::
+
+Researching oracle materialized view rebuild command.
+
+2:30::
+
+View is not materialized...
+Continuing to debug query.
+
+2:40::
+
+Moved inner join, diffs should not be wildly different
+anymore.
+
+2:45::
+
+Still appears to be a comment-count difference, but it's
+seemingly random now.
+
+Also result count difference is still present (ofc)
+
+2:55::
+
+Making export of diff based on count
+
+3:20::
+
+Cleaned up comments with duplicate link records
+(comment.stable_id = link.stable_id).
++
+[source, sql]
+----
+
+DELETE FROM
+  userlogins5.commentstableid
+WHERE
+  comment_stable_id IN (
+    SELECT
+      b.comment_stable_id
+    FROM
+      userlogins5.comments a
+      INNER JOIN userlogins5.commentstableid b
+        ON a.comment_id = b.comment_id
+        AND a.stable_id = b.stable_id
+    WHERE
+      a.is_visible = 1
+  )
+----

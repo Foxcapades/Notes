@@ -1,0 +1,378 @@
+= User comment cleanup
+:toc:
+:toclevels: 3
+:sectnums:
+:source-highlighter: pygments
+:icons: font
+
+== Table Cleanup
+
+=== Questions / Concerns
+
+. This will also mean updating the pk sequences since our
+  code uses the table name to generate the sequence names
+  for lookup.
+. Will the triggers need to be updated?
+
+=== Tables
+
+==== `commentfile`
+
+Action:: Rename to `comment_file`
+Has Sequence:: [red]#Yes#
+References::
++
+[cols=">1,8", options="header"]
+|====
+| Usages | File
+| 3 | BaseCommentQuery.java
+| 1 | Column.java
+| 1 | DeleteAttachmentQuery.java
+| 4 | FindCommentQuery.java
+| 4 | GetAllAttachmentsQuery.java
+| 4 | GetAttachmentQuery.java
+| 4 | GetCommentQuery.java
+| 1 | InsertAttachmentQuery.java
+| 1 | Table.java
+| 1 | UpdateAttachmentQuery.java
+| 5 | commentTableQueries.xml
+| 3 | create_schema_userlogins5_south_sequences.sql
+| 1 | DeleteCommentsMapper.xml
+| 1 | extractTextSearchFiles
+| 2 | initialize_wdk_roles.sql
+| 2 | MigrateCommentsMapper.xml
+| 3 | migration_comment_b21.sql
+| 2 | update_sequences.pl
+|====
+
+==== `commentreference`
+
+Action:: Rename to `comment_reference`
+Has Sequence:: [red]#Yes#
+References::
++
+[cols=">1,8", options="header"]
+|====
+| Usages | File
+| 2 | BaseCommentQuery.java
+| 1 | Column.java
+| 3 | FindCommentQuery.java
+| 3 | GetCommentQuery.java
+| 1 | InsertReferencesQuery.java
+| 1 | Table.java
+| 1 | commentreference.source_id.json
+| 6 | commentTableQueries.xml
+| 3 | create_schema_userlogins5_south_sequences.sql
+| 1 | DeleteCommentsMapper.xml
+| 2 | initialize_wdk_roles.sql
+| 2 | MigrateCommentsMapper.xml
+| 3 | migration_comment_b21.sql
+| 1 | reference-array.json
+| 2 | update_sequences.pl
+|====
+
+==== `commentsequence`
+
+Action:: Rename to `comment_sequence`
+Has Sequence:: [red]#Yes#
+References::
++
+[cols=">1,8", options="header"]
+|====
+| Usages | File
+| 1 | BaseCommentQuery.java
+| 1 | Column.java
+| 2 | FindCommentQuery.java
+| 2 | GetCommentQuery.java
+| 1 | InsertSequenceQuery.java
+| 1 | Table.java
+| 3 | create_schema_userlogins5_south_sequences.sql
+| 1 | DeleteCommentsMapper.xml
+| 2 | initialize_wdk_roles.sql
+| 2 | MigrateCommentsMapper.xml
+| 3 | migration_comment_b21.sql
+| 2 | update_sequences.pl
+|====
+
+==== `commentstableid`
+
+Action:: Rename to `comment_target_id`
+Has Sequence:: [red]#Yes#
+References::
++
+[cols=">1,8", options="header"]
+|====
+| Usages | File
+| 1 | Column.java
+| 4 | FindCommentQuery.java
+| 2 | GetCommentQuery.java
+| 1 | InsertStableIdQuery.java
+| 1 | Table.java
+| 3 | apiTuningManager.xml
+| 3 | commentTableQueries.xml
+| 3 | create_schema_userlogins5_south_sequences.sql
+| 1 | DeleteCommentsMapper.xml
+| 2 | initialize_wdk_roles.sql
+| 2 | MigrateCommentsMapper.xml
+| 3 | migration_comment_b21.sql
+| 5 | showNewCommentLinks
+| 2 | update_sequences.pl
+|====
+
+==== `commenttargetcategory`
+
+Action:: Rename to `comment_target_category`
+Has Sequence:: [red]#Yes#
+References::
++
+[cols=">1,8", options="header"]
+|====
+| Usages | File
+| 1 | commentTableQueries.xml
+| 3 | create_schema_userlogins5_south_sequences.sql
+| 1 | DeleteCommentsMapper.xml
+| 2 | initialize_wdk_roles.sql
+| 1 | InsertCategoryQuery.java
+| 2 | MigrateCommentsMapper.xml
+| 3 | migration_comment_b21.sql
+| 1 | Table.java
+| 2 | update_sequences.pl
+|====
+
+==== `comment_target`
+
+Action:: Rename to `comment_target_type`
+Has Sequence:: [green]#No#
+References::
++
+[cols=">1,8", options="header"]
+|====
+| Usages | File
+| 1 | DeleteCommentsMapper.xml
+| 1 | initialize_wdk_roles.sql
+| 2 | MigrateCommentsMapper.xml
+| 3 | migration_comment_b21.sql
+|====
+
+
+==== `categories`
+
+Action:: Drop
+Has Sequence:: [red]#Yes#
+References::
++
+[cols=">1,8", options="header"]
+|====
+| Usages | File
+| 1 | migration_user_b21.sql
+| 9 | migration_userlogins5_archive.sql
+| 7 | userlogins5_archive.sql
+| 2 | DeleteCommentsMapper.xml
+| 2 | MigrateCommentsMapper.xml
+| 4 | CommentsCleanupTask.java
+| 4 | CommentsMigrateTask.java
+| 2 | DeleteCommentsMapper.java
+| 2 | MigrateCommentsMapper.java
+| 3 | CommentFactory.java
+| 8 | Comment.java
+| 1 | FindCommentQuery.java
+| 4 | GetCategoriesQuery.java
+| 1 | GetCommentQuery.java
+| 1 | Table.java
+| 1 | UserCommentsService.java
+| 2 | full-comment.json
+| 2 | UserCommentShowController.tsx
+| 3 | UserCommentsService.ts
+| 3 | UserCommentFormStoreModule.ts
+| 7 | create_schema_userlogins5.sql
+| 7 | create_schema_userlogins5_postgres.sql
+| 3 | create_schema_userlogins5_south_sequences.sql
+| 2 | drop_schema_userlogins5.sql
+| 2 | initialize_wdk_roles.sql
+| 2 | update_sequences.pl
+| 5 | persistent_tables_oracle.sql
+| 5 | persistent_tables_postgres.sql
+|====
+
+
+== Column Cleanup
+
+=== `comments` Table
+
+==== Drop the `comments.stable_id` column
+
+[source, sql]
+----
+ALTER TABLE userlogins5.comments
+DROP COLUMN stable_id;
+----
+
+===== Code References
+
+[cols=">1,8", options="header"]
+|====
+| Usages | File
+| 10 | apiTuningManager.xml
+| 1 | BaseCommentQuery.java
+| 2 | Column.java
+| 22 | commentTableQueries.xml
+| 3 | FindCommentQuery.java
+| 2 | geneAttributeQueries.xml
+| 5 | geneQueries.xml
+| 1 | generateGeneMetrics
+| 1 | generateGeneMetrics_New
+| 2 | geneRecord.xml
+| 7 | geneTableQueries.xml
+| 1 | genomicRecords.xml
+| 2 | GetCommentQuery.java
+| 1 | InsertCommentQuery.java
+| 1 | InsertStableIdQuery.java
+| 4 | MigrateCommentsMapper.xml
+| 4 | migration_comment_b21.sql
+| 1 | popsetRecords.xml
+| 6 | showComments.jsp
+| 1 | showNewCommentLinks
+|====
+
+
+==== Rename `comments.comment_target_id`
+
+[source, sql]
+----
+ALTER TABLE userlogins5.comments
+RENAME COLUMN comment_target_id TO comment_target_type;
+----
+
+===== Code References
+
+[cols=">1,8", options="header"]
+|====
+| Usages | File
+| 2 | apiTuningManager.xml
+| 2 | Column.java
+| 1 | commentTableQueries.xml
+| 2 | geneRecord.xml
+| 2 | geneTableQueries.xml
+| 1 | genomicRecords.xml
+| 1 | InsertCommentQuery.java
+| 1 | KeywordSearchPlugin.java
+| 6 | MigrateCommentsMapper.xml
+| 6 | migration_comment_b21.sql
+| 1 | popsetRecords.xml
+| 3 | showComments.jsp
+| 1 | TranscriptSearchPlugin.java
+|====
+
+=== `commentstableid` Table
+
+==== Add `is_primary_target` Column
+
+===== Create Column
+
+[source, sql]
+----
+ALTER TABLE userlogins5.commentstableid
+ADD is_primary_target NUMBER(1) DEFAULT 0 NOT NULL;
+----
+
+===== Create Constraints
+
+Creates a unique index on the comment id value for records
+that have the `is_primary_target` flag set to `1`.
+
+Slightly roundabout way to make sure a comment can only have
+one primary target link without having to create triggers or
+functions.
+
+[source, sql]
+----
+CREATE UNIQUE INDEX comment_target_id_one_primary
+ON userlogins5.commentstableid (
+  CASE
+    WHEN is_primary_target = 1
+    THEN comment_id
+    ELSE NULL
+  END
+);
+----
+
+== Data Cleanup
+
+=== Move comment target links
+
+==== Cleanup conflicts
+
+There will likely be some junk records in the related record
+table that will cause conflicts when trying to copy over the
+comment targets.
+
+[source, sql]
+----
+DELETE FROM
+  userlogins5.commentstableid
+WHERE
+  (comment_id, stable_id) IN (
+    SELECT comment_id, stable_id
+    FROM userlogins5.comments
+  );
+----
+
+==== Copy over targets
+
+[source, sql]
+----
+INSERT INTO
+  userlogins5.commentstableid (
+    comment_stable_id
+  , stable_id
+  , comment_id
+  , is_primary_target
+)
+SELECT
+  (SELECT userlogins5.commentstableid_pkseq.nextval FROM dual)
+, stable_id
+, comment_id
+, 1
+FROM
+  userlogins5.comments
+----
+
+=== `comment_target` Table
+
+==== Cleanup dead data
+
+[source, sql]
+----
+DELETE FROM userlogins5.comment_target_type
+WHERE comment_target_type_id IN ('protein', 'phenotype');
+----
+
+==== Insert missing data
+
+[source, sql]
+----
+INSERT INTO
+  userlogins5.comment_target_type (
+    comment_target_type_id
+  , comment_target_type_name
+  , require_location
+  )
+VALUES
+  ('snp',      'SNP',      0)
+, ('est',      'EST',      0)
+, ('assembly', 'Assembly', 0)
+, ('sage',     'Sage',     0)
+, ('orf',      'ORF',      0)
+----
+
+== Misc / Followup
+
+. Fix the mapped comments view
+. Copy targets from comment table to linking table
+. Rework queries from original task?
+
+== Sequence
+
+. <<Add `is_primary_target` Column>>
+. <<Move comment target links>>
+. <<Drop the `comments.stable_id` column>>
