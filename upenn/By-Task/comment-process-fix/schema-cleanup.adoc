@@ -126,31 +126,13 @@ DROP COLUMN stable_id;
 
 ==== Rename `comments.comment_target_id`
 
+link:{curDir}/csv/comments.comment_target_id.csv[External References]
+
 [source, sql]
 ----
 ALTER TABLE userlogins5.comments
 RENAME COLUMN comment_target_id TO comment_target_type;
 ----
-
-===== Code References
-
-[cols=">1,8,2", options="header"]
-|====
-| Usages | File                        | Actions
-| 2      | apiTuningManager.xml        |
-| 2      | Column.java                 |
-| 1      | commentTableQueries.xml     |
-| 2      | geneRecord.xml              |
-| 2      | geneTableQueries.xml        |
-| 1      | genomicRecords.xml          |
-| 1      | InsertCommentQuery.java     |
-| 1      | KeywordSearchPlugin.java    |
-| 6      | MigrateCommentsMapper.xml   |
-| 6      | migration_comment_b21.sql   |
-| 1      | popsetRecords.xml           |
-| 3      | showComments.jsp            |
-| 1      | TranscriptSearchPlugin.java |
-|====
 
 === `commentstableid` Table
 
