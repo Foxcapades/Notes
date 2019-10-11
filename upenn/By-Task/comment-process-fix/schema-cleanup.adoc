@@ -31,25 +31,25 @@ RENAME userlogins5.commentfile_pkseq TO comment_file_pkseq;
 
 [cols=">1,8", options="header"]
 |====
-| Usages | File
-| 3 | BaseCommentQuery.java
-| 1 | Column.java
-| 1 | DeleteAttachmentQuery.java
-| 4 | FindCommentQuery.java
-| 4 | GetAllAttachmentsQuery.java
-| 4 | GetAttachmentQuery.java
-| 4 | GetCommentQuery.java
-| 1 | InsertAttachmentQuery.java
-| 1 | Table.java
-| 1 | UpdateAttachmentQuery.java
-| 5 | commentTableQueries.xml
-| 3 | create_schema_userlogins5_south_sequences.sql
-| 1 | DeleteCommentsMapper.xml
-| 1 | extractTextSearchFiles
-| 2 | initialize_wdk_roles.sql
-| 2 | MigrateCommentsMapper.xml
-| 3 | migration_comment_b21.sql
-| 2 | update_sequences.pl
+| Usages | File                                          | Actions
+| 3      | BaseCommentQuery.java                         |
+| 1      | Column.java                                   |
+| 1      | DeleteAttachmentQuery.java                    |
+| 4      | FindCommentQuery.java                         |
+| 4      | GetAllAttachmentsQuery.java                   |
+| 4      | GetAttachmentQuery.java                       |
+| 4      | GetCommentQuery.java                          |
+| 1      | InsertAttachmentQuery.java                    |
+| 1      | Table.java                                    |
+| 1      | UpdateAttachmentQuery.java                    |
+| 5      | commentTableQueries.xml                       |
+| 3      | create_schema_userlogins5_south_sequences.sql |
+| 1      | DeleteCommentsMapper.xml                      |
+| 1      | extractTextSearchFiles                        |
+| 2      | initialize_wdk_roles.sql                      |
+| 2      | MigrateCommentsMapper.xml                     |
+| 3      | migration_comment_b21.sql                     |
+| 2      | update_sequences.pl                           |
 |====
 
 ==== `commentreference`
@@ -64,95 +64,117 @@ RENAME userlogins5.commentreference_idx02 TO comment_reference_idx02;
 RENAME userlogins5.commentreference_pkseq TO comment_reference_pkseq;
 ----
 
-Has Sequence:: [red]#Yes#
-References::
-+
+===== External References
+
 [cols=">1,8", options="header"]
 |====
-| Usages | File
-| 2 | BaseCommentQuery.java
-| 1 | Column.java
-| 3 | FindCommentQuery.java
-| 3 | GetCommentQuery.java
-| 1 | InsertReferencesQuery.java
-| 1 | Table.java
-| 1 | commentreference.source_id.json
-| 6 | commentTableQueries.xml
-| 3 | create_schema_userlogins5_south_sequences.sql
-| 1 | DeleteCommentsMapper.xml
-| 2 | initialize_wdk_roles.sql
-| 2 | MigrateCommentsMapper.xml
-| 3 | migration_comment_b21.sql
-| 1 | reference-array.json
-| 2 | update_sequences.pl
+| Usages | File                                          | Actions
+| 2      | BaseCommentQuery.java                         |
+| 1      | Column.java                                   |
+| 3      | FindCommentQuery.java                         |
+| 3      | GetCommentQuery.java                          |
+| 1      | InsertReferencesQuery.java                    |
+| 1      | Table.java                                    |
+| 1      | commentreference.source_id.json               |
+| 6      | commentTableQueries.xml                       |
+| 3      | create_schema_userlogins5_south_sequences.sql |
+| 1      | DeleteCommentsMapper.xml                      |
+| 2      | initialize_wdk_roles.sql                      |
+| 2      | MigrateCommentsMapper.xml                     |
+| 3      | migration_comment_b21.sql                     |
+| 1      | reference-array.json                          |
+| 2      | update_sequences.pl                           |
 |====
 
 ==== `commentsequence`
 
-Action:: Rename to `comment_sequence`
-Has Sequence:: [red]#Yes#
-References::
-+
+===== Rename to `comment_sequence`
+
+[source, sql]
+----
+RENAME userlogins5.commentsequence TO comment_sequence;
+RENAME userlogins5.commentsequence_idx01 TO comment_sequence_idx01;
+RENAME userlogins5.commentsequence_pkseq TO comment_sequence_pkseq;
+----
+
+===== External References
+
 [cols=">1,8", options="header"]
 |====
-| Usages | File
-| 1 | BaseCommentQuery.java
-| 1 | Column.java
-| 2 | FindCommentQuery.java
-| 2 | GetCommentQuery.java
-| 1 | InsertSequenceQuery.java
-| 1 | Table.java
-| 3 | create_schema_userlogins5_south_sequences.sql
-| 1 | DeleteCommentsMapper.xml
-| 2 | initialize_wdk_roles.sql
-| 2 | MigrateCommentsMapper.xml
-| 3 | migration_comment_b21.sql
-| 2 | update_sequences.pl
+| Usages | File                                          | Actions
+| 1      | BaseCommentQuery.java                         |
+| 1      | Column.java                                   |
+| 2      | FindCommentQuery.java                         |
+| 2      | GetCommentQuery.java                          |
+| 1      | InsertSequenceQuery.java                      |
+| 1      | Table.java                                    |
+| 3      | create_schema_userlogins5_south_sequences.sql |
+| 1      | DeleteCommentsMapper.xml                      |
+| 2      | initialize_wdk_roles.sql                      |
+| 2      | MigrateCommentsMapper.xml                     |
+| 3      | migration_comment_b21.sql                     |
+| 2      | update_sequences.pl                           |
 |====
 
 ==== `commentstableid`
 
-Action:: Rename to `comment_target_id`
-Has Sequence:: [red]#Yes#
-References::
-+
+===== Rename to `comment_target_id`
+
+[source, sql]
+----
+RENAME userlogins5.commentstableid TO comment_target_id;
+RENAME userlogins5.commentstableid_idx01 TO comment_target_id_idx01;
+RENAME userlogins5.commentstableid_ux01 TO comment_target_id_ux01;
+RENAME userlogins5.commentstableid_pkseq TO comment_target_id_pkseq;
+----
+
+===== External References
+
 [cols=">1,8", options="header"]
 |====
-| Usages | File
-| 1 | Column.java
-| 4 | FindCommentQuery.java
-| 2 | GetCommentQuery.java
-| 1 | InsertStableIdQuery.java
-| 1 | Table.java
-| 3 | apiTuningManager.xml
-| 3 | commentTableQueries.xml
-| 3 | create_schema_userlogins5_south_sequences.sql
-| 1 | DeleteCommentsMapper.xml
-| 2 | initialize_wdk_roles.sql
-| 2 | MigrateCommentsMapper.xml
-| 3 | migration_comment_b21.sql
-| 5 | showNewCommentLinks
-| 2 | update_sequences.pl
+| Usages | File                                          | Actions
+| 1      | Column.java                                   |
+| 4      | FindCommentQuery.java                         |
+| 2      | GetCommentQuery.java                          |
+| 1      | InsertStableIdQuery.java                      |
+| 1      | Table.java                                    |
+| 3      | apiTuningManager.xml                          |
+| 3      | commentTableQueries.xml                       |
+| 3      | create_schema_userlogins5_south_sequences.sql |
+| 1      | DeleteCommentsMapper.xml                      |
+| 2      | initialize_wdk_roles.sql                      |
+| 2      | MigrateCommentsMapper.xml                     |
+| 3      | migration_comment_b21.sql                     |
+| 5      | showNewCommentLinks                           |
+| 2      | update_sequences.pl                           |
 |====
 
 ==== `commenttargetcategory`
 
-Action:: Rename to `comment_target_category`
-Has Sequence:: [red]#Yes#
-References::
-+
+===== Rename to `comment_target_category`
+
+[source, sql]
+----
+RENAME userlogins5.commenttargetcategory TO comment_target_category;
+RENAME userlogins5.commenttargetcategory_idx01 TO comment_target_category_idx01;
+RENAME userlogins5.commenttargetcategory_idx02 TO comment_target_category_idx02;
+RENAME userlogins5.commenttargetcategory_pkseq TO comment_target_category_pkseq;
+----
+
+===== External References
+
 [cols=">1,8", options="header"]
 |====
-| Usages | File
-| 1 | commentTableQueries.xml
-| 3 | create_schema_userlogins5_south_sequences.sql
-| 1 | DeleteCommentsMapper.xml
-| 2 | initialize_wdk_roles.sql
-| 1 | InsertCategoryQuery.java
-| 2 | MigrateCommentsMapper.xml
-| 3 | migration_comment_b21.sql
-| 1 | Table.java
-| 2 | update_sequences.pl
+| Usages | File                                          | Actions
+| 1      | commentTableQueries.xml                       |
+| 3      | create_schema_userlogins5_south_sequences.sql |
+| 1      | DeleteCommentsMapper.xml                      |
+| 2      | initialize_wdk_roles.sql                      |
+| 1      | InsertCategoryQuery.java                      |
+| 2      | MigrateCommentsMapper.xml                     |
+| 3      | migration_comment_b21.sql                     |
+| 1      | Table.java                                    |
+| 2      | update_sequences.pl                           |
 |====
 
 ==== `comment_target`
@@ -263,20 +285,20 @@ RENAME COLUMN comment_target_id TO comment_target_type;
 
 [cols=">1,8", options="header"]
 |====
-| Usages | File
-| 2 | apiTuningManager.xml
-| 2 | Column.java
-| 1 | commentTableQueries.xml
-| 2 | geneRecord.xml
-| 2 | geneTableQueries.xml
-| 1 | genomicRecords.xml
-| 1 | InsertCommentQuery.java
-| 1 | KeywordSearchPlugin.java
-| 6 | MigrateCommentsMapper.xml
-| 6 | migration_comment_b21.sql
-| 1 | popsetRecords.xml
-| 3 | showComments.jsp
-| 1 | TranscriptSearchPlugin.java
+| Usages | File                        | Actions
+| 2      | apiTuningManager.xml        |
+| 2      | Column.java                 |
+| 1      | commentTableQueries.xml     |
+| 2      | geneRecord.xml              |
+| 2      | geneTableQueries.xml        |
+| 1      | genomicRecords.xml          |
+| 1      | InsertCommentQuery.java     |
+| 1      | KeywordSearchPlugin.java    |
+| 6      | MigrateCommentsMapper.xml   |
+| 6      | migration_comment_b21.sql   |
+| 1      | popsetRecords.xml           |
+| 3      | showComments.jsp            |
+| 1      | TranscriptSearchPlugin.java |
 |====
 
 === `commentstableid` Table
