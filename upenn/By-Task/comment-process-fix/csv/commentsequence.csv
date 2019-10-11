@@ -1,0 +1,13 @@
+Usages,File,Actions
+1,BaseCommentQuery.java,
+1,Column.java,
+2,FindCommentQuery.java,
+2,GetCommentQuery.java,
+1,InsertSequenceQuery.java,
+1,Table.java,
+3,create_schema_userlogins5_south_sequences.sql,
+1,DeleteCommentsMapper.xml,
+2,initialize_wdk_roles.sql,
+2,MigrateCommentsMapper.xml,
+3,migration_comment_b21.sql,
+2,update_sequences.pl,
