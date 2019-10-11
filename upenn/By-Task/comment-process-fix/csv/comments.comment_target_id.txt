@@ -1,0 +1,149 @@
+Targets
+    Occurrences of 'comment_target_id' in Project
+Found Occurrences  (103 usages found)
+    api-common-data-load  (50 usages found)
+        ApiCommonData/Load/bin  (5 usages found)
+            deleteComment  (1 usage found)
+                72     select stable_id, project_name, project_version, organism, comment_target_id, is_visible, email, headline, content
+            extractCommentsFile  (2 usages found)
+                74   AND c.comment_target_id='gene'
+                77   AND c.comment_target_id = 'gene'
+            extractTextSearchFiles  (1 usage found)
+                89 #    AND c.comment_target_id='gene'
+            loadBulkUserCommentsFromExcel.pl  (1 usage found)
+                230                                 comment_target_id, stable_id, conceptual, 
+        ApiCommonData/Load/lib/sql/comments  (45 usages found)
+            createCategoryTables.sql  (33 usages found)
+                18 comment_target_id varchar(20) NOT NULL,
+                25 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(1, 'Gene Model', 'gene');
+                26 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(2, 'Name/Product', 'gene');
+                27 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(3, 'Function', 'gene');
+                28 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(4, 'Expression', 'gene');
+                29 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(5, 'Sequence', 'gene');
+                30 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(6, 'Phenotype', 'gene');
+                32 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(7, 'Characteristics/Overview', 'isolate');
+                33 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(8, 'Reference', 'isolate');
+                34 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(9, 'Sequence', 'isolate');
+                36 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(10, 'New Gene', 'genome');
+                37 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(11, 'New Feature', 'genome');
+                38 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(12, 'Centromere', 'genome');
+                39 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(13, 'Genomic Assembly', 'genome');
+                40 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(14, 'Sequence', 'genome');
+                41 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(33, 'Phenotype', 'genome');
+                43 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(15, 'Characteristics/Overview', 'snp');
+                44 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(16, 'Gene Context', 'snp');
+                45 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(17, 'Strains', 'snp');
+                47 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(19, 'Characteristics/Overview', 'est');
+                48 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(20, 'Alignment', 'est');
+                49 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(21, 'Sequence', 'est');
+                50 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(22, 'Assembly', 'est');
+                52 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(23, 'Characteristics/Overview', 'assembly');
+                53 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(24, 'Consensus Sequence', 'assembly');
+                54 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(25, 'Alignment', 'assembly');
+                55 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(26, 'Included Est''s', 'assembly');
+                57 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(27, 'Characteristics/Overview ', 'sage');
+                58 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(28, 'Gene', 'sage');
+                59 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(29, 'Alignment', 'sage');
+                60 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(30, 'Library Counts', 'sage');
+                62 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(31, 'Alignment', 'orf');
+                63 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(32, 'Sequence', 'orf');
+            createCommentTables.sql  (7 usages found)
+                72 comment_target_id varchar(20) NOT NULL,
+                75 CONSTRAINT comment_target_key PRIMARY KEY (comment_target_id)
+                100 comment_target_id varchar(20),
+                113 CONSTRAINT comments_ct_id_fkey FOREIGN KEY (comment_target_id)
+                114 REFERENCES userlogins5.comment_target (comment_target_id),
+                123 ON userlogins5.comments (project_name, is_visible, stable_id, comment_id, comment_target_id, review_status_id);
+                182 select c.comment_id, c.user_id, c.email, c.comment_date, c.comment_target_id,
+            createCommentTriggers.sql  (4 usages found)
+                40 if :new.comment_target_id = 'gene' and :new.is_visible = 1 then
+                77 if :new.comment_target_id = 'gene' and :new.is_visible = 1 then
+                130 and comment_target_id = 'gene'
+                182 and comment_target_id = 'gene'
+            reindexComments.sql  (1 usage found)
+                32 where c.comment_target_id = 'gene'
+    api-common-model-model  (40 usages found)
+        ApiCommonModel/Model/bin  (1 usage found)
+            buildAnnotationChangeTT  (1 usage found)
+                396     --     and comment_target_id = 'gene'
+        ApiCommonModel/Model/lib/sql  (6 usages found)
+            migration_comment_b21.sql  (6 usages found)
+                15 INSERT INTO userlogins5.comment_target (comment_target_id, comment_target_name, require_location)
+                16 SELECT comment_target_id, comment_target_name, require_location 
+                25 INSERT INTO userlogins5.comments (comment_id, prev_comment_id, prev_schema, user_id, email, comment_date, comment_target_id, stable_id, conceptual,
+                27 SELECT comment_id, prev_comment_id, prev_schema, user_id, email, comment_date, comment_target_id, stable_id, conceptual, 
+                47 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id)
+                48 SELECT target_category_id, category, comment_target_id
+        ApiCommonModel/Model/lib/wdk/model/records  (25 usages found)
+            commentTableQueries.xml  (18 usages found)
+                69 <column name="comment_target_id"/>
+                100                   SELECT c.comment_target_id, c.project_name as project_id, c.comment_id,
+                140                     AND c.comment_target_id = 'gene'
+                188 <column name="comment_target_id"/>
+                191                    SELECT c.comment_target_id, c.project_name as project_id, c.comment_id, 
+                216                       AND c.comment_target_id = 'gene'
+                244 <column name="comment_target_id"/>
+                248                      apicomm.comment_target_id,
+                252                    (SELECT c.comment_target_id, c.project_name as project_id, c.comment_id, c.stable_id, c.comment_date, c.headline,
+                269                       AND c.comment_target_id = 'isolate'
+                327 <column name="comment_target_id"/>
+                331                      apicomm.comment_target_id,
+                335                    (SELECT c.comment_target_id, c.project_name as project_id, c.comment_id, c.stable_id, c.comment_date, c.headline,
+                352                       AND c.comment_target_id = 'genome'
+                380             <column name="comment_target_id"/>
+                384                      apicomm.comment_target_id,
+                388                    (SELECT c.comment_target_id, c.project_name as project_id, c.comment_id, c.stable_id, 
+                403                       AND c.comment_target_id = 'phenotype'
+            geneRecord.xml  (2 usages found)
+                1420 <columnAttribute name="comment_target_id" internal="true"/>
+                1464 <columnAttribute name="comment_target_id" internal="true"/>
+            geneTableQueries.xml  (3 usages found)
+                1627                      WHERE cmnts.comment_target_id = 'gene'
+                1878                     AND c.comment_target_id = 'gene'
+                2066                        WHERE comment_target_id = 'gene'
+            genomicRecords.xml  (1 usage found)
+                966 <columnAttribute name="comment_target_id" internal="true"/> 
+            popsetRecords.xml  (1 usage found)
+                508 <columnAttribute name="comment_target_id" internal="true"/>
+        ApiCommonModel/Model/lib/xml/tuningManager  (2 usages found)
+            apiTuningManager.xml  (2 usages found)
+                818                     and comment_target_id = 'gene')
+                1349           AND comment_target_id = 'gene')
+        mappers.migrate5  (6 usages found)
+            MigrateCommentsMapper.xml  (6 usages found)
+                8 INSERT INTO userlogins5.comment_target (comment_target_id, comment_target_name, require_location)
+                9 SELECT comment_target_id, comment_target_name, require_location 
+                21 comment_target_id, stable_id, conceptual, project_name, project_version, headline, 
+                24 comment_target_id, stable_id, conceptual, project_name, project_version, headline, 
+                52 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id)
+                53 SELECT target_category_id, category, comment_target_id
+    api-common-website-model  (5 usages found)
+        org.apidb.apicommon.model.comment.repo  (5 usages found)
+            Column.java  (2 usages found)
+                8 TARGET_ID         = "comment_target_id",
+                70 TARGET_ID = "comment_target_id";
+            InsertCommentQuery.java  (3 usages found)
+                getArguments()  (1 usage found)
+                    80 _req.getTarget().getType(),          // COMMENT_TARGET_ID
+                24 "    COMMENT_TARGET_ID,\n" +
+                42 VARCHAR, // COMMENT_TARGET_ID
+    api-common-website-site  (6 usages found)
+        ApiCommonWebsite/Site/bin  (3 usages found)
+            extractCommentsFile  (2 usages found)
+                53   AND c.comment_target_id='gene'
+                56   AND c.comment_target_id = 'gene'
+            extractTextSearchFiles  (1 usage found)
+                68 #    AND c.comment_target_id='gene'
+        ApiCommonWebsite/Site/webapp  (3 usages found)
+            showComments.jsp  (3 usages found)
+                30 <c:when test="${comment_target_id eq 'gene'}">
+                36 <c:when test="${comment_target_id eq 'isolate'}">
+                55 <p align="center">${comment_target_id} comments on <a href="${returnUrl}">${stable_id}</a></p>
+    api-common-websvc-wsfplugin  (2 usages found)
+        org.apidb.apicomplexa.wsfplugin.textsearch  (2 usages found)
+            KeywordSearchPlugin.java  (1 usage found)
+                getCommentQuery(String, String, boolean, boolean, boolean)  (1 usage found)
+                    198 recordTypePredicate = " AND comment_target_id = '" + recordType + "'\n";
+            TranscriptSearchPlugin.java  (1 usage found)
+                getCommentQuery(String, boolean, boolean, String)  (1 usage found)
+                    185 recordTypePredicate = " AND comment_target_id = 'gene' \n";

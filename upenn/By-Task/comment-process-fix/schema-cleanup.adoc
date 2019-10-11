@@ -126,7 +126,7 @@ DROP COLUMN stable_id;
 
 ==== Rename `comments.comment_target_id`
 
-link:{curDir}/csv/comments.comment_target_id.csv[External References]
+link:{curDir}/csv/comments.comment_target_id.txt[External References]
 
 [source, sql]
 ----
