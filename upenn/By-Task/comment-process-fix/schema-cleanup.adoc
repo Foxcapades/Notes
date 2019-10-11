@@ -62,6 +62,8 @@ RENAME userlogins5.commentsequence_pkseq TO comment_sequence_pkseq;
 
 ==== `commentstableid`
 
+link:{curDir}/csv/commentstableid.csv[External References]
+
 ===== Rename to `comment_target_id`
 
 [source, sql]
@@ -71,27 +73,6 @@ RENAME userlogins5.commentstableid_idx01 TO comment_target_id_idx01;
 RENAME userlogins5.commentstableid_ux01 TO comment_target_id_ux01;
 RENAME userlogins5.commentstableid_pkseq TO comment_target_id_pkseq;
 ----
-
-===== External References
-
-[cols=">1,8,2", options="header"]
-|====
-| Usages | File                                          | Actions
-| 1      | Column.java                                   |
-| 4      | FindCommentQuery.java                         |
-| 2      | GetCommentQuery.java                          |
-| 1      | InsertStableIdQuery.java                      |
-| 1      | Table.java                                    |
-| 3      | apiTuningManager.xml                          |
-| 3      | commentTableQueries.xml                       |
-| 3      | create_schema_userlogins5_south_sequences.sql |
-| 1      | DeleteCommentsMapper.xml                      |
-| 2      | initialize_wdk_roles.sql                      |
-| 2      | MigrateCommentsMapper.xml                     |
-| 3      | migration_comment_b21.sql                     |
-| 5      | showNewCommentLinks                           |
-| 2      | update_sequences.pl                           |
-|====
 
 ==== `commenttargetcategory`
 
