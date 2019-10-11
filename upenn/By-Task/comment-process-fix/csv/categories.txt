@@ -1,0 +1,167 @@
+Targets
+    Occurrences of 'categories' in Project
+Found Occurrences  (101 usages found)
+    api-common-model-model  (33 usages found)
+        ApiCommonModel/Model/lib/sql  (17 usages found)
+            migration_user_b21.sql  (1 usage found)
+                1 DELETE FROM userlogins5.categories;
+            migration_userlogins5_archive.sql  (9 usages found)
+                1 ALTER TABLE userlogins5_archive.categories DISABLE CONSTRAINT "categories_fk01";
+                2 ALTER TABLE userlogins5_archive.categories DISABLE CONSTRAINT "categories_fk01";
+                3 ALTER TABLE userlogins5_archive.categories DISABLE CONSTRAINT "categories_fk01";
+                4 ALTER TABLE userlogins5_archive.categories DISABLE CONSTRAINT "categories_fk01";
+                14 TRUNCATE TABLE userlogins5_archive.categories;
+                27 ALTER TABLE userlogins5_archive.categories ENABLE CONSTRAINT "categories_fk01";
+                28 ALTER TABLE userlogins5_archive.categories ENABLE CONSTRAINT "categories_fk01";
+                29 ALTER TABLE userlogins5_archive.categories ENABLE CONSTRAINT "categories_fk01";
+                30 ALTER TABLE userlogins5_archive.categories ENABLE CONSTRAINT "categories_fk01";
+            userlogins5_archive.sql  (7 usages found)
+                3 DROP TABLE userlogins5_archive.categories;
+                279 CREATE TABLE userlogins5_archive.categories
+                289 CONSTRAINT "categories_pk" PRIMARY KEY (category_id),
+                290 CONSTRAINT "categories_uq01" UNIQUE (user_id, category_type, parent_id, category_name),
+                291 CONSTRAINT "categories_fk01" FOREIGN KEY (user_id)
+                295 GRANT SELECT ON userlogins5_archive.categories TO GUS_R;
+                296 GRANT INSERT, UPDATE, DELETE ON userlogins5_archive.categories TO GUS_W;
+        mappers.migrate5  (4 usages found)
+            DeleteCommentsMapper.xml  (2 usages found)
+                23 <delete id="deleteCommentTargetCategories">
+                27 <delete id="deleteTargetCategories">
+            MigrateCommentsMapper.xml  (2 usages found)
+                51 <insert id="insertTargetCategories">
+                57 <insert id="insertCommentTargetCategories">
+        org.apidb.apicommon.model.maintain.users5  (8 usages found)
+            CommentsCleanupTask.java  (4 usages found)
+                execute(SqlSession)  (4 usages found)
+                    62 count = mapper.deleteCommentTargetCategories();
+                    63 LOG.debug(count + " comment categories deleted.");
+                    65 count = mapper.deleteTargetCategories();
+                    66 LOG.debug(count + " categories deleted.");
+            CommentsMigrateTask.java  (4 usages found)
+                execute(SqlSession)  (4 usages found)
+                    52 count = mapper.insertTargetCategories();
+                    53 LOG.debug(count + " categories migrated.");
+                    55 count = mapper.insertCommentTargetCategories();
+                    56 LOG.debug(count + " comment categories migrated.");
+        org.apidb.apicommon.model.maintain.users5.mapper  (4 usages found)
+            DeleteCommentsMapper.java  (2 usages found)
+                deleteCommentTargetCategories()  (1 usage found)
+                    13 int deleteCommentTargetCategories();
+                deleteTargetCategories()  (1 usage found)
+                    15 int deleteTargetCategories();
+            MigrateCommentsMapper.java  (2 usages found)
+                insertTargetCategories()  (1 usage found)
+                    17 int insertTargetCategories();
+                insertCommentTargetCategories()  (1 usage found)
+                    19 int insertCommentTargetCategories();
+    api-common-website-model  (20 usages found)
+        org.apidb.apicommon.model.comment  (3 usages found)
+            CommentFactory.java  (3 usages found)
+                getCategoriesByType(String)  (2 usages found)
+                    125 public Collection<Category> getCategoriesByType(final String type) throws WdkModelException {
+                    127 return new GetCategoriesQuery(_config.getCommentSchema())
+                31 import org.apidb.apicommon.model.comment.repo.GetCategoriesQuery;
+        org.apidb.apicommon.model.comment.pojo  (9 usages found)
+            Comment.java  (8 usages found)
+                Comment(long, long)  (1 usage found)
+                    40 _categories = new HashSet<>();
+                getCategories()  (2 usages found)
+                    53 public Set<String> getCategories() {
+                    54 return Collections.unmodifiableSet(_categories);
+                addCategory(String)  (1 usage found)
+                    58 _categories.add(cat);
+                setCategories(Collection<String>)  (3 usages found)
+                    62 public Comment setCategories(Collection<String> categoryNames) {
+                    63 _categories.clear();
+                    64 _categories.addAll(categoryNames);
+                14 private final Set<String> _categories;
+            CommentRequest.java  (1 usage found)
+                24 * Comment categories
+        org.apidb.apicommon.model.comment.repo  (8 usages found)
+            FindCommentQuery.java  (1 usage found)
+                88 "  LEFT JOIN %1$s." + Table.CATEGORIES + " ca\n" +
+            GetCategoriesQuery.java  (4 usages found)
+                GetCategoriesQuery(String)  (1 usage found)
+                    27 public GetCategoriesQuery(String schema) {
+                filterByType(String)  (1 usage found)
+                    31 public GetCategoriesQuery filterByType(final String type) {
+                14 public class GetCategoriesQuery extends ValueQuery<Collection<Category>> {
+                20 "FROM\n  %s." + Table.CATEGORIES,
+            GetCommentQuery.java  (1 usage found)
+                70 "  LEFT JOIN %1$s." + Table.CATEGORIES + " ca\n" +
+            InsertCategoryQuery.java  (1 usage found)
+                13 * Insert a link between a comment and selected categories.
+            Table.java  (1 usage found)
+                15 String CATEGORIES    = "TARGETCATEGORY";
+    api-common-website-service  (3 usages found)
+        org.apidb.apicommon.service.services  (1 usage found)
+            UserCommentsService.java  (1 usage found)
+                getCategoryList(String)  (1 usage found)
+                    146 return getCommentFactory().getCategoriesByType(targetType);
+        schema.apicomm.user-comments.includes  (2 usages found)
+            full-comment.json  (2 usages found)
+                27 "categories": {
+                127 "categories",
+    wdk-client  (8 usages found)
+        WDKClient/Client/src/Controllers  (2 usages found)
+            UserCommentShowController.tsx  (2 usages found)
+                270 key: 'categories',
+                275 comment.categories.map(
+        WDKClient/Client/src/Service/Mixins  (3 usages found)
+            UserCommentsService.ts  (3 usages found)
+                41 function getUserCommentCategories(targetType: string): Promise<CategoryChoice[]> {
+                45 ).then(categories => categories.map(
+                125 getUserCommentCategories,
+        WDKClient/Client/src/StoreModules  (3 usages found)
+            UserCommentFormStoreModule.ts  (3 usages found)
+                92 .filter(({ display }) => userCommentGetResponse.categories.includes(display))
+                252 categoryIdOptions: await wdkService.getUserCommentCategories(
+                258 const categoryIdOptions = await wdkService.getUserCommentCategories(formValues.target.type);
+    wdk-model  (37 usages found)
+        WDK/Model/data  (23 usages found)
+            create_schema_userlogins5.sql  (7 usages found)
+                134 CREATE TABLE userlogins5.categories (
+                143 CONSTRAINT "categories_pk" PRIMARY KEY (category_id),
+                144 CONSTRAINT "categories_uq01" UNIQUE (user_id, category_type, parent_id, category_name),
+                145 CONSTRAINT "categories_fk01" FOREIGN KEY (user_id)
+                149 GRANT SELECT, INSERT, UPDATE, DELETE ON userlogins5.categories TO COMM_WDK_W;
+                319 CREATE SEQUENCE userlogins5.categories_pkseq INCREMENT BY 10 START WITH 100000000;
+                320 GRANT SELECT ON userlogins5.categories_pkseq TO COMM_WDK_W;
+            create_schema_userlogins5_postgres.sql  (7 usages found)
+                123 CREATE TABLE userlogins5.categories (
+                132 CONSTRAINT "categories_pk" PRIMARY KEY (category_id),
+                133 CONSTRAINT "categories_uq01" UNIQUE (user_id, category_type, parent_id, category_name),
+                134 CONSTRAINT "categories_fk01" FOREIGN KEY (user_id)
+                138 GRANT SELECT, INSERT, UPDATE, DELETE ON userlogins5.categories TO COMM_WDK_W;
+                308 CREATE SEQUENCE userlogins5.categories_pkseq INCREMENT BY 10; -- START WITH 100000000;
+                309 GRANT SELECT ON userlogins5.categories_pkseq TO COMM_WDK_W;
+            create_schema_userlogins5_south_sequences.sql  (3 usages found)
+                17 DROP SEQUENCE userlogins5.categories_pkseq;
+                42 CREATE SEQUENCE userlogins5.categories_pkseq INCREMENT BY 10 START WITH 100000003;
+                43 GRANT SELECT ON userlogins5.categories_pkseq TO COMM_WDK_W;
+            drop_schema_userlogins5.sql  (2 usages found)
+                8 DROP TABLE userlogins5.categories;
+                18 DROP SEQUENCE userlogins5.categories_pkseq;
+            initialize_wdk_roles.sql  (2 usages found)
+                117 GRANT SELECT, INSERT, UPDATE, DELETE ON USERLOGINS5.CATEGORIES TO COMM_WDK_W;
+                126 GRANT SELECT ON USERLOGINS5.CATEGORIES_PKSEQ TO COMM_WDK_W;
+            update_sequences.pl  (2 usages found)
+                60 $seqInfo ->{13} [0] = 'userlogins5.categories_pkseq';
+                62 $seqInfo ->{13} [2] = 'userlogins5.categories';
+        WDK/Model/data/out-of-date  (14 usages found)
+            persistent_tables_oracle.sql  (7 usages found)
+                2 DROP SEQUENCE userlogins5.categories_pkseq;
+                13 DROP TABLE userlogins5.categories;
+                55 CREATE SEQUENCE userlogins5.categories_pkseq INCREMENT BY 1 START WITH 1;
+                307 CREATE TABLE userlogins5.categories
+                317 CONSTRAINT "categories_pk" PRIMARY KEY (category_id),
+                318 CONSTRAINT "categories_uq01" UNIQUE (user_id, category_type, parent_id, category_name),
+                319 CONSTRAINT "categories_fk01" FOREIGN KEY (user_id)
+            persistent_tables_postgres.sql  (7 usages found)
+                2 --DROP SEQUENCE IF EXISTS wdkuser.categories_pkseq;
+                13 --DROP TABLE IF EXISTS wdkuser.categories;
+                64 CREATE SEQUENCE wdkuser.categories_pkseq INCREMENT BY 1 START WITH 1;
+                316 CREATE TABLE wdkuser.categories
+                326 CONSTRAINT "categories_pk" PRIMARY KEY (category_id),
+                327 CONSTRAINT "categories_uq01" UNIQUE (user_id, category_type, parent_id, category_name),
+                328 CONSTRAINT "categories_fk01" FOREIGN KEY (user_id)

@@ -101,7 +101,7 @@ RENAME userlogins5.comment_target TO comment_target_type;
 
 ==== `categories`
 
-link:{curDir}/csv/categories.csv[External References]
+link:{curDir}/csv/categories.txt[External References]
 
 ===== Drop Table
 
