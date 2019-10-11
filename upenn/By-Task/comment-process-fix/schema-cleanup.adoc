@@ -4,6 +4,7 @@
 :sectnums:
 :source-highlighter: pygments
 :icons: font
+:curDir: /upenn/By-Task/comment-process-fix
 
 == Table Cleanup
 
@@ -23,7 +24,7 @@
 
 ===== Rename to `comment_file`
 
-link:/csv/commentfile.csv[External References]
+link:{curDir}/csv/commentfile.csv[External References]
 
 [source, sql]
 ----
