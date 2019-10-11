@@ -23,7 +23,7 @@
 
 ===== Rename to `comment_file`
 
-link::/csv/commentfile.csv[External References]
+link:/csv/commentfile.csv[External References]
 
 [source, sql]
 ----
