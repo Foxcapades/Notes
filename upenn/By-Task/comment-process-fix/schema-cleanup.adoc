@@ -18,17 +18,17 @@
 
 ==== `commentfile`
 
+===== Rename to `comment_file`
+
 [source, sql]
 ----
 RENAME userlogins5.commentfile TO comment_file;
-RENAME userlogins5.commentfile_idx01 TO comment_file_id01;
+RENAME userlogins5.commentfile_idx01 TO comment_file_idx01;
+RENAME userlogins5.commentfile_pkseq TO comment_file_pkseq;
 ----
 
+===== External references
 
-Action:: Rename to `comment_file`
-Has Sequence:: [red]#Yes#
-References::
-+
 [cols=">1,8", options="header"]
 |====
 | Usages | File
@@ -54,7 +54,16 @@ References::
 
 ==== `commentreference`
 
-Action:: Rename to `comment_reference`
+===== Rename to `comment_reference`
+
+[source, sql]
+----
+RENAME userlogins5.commentreference TO comment_reference;
+RENAME userlogins5.commentreference_idx01 TO comment_reference_idx01;
+RENAME userlogins5.commentreference_idx02 TO comment_reference_idx02;
+RENAME userlogins5.commentreference_pkseq TO comment_reference_pkseq;
+----
+
 Has Sequence:: [red]#Yes#
 References::
 +
