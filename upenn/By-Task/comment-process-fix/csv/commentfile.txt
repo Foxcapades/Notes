@@ -1,0 +1,110 @@
+Targets
+    Occurrences of 'commentfile' in Project
+Found Occurrences  (64 usages found)
+    api-common-data-load  (19 usages found)
+        ApiCommonData/Load/bin  (5 usages found)
+            deleteComment  (2 usages found)
+                149     delete from comments2.CommentFile where comment_id = $commentId
+                152 print "CommentFile: $rows row(s)\n";
+            extractTextSearchFiles  (1 usage found)
+                105 die "extractTextSearchFiles can't get comments through db_link.  Use extractCommentFile."
+            loadBulkUserCommentsFromExcel.pl  (1 usage found)
+                360 INSERT INTO userlogins5.CommentFile (file_id, name, notes, comment_id)
+            makeCommentFile  (1 usage found)
+                266 my $usage = "usage:  perl makeCommentFile \\
+        ApiCommonData/Load/lib/sql/comments  (14 usages found)
+            createCategoryTables.sql  (9 usages found)
+                2 DROP TABLE userlogins5.CommentFile;
+                11 DROP SEQUENCE userlogins5.commentFile_pkseq; 
+                131 CREATE TABLE userlogins5.CommentFile
+                142 CREATE INDEX userlogins5.CommentFile_idx01 ON userlogins5.CommentFile (comment_id, file_id);
+                144 GRANT insert, update, delete on userlogins5.CommentFile to GUS_W;
+                145 GRANT select on userlogins5.CommentFile to GUS_R;
+                147 CREATE SEQUENCE userlogins5.commentFile_pkseq START WITH 1 INCREMENT BY 1;
+                148 GRANT select on userlogins5.commentFile_pkseq to GUS_W;
+                149 GRANT select on userlogins5.commentFile_pkseq to GUS_R;
+            createCommentTables.sql  (5 usages found)
+                5 DROP SEQUENCE userlogins5.commentFile_pkseq; 
+                12 DROP TABLE userlogins5.CommentFile;
+                60 CREATE SEQUENCE userlogins5.commentFile_pkseq START WITH 100000000 INCREMENT BY 10;
+                61 GRANT select on userlogins5.commentFile_pkseq to GUS_W;
+                62 GRANT select on userlogins5.commentFile_pkseq to GUS_R;
+    api-common-model-model  (11 usages found)
+        ApiCommonModel/Model/lib/sql  (3 usages found)
+            migration_comment_b21.sql  (3 usages found)
+                2 DELETE FROM userlogins5.CommentFile;
+                67 INSERT INTO userlogins5.CommentFile (file_id, name, notes, comment_id)
+                69 FROM comments2.CommentFile;
+        ApiCommonModel/Model/lib/wdk/model/records  (5 usages found)
+            commentTableQueries.xml  (5 usages found)
+                113                         FROM @COMMENT_SCHEMA@CommentFile@COMMENT_DBLINK@
+                198                           FROM @COMMENT_SCHEMA@CommentFile@COMMENT_DBLINK@
+                257                           FROM @COMMENT_SCHEMA@CommentFile@COMMENT_DBLINK@
+                340                           FROM @COMMENT_SCHEMA@CommentFile@COMMENT_DBLINK@
+                394                           FROM @COMMENT_SCHEMA@CommentFile@COMMENT_DBLINK@
+        mappers.migrate5  (3 usages found)
+            DeleteCommentsMapper.xml  (1 usage found)
+                12 DELETE FROM userlogins5.CommentFile
+            MigrateCommentsMapper.xml  (2 usages found)
+                76 INSERT INTO userlogins5.CommentFile (file_id, name, notes, comment_id)
+                78 FROM comments2.CommentFile
+    api-common-website-model  (26 usages found)
+        org.apidb.apicommon.controller  (2 usages found)
+            BBCode.java  (2 usages found)
+                main(String[])  (2 usages found)
+                    121 File commentFile = new File(args[0]);
+                    125 BufferedReader br = new BufferedReader(new FileReader(commentFile));
+        org.apidb.apicommon.model.comment.repo  (24 usages found)
+            BaseCommentQuery.java  (3 usages found)
+                rs2Attachment(ResultSet)  (3 usages found)
+                    140 final long id = rs.getLong(Column.CommentFile.ID);
+                    144 .setName(rs.getString(Column.CommentFile.NAME))
+                    145 .setDescription(rs.getString(Column.CommentFile.NOTES)));
+            Column.java  (1 usage found)
+                38 interface CommentFile {
+            DeleteAttachmentQuery.java  (1 usage found)
+                13 private static final String SQL = "DELETE FROM %s.COMMENTFILE\n" +
+            FindCommentQuery.java  (4 usages found)
+                55 "  fi." + CommentFile.ID                  + ",\n" +
+                56 "  fi." + CommentFile.NAME                + ",\n" +
+                57 "  fi." + CommentFile.NOTES               + ",\n" +
+                79 "    ON co." + Column.Comment.ID + " = fi." + CommentFile.COMMENT_ID + "\n" +
+            GetAllAttachmentsQuery.java  (4 usages found)
+                rs2Attachment(ResultSet)  (3 usages found)
+                    57 .setId(rs.getLong(Column.CommentFile.ID))
+                    58 .setName(rs.getString(Column.CommentFile.NAME))
+                    59 .setDescription(rs.getString(Column.CommentFile.NOTES));
+                19 "FROM %s.COMMENTFILE\n" + "WHERE COMMENT_ID = ?";
+            GetAttachmentQuery.java  (4 usages found)
+                rs2Attachment(ResultSet)  (3 usages found)
+                    56 .setId(rs.getLong(Column.CommentFile.ID))
+                    57 .setName(rs.getString(Column.CommentFile.NAME))
+                    58 .setDescription(rs.getString(Column.CommentFile.NOTES));
+                18 "FROM %s.COMMENTFILE\n" + "WHERE FILE_ID = ? AND COMMENT_ID = ?";
+            GetCommentQuery.java  (4 usages found)
+                39 "  fi." + CommentFile.ID                  + ",\n" +
+                40 "  fi." + CommentFile.NAME                + ",\n" +
+                41 "  fi." + CommentFile.NOTES               + ",\n" +
+                61 "    ON co." + Column.Comment.ID + " = fi." + CommentFile.COMMENT_ID + "\n" +
+            InsertAttachmentQuery.java  (1 usage found)
+                15 private static final String SQL = "INSERT INTO %s.COMMENTFILE (" +
+            Table.java  (1 usage found)
+                10 String COMMENT_TO_FILE      = "COMMENTFILE";
+            UpdateAttachmentQuery.java  (1 usage found)
+                19 private static final String SQL = "UPDATE %s.COMMENTFILE SET COMMENT_ID = ?" +
+    api-common-website-site  (1 usage found)
+        ApiCommonWebsite/Site/bin  (1 usage found)
+            extractTextSearchFiles  (1 usage found)
+                84 die "extractTextSearchFiles can't get comments through db_link.  Use extractCommentFile."
+    wdk-model  (7 usages found)
+        WDK/Model/data  (7 usages found)
+            create_schema_userlogins5_south_sequences.sql  (3 usages found)
+                24 DROP SEQUENCE userlogins5.commentFile_pkseq; 
+                83 CREATE SEQUENCE userlogins5.commentFile_pkseq START WITH 100000000 INCREMENT BY 10;
+                84 GRANT select on userlogins5.commentFile_pkseq to COMM_WDK_W;
+            initialize_wdk_roles.sql  (2 usages found)
+                141 GRANT SELECT, INSERT, UPDATE, DELETE ON USERLOGINS5.COMMENTFILE TO COMM_WDK_W;
+                152 GRANT SELECT ON USERLOGINS5.COMMENTFILE_PKSEQ TO COMM_WDK_W;
+            update_sequences.pl  (2 usages found)
+                80 $seqInfo ->{18} [0] = 'userlogins5.commentFile_pkseq';
+                82 $seqInfo ->{18} [2] = 'userlogins5.commentFile';

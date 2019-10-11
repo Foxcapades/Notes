@@ -22,7 +22,7 @@
 
 ==== `commentfile`
 
-link:{curDir}/csv/commentfile.csv[External References]
+link:{curDir}/csv/commentfile.txt[External References]
 
 ===== Rename to `comment_file`
 
