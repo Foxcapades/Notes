@@ -62,7 +62,7 @@ RENAME userlogins5.commentsequence_pkseq TO comment_sequence_pkseq;
 
 ==== `commentstableid`
 
-link:{curDir}/csv/commentstableid.csv[External References]
+link:{curDir}/csv/commentstableid.txt[External References]
 
 ===== Rename to `comment_target_id`
 

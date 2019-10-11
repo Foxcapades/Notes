@@ -1,0 +1,97 @@
+Targets
+    Occurrences of 'commentstableid' in Project
+Found Occurrences  (61 usages found)
+    api-common-data-load  (28 usages found)
+        ApiCommonData/Load/bin  (4 usages found)
+            deleteComment  (2 usages found)
+                137     delete from comments2.CommentStableId where comment_id = $commentId
+                140 print "CommentStableId: $rows row(s)\n";
+            loadBulkUserCommentsFromExcel.pl  (2 usages found)
+                280 INSERT INTO userlogins5.CommentStableId 
+                282 VALUES (userlogins5.commentStableId_pkseq.nextval, '$gene', $comment_id)
+        ApiCommonData/Load/lib/sql/comments  (24 usages found)
+            createCategoryTables.sql  (10 usages found)
+                1 DROP TABLE userlogins5.CommentStableId
+                8 DROP SEQUENCE userlogins5.commentStableId_pkseq; 
+                151 CREATE TABLE userlogins5.CommentStableId
+                161 CREATE INDEX userlogins5.CommentStableId_idx01 ON userlogins5.CommentStableId (comment_id);
+                162 CREATE UNIQUE INDEX userlogins5.CommentStableId_ux01 ON userlogins5.CommentStableId (stable_id, comment_id);
+                164 GRANT insert, update, delete on userlogins5.CommentStableId to GUS_W;
+                165 GRANT select on userlogins5.CommentStableId to GUS_R;
+                167 CREATE SEQUENCE userlogins5.commentStableId_pkseq START WITH 1 INCREMENT BY 1;
+                168 GRANT select on userlogins5.commentStableId_pkseq to GUS_W;
+                169 GRANT select on userlogins5.commentStableId_pkseq to GUS_R;
+            createCommentTables.sql  (7 usages found)
+                2 DROP SEQUENCE userlogins5.commentStableId_pkseq; 
+                11 DROP TABLE userlogins5.CommentStableId;
+                64 CREATE SEQUENCE userlogins5.commentStableId_pkseq START WITH 100000000 INCREMENT BY 10;
+                65 GRANT select on userlogins5.commentStableId_pkseq to GUS_W;
+                66 GRANT select on userlogins5.commentStableId_pkseq to GUS_R;
+                180 -- view of comments with stable_id either as-is or mapped through commentStableId
+                190 from userlogins5.commentStableId) idMap
+            createCommentTriggers.sql  (5 usages found)
+                99 from userlogins5.CommentStableId
+                107 after insert on userlogins5.CommentStableId
+                137 after delete on userlogins5.CommentStableId
+                152 after update on userlogins5.CommentStableId
+                192 -- This is an issue for CommentReference (unlike Comments and CommentStableId) because
+            reindexComments.sql  (2 usages found)
+                4 -- in sync with the Comments / CommentStableId / CommentReference tables, which
+                31 select comment_id, stable_id from userlogins5.commentStableId) ci
+    api-common-model-model  (17 usages found)
+        ApiCommonModel/Model/bin  (5 usages found)
+            showNewCommentLinks  (5 usages found)
+                28 my $stmt = $dbh->prepare(<<SQL) or die "preparing new-CommentStableId query";
+                34 $stmt->execute() or die "executing new-CommentStableId query";
+                37 while (my ($commentStableId, $stableId, $commentId, $headline) = $stmt->fetchrow_array()) {
+                39 print STDERR "\nRecords added to CommentStableId to link old comments to new IDs:\n\n";
+                45 printf STDERR "%12d %12d %-48s %-100s\n", $commentStableId, $commentId, $stableId, $headline;
+        ApiCommonModel/Model/lib/sql  (3 usages found)
+            migration_comment_b21.sql  (3 usages found)
+                1 DELETE FROM userlogins5.CommentStableId;
+                72 INSERT INTO userlogins5.CommentStableId (comment_stable_id, stable_id, comment_id)
+                74 FROM comments2.CommentStableId;
+        ApiCommonModel/Model/lib/wdk/model/records  (3 usages found)
+            commentTableQueries.xml  (3 usages found)
+                32 <!--  ++ a comment in commentstableid table with an old ID appears in the official ID gene page  -->
+                33 <!--  ++ the link (URL) to the comment uses 'stable_id' which needs to be the old ID existing in commentstableid table  -->
+                34 <!--  ++ gene count for related IDs was counting all entries in commentstableid therefore too high in many cases (counting all IDs)  -->
+        ApiCommonModel/Model/lib/xml/tuningManager  (3 usages found)
+            apiTuningManager.xml  (3 usages found)
+                1354   FROM project_comments pc, userlogins5.commentStableId@&dblink csi
+                1361 SELECT stable_id, comment_id, userlogins5.CommentStableId_pkseq.nextval@&dblink as comment_stable_id
+                1373 INSERT INTO userlogins5.CommentStableId@&dblink
+        mappers.migrate5  (3 usages found)
+            DeleteCommentsMapper.xml  (1 usage found)
+                8 DELETE FROM userlogins5.CommentStableId
+            MigrateCommentsMapper.xml  (2 usages found)
+                82 INSERT INTO userlogins5.CommentStableId (comment_stable_id, stable_id, comment_id)
+                84 FROM comments2.CommentStableId
+    api-common-website-model  (9 usages found)
+        org.apidb.apicommon.model.comment.repo  (9 usages found)
+            Column.java  (1 usage found)
+                27 interface CommentStableId {
+            FindCommentQuery.java  (4 usages found)
+                29 "      ON a." + Column.Comment.ID + " = b." + CommentStableId.COMMENT_ID + "\n" +
+                51 "  id." + CommentStableId.STABLE_ID       + " " + RELATED + ",\n" +
+                73 "    ON co." + Column.Comment.ID + " = id." + CommentStableId.COMMENT_ID + "\n" +
+                92 "    AND ? IN (a." + Column.Comment.STABLE_ID + ", b." + CommentStableId.STABLE_ID + ")";
+            GetCommentQuery.java  (2 usages found)
+                35 "  id." + CommentStableId.STABLE_ID       + " " + RELATED + ",\n" +
+                55 "    ON co." + Column.Comment.ID + " = id." + CommentStableId.COMMENT_ID + "\n" +
+            InsertStableIdQuery.java  (1 usage found)
+                18 private static final String SQL = "INSERT INTO %s.COMMENTSTABLEID (\n" +
+            Table.java  (1 usage found)
+                6 String COMMENT_TO_STABLE_ID = "COMMENTSTABLEID";
+    wdk-model  (7 usages found)
+        WDK/Model/data  (7 usages found)
+            create_schema_userlogins5_south_sequences.sql  (3 usages found)
+                21 DROP SEQUENCE userlogins5.commentStableId_pkseq; 
+                86 CREATE SEQUENCE userlogins5.commentStableId_pkseq START WITH 100000000 INCREMENT BY 10;
+                87 GRANT select on userlogins5.commentStableId_pkseq to COMM_WDK_W;
+            initialize_wdk_roles.sql  (2 usages found)
+                145 GRANT SELECT, INSERT, UPDATE, DELETE ON USERLOGINS5.COMMENTSTABLEID TO COMM_WDK_W;
+                156 GRANT SELECT ON USERLOGINS5.COMMENTSTABLEID_PKSEQ TO COMM_WDK_W;
+            update_sequences.pl  (2 usages found)
+                68 $seqInfo ->{15} [0] = 'userlogins5.commentStableId_pkseq';
+                70 $seqInfo ->{15} [2] = 'userlogins5.commentStableId';
