@@ -293,7 +293,7 @@ RENAME COLUMN comment_target_id TO comment_target_type;
 
 ===== Code References
 
-[cols=">1,8", options="header"]
+[cols=">1,8,2", options="header"]
 |====
 | Usages | File                        | Actions
 | 2      | apiTuningManager.xml        |
