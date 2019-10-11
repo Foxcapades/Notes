@@ -23,37 +23,14 @@
 
 ===== Rename to `comment_file`
 
+link::/csv/commentfile.csv[External References]
+
 [source, sql]
 ----
 RENAME userlogins5.commentfile TO comment_file;
 RENAME userlogins5.commentfile_idx01 TO comment_file_idx01;
 RENAME userlogins5.commentfile_pkseq TO comment_file_pkseq;
 ----
-
-===== External references
-
-[cols=">1,8,2", options="header"]
-|====
-| Usages | File                                          | Actions
-| 3      | BaseCommentQuery.java                         |
-| 1      | Column.java                                   |
-| 1      | DeleteAttachmentQuery.java                    |
-| 4      | FindCommentQuery.java                         |
-| 4      | GetAllAttachmentsQuery.java                   |
-| 4      | GetAttachmentQuery.java                       |
-| 4      | GetCommentQuery.java                          |
-| 1      | InsertAttachmentQuery.java                    |
-| 1      | Table.java                                    |
-| 1      | UpdateAttachmentQuery.java                    |
-| 5      | commentTableQueries.xml                       |
-| 3      | create_schema_userlogins5_south_sequences.sql |
-| 1      | DeleteCommentsMapper.xml                      |
-| 1      | extractTextSearchFiles                        |
-| 2      | initialize_wdk_roles.sql                      |
-| 2      | MigrateCommentsMapper.xml                     |
-| 3      | migration_comment_b21.sql                     |
-| 2      | update_sequences.pl                           |
-|====
 
 ==== `commentreference`
 
