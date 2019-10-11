@@ -257,7 +257,7 @@ DROP COLUMN stable_id;
 
 ===== Code References
 
-[cols=">1,8", options="header"]
+[cols=">1,8,2", options="header"]
 |====
 | Usages | File                      | Actions
 | 10     | apiTuningManager.xml      |
