@@ -1,5 +1,27 @@
-Usages,File,Actions
-1,DeleteCommentsMapper.xml,
-1,initialize_wdk_roles.sql,
-2,MigrateCommentsMapper.xml,
-3,migration_comment_b21.sql,
+Targets
+    Occurrences of 'comment_target' in Project
+Found Occurrences  (12 usages found)
+    api-common-data-load  (5 usages found)
+        ApiCommonData/Load/lib/sql/comments  (5 usages found)
+            createCommentTables.sql  (5 usages found)
+                22 DROP TABLE userlogins5.comment_target;
+                70 CREATE TABLE userlogins5.comment_target
+                78 GRANT insert, update, delete on userlogins5.comment_target to GUS_W;
+                79 GRANT select on userlogins5.comment_target to GUS_R;
+                114 REFERENCES userlogins5.comment_target (comment_target_id),
+    api-common-model-model  (6 usages found)
+        ApiCommonModel/Model/lib/sql  (3 usages found)
+            migration_comment_b21.sql  (3 usages found)
+                12 DELETE FROM userlogins5.comment_target;
+                15 INSERT INTO userlogins5.comment_target (comment_target_id, comment_target_name, require_location)
+                17 FROM comments2.comment_target;
+        mappers.migrate5  (3 usages found)
+            DeleteCommentsMapper.xml  (1 usage found)
+                52 DELETE FROM userlogins5.comment_target
+            MigrateCommentsMapper.xml  (2 usages found)
+                8 INSERT INTO userlogins5.comment_target (comment_target_id, comment_target_name, require_location)
+                10 FROM comments2.comment_target
+    wdk-model  (1 usage found)
+        WDK/Model/data  (1 usage found)
+            initialize_wdk_roles.sql  (1 usage found)
+                139 GRANT SELECT, INSERT, UPDATE, DELETE ON USERLOGINS5.COMMENT_TARGET TO COMM_WDK_W;

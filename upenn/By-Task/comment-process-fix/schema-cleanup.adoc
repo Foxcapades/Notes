@@ -90,7 +90,7 @@ RENAME userlogins5.commenttargetcategory_pkseq TO comment_target_category_pkseq;
 
 ==== `comment_target`
 
-link:{curDir}/csv/comment_target.csv[External References]
+link:{curDir}/csv/comment_target.txt[External References]
 
 ===== Rename to `comment_target_type`
 
