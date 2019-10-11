@@ -1,0 +1,62 @@
+Targets
+    Occurrences of 'commenttargetcategory' in Project
+Found Occurrences  (35 usages found)
+    api-common-data-load  (19 usages found)
+        ApiCommonData/Load/bin  (4 usages found)
+            deleteComment  (2 usages found)
+                131     delete from comments2.CommentTargetCategory where comment_id = $commentId
+                134 print "CommentTargetCategory: $rows row(s)\n";
+            loadBulkUserCommentsFromExcel.pl  (2 usages found)
+                266 INSERT INTO userlogins5.CommentTargetCategory 
+                268 VALUES (userlogins5.commentTargetCategory_pkseq.nextval, $comment_id, $target_category_id)
+        ApiCommonData/Load/lib/sql/comments  (15 usages found)
+            createCategoryTables.sql  (10 usages found)
+                3 DROP TABLE userlogins5.CommentTargetCategory;
+                9 DROP SEQUENCE userlogins5.commentTargetCategory_pkseq; 
+                66 CREATE TABLE userlogins5.CommentTargetCategory
+                78 CREATE INDEX userlogins5.CommentTargetCategory_idx01 ON userlogins5.CommentTargetCategory (comment_id);
+                79 CREATE INDEX userlogins5.CommentTargetCategory_idx02 ON userlogins5.CommentTargetCategory (target_category_id);
+                82 GRANT insert, update, delete on userlogins5.CommentTargetCategory to GUS_W;
+                83 GRANT select on userlogins5.CommentTargetCategory to GUS_R;
+                85 CREATE SEQUENCE userlogins5.commentTargetCategory_pkseq START WITH 1 INCREMENT BY 1;
+                87 GRANT select on userlogins5.commentTargetCategory_pkseq to GUS_W;
+                88 GRANT select on userlogins5.commentTargetCategory_pkseq to GUS_R;
+            createCommentTables.sql  (5 usages found)
+                3 DROP SEQUENCE userlogins5.commentTargetCategory_pkseq; 
+                13 DROP TABLE userlogins5.CommentTargetCategory;
+                44 CREATE SEQUENCE userlogins5.commentTargetCategory_pkseq START WITH 100000000 INCREMENT BY 10;
+                46 GRANT select on userlogins5.commentTargetCategory_pkseq to GUS_W;
+                47 GRANT select on userlogins5.commentTargetCategory_pkseq to GUS_R;
+    api-common-model-model  (7 usages found)
+        ApiCommonModel/Model/lib/sql  (3 usages found)
+            migration_comment_b21.sql  (3 usages found)
+                5 DELETE FROM userlogins5.CommentTargetCategory;
+                52 INSERT INTO userlogins5.CommentTargetCategory (comment_target_category_id, comment_id, target_category_id)
+                54 FROM comments2.CommentTargetCategory;
+        ApiCommonModel/Model/lib/wdk/model/records  (1 usage found)
+            commentTableQueries.xml  (1 usage found)
+                301                      @COMMENT_SCHEMA@CommentTargetCategory@COMMENT_DBLINK@ tc
+        mappers.migrate5  (3 usages found)
+            DeleteCommentsMapper.xml  (1 usage found)
+                24 DELETE FROM userlogins5.CommentTargetCategory
+            MigrateCommentsMapper.xml  (2 usages found)
+                58 INSERT INTO userlogins5.CommentTargetCategory (comment_target_category_id, comment_id, target_category_id)
+                60 FROM comments2.CommentTargetCategory
+    api-common-website-model  (2 usages found)
+        org.apidb.apicommon.model.comment.repo  (2 usages found)
+            InsertCategoryQuery.java  (1 usage found)
+                17 private static final String SQL = "INSERT INTO %s.COMMENTTARGETCATEGORY (" +
+            Table.java  (1 usage found)
+                8 String COMMENT_TO_CATEGORY  = "COMMENTTARGETCATEGORY";
+    wdk-model  (7 usages found)
+        WDK/Model/data  (7 usages found)
+            create_schema_userlogins5_south_sequences.sql  (3 usages found)
+                22 DROP SEQUENCE userlogins5.commentTargetCategory_pkseq; 
+                74 CREATE SEQUENCE userlogins5.commentTargetCategory_pkseq START WITH 100000000 INCREMENT BY 10;
+                75 GRANT select on userlogins5.commentTargetCategory_pkseq to COMM_WDK_W;
+            initialize_wdk_roles.sql  (2 usages found)
+                146 GRANT SELECT, INSERT, UPDATE, DELETE ON USERLOGINS5.COMMENTTARGETCATEGORY TO COMM_WDK_W;
+                157 GRANT SELECT ON USERLOGINS5.COMMENTTARGETCATEGORY_PKSEQ TO COMM_WDK_W;
+            update_sequences.pl  (2 usages found)
+                72 $seqInfo ->{16} [0] = 'userlogins5.commentTargetCategory_pkseq';
+                74 $seqInfo ->{16} [2] = 'userlogins5.commentTargetCategory';
