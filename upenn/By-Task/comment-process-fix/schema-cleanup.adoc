@@ -13,6 +13,9 @@
   code uses the table name to generate the sequence names
   for lookup.
 . Will the triggers need to be updated?
+.. Triggers will be removed
+. What is `cmntRef_trggr_pkg.stale(i)`?
+. What is `cmntRef_trggr_pkg.empty`
 
 === Tables
 
@@ -412,6 +415,38 @@ VALUES
 , ('sage',     'Sage',     0)
 , ('orf',      'ORF',      0)
 ----
+
+== Trigger / Function / Package Cleanup
+
+Remove the following:
+
+----
+OWNER	TRIGGER_NAME
+USERLOGINS5	COMMENTS_UPDATE
+USERLOGINS5	COMMENTS_DELETE
+USERLOGINS5	COMMENTS_INSERT
+USERLOGINS5	CSI_INSERT
+USERLOGINS5	CSI_DELETE
+USERLOGINS5	CSI_UPDATE
+USERLOGINS5	CMNTREF_MARKUPDATEDID
+USERLOGINS5	CMNTREF_SETUP
+USERLOGINS5	CMNTREF_MARKINSERTEDID
+USERLOGINS5	CMNTREF_UPDATETSC
+USERLOGINS5	CMNTREF_MARKDELETEDID
+USERLOGINS5	COMMENTUSERS_UPDATE
+----
+
+=== Packages
+
+==== `cmntRef_trggr_pkg`
+
+.External References
+[cols=">1,8,2", options="header"]
+|====
+| Usages | File                      | Actions
+| 14     | createCommentTriggers.sql |
+|====
+
 
 == Misc / Followup
 
