@@ -1,0 +1,67 @@
+Targets
+    Occurrences of 'commentsequence' in Project
+Found Occurrences  (38 usages found)
+    api-common-data-load  (17 usages found)
+        ApiCommonData/Load/bin  (3 usages found)
+            loadBulkUserCommentsFromExcel.pl  (3 usages found)
+                343 INSERT INTO userlogins5.CommentSequence (comment_sequence_id, sequence, comment_id)
+                344 VALUES (userlogins5.commentSequence_pkseq.nextval, ?, ?)
+                347 #VALUES (userlogins5.commentSequence_pkseq.nextval, '$seq', $comment_id)
+        ApiCommonData/Load/lib/sql/comments  (14 usages found)
+            createCategoryTables.sql  (9 usages found)
+                6 DROP TABLE userlogins5.CommentSequence;
+                12 DROP SEQUENCE userlogins5.commentSequence_pkseq; 
+                112 CREATE TABLE userlogins5.CommentSequence
+                122 CREATE INDEX userlogins5.CommentSequence_idx01 ON userlogins5.CommentSequence (comment_id);
+                124 GRANT insert, update, delete on userlogins5.CommentSequence to GUS_W;
+                125 GRANT select on userlogins5.CommentSequence to GUS_R;
+                127 CREATE SEQUENCE userlogins5.commentSequence_pkseq START WITH 1 INCREMENT BY 1;
+                128 GRANT select on userlogins5.commentSequence_pkseq to GUS_W;
+                129 GRANT select on userlogins5.commentSequence_pkseq to GUS_R;
+            createCommentTables.sql  (5 usages found)
+                6 DROP SEQUENCE userlogins5.commentSequence_pkseq; 
+                16 DROP TABLE userlogins5.CommentSequence;
+                55 CREATE SEQUENCE userlogins5.commentSequence_pkseq START WITH 100000000 INCREMENT BY 10;
+                56 GRANT select on userlogins5.commentSequence_pkseq to GUS_W;
+                57 GRANT select on userlogins5.commentSequence_pkseq to GUS_R;
+    api-common-model-model  (6 usages found)
+        ApiCommonModel/Model/lib/sql  (3 usages found)
+            migration_comment_b21.sql  (3 usages found)
+                3 DELETE FROM userlogins5.CommentSequence;
+                62 INSERT INTO userlogins5.CommentSequence (comment_sequence_id, sequence, comment_id)
+                64 FROM comments2.CommentSequence;
+        mappers.migrate5  (3 usages found)
+            DeleteCommentsMapper.xml  (1 usage found)
+                16 DELETE FROM userlogins5.CommentSequence
+            MigrateCommentsMapper.xml  (2 usages found)
+                70 INSERT INTO userlogins5.CommentSequence (comment_sequence_id, sequence, comment_id)
+                72 FROM comments2.CommentSequence
+    api-common-website-model  (8 usages found)
+        org.apidb.apicommon.model.comment.repo  (8 usages found)
+            BaseCommentQuery.java  (1 usage found)
+                rs2Sequence(ResultSet)  (1 usage found)
+                    22 return Optional.ofNullable(rs.getString(Column.CommentSequence.SEQUENCE));
+            Column.java  (1 usage found)
+                22 interface CommentSequence {
+            FindCommentQuery.java  (2 usages found)
+                52 "  se." + CommentSequence.SEQUENCE        + ",\n" +
+                75 "    ON co." + Column.Comment.ID + " = se." + CommentSequence.COMMENT_ID + "\n" +
+            GetCommentQuery.java  (2 usages found)
+                36 "  se." + CommentSequence.SEQUENCE        + ",\n" +
+                57 "    ON co." + Column.Comment.ID + " = se." + CommentSequence.COMMENT_ID + "\n" +
+            InsertSequenceQuery.java  (1 usage found)
+                16 private static final String QUERY = "INSERT INTO %s.COMMENTSEQUENCE(" +
+            Table.java  (1 usage found)
+                7 String COMMENT_TO_SEQUENCE  = "COMMENTSEQUENCE";
+    wdk-model  (7 usages found)
+        WDK/Model/data  (7 usages found)
+            create_schema_userlogins5_south_sequences.sql  (3 usages found)
+                25 DROP SEQUENCE userlogins5.commentSequence_pkseq; 
+                80 CREATE SEQUENCE userlogins5.commentSequence_pkseq START WITH 100000000 INCREMENT BY 10;
+                81 GRANT select on userlogins5.commentSequence_pkseq to COMM_WDK_W;
+            initialize_wdk_roles.sql  (2 usages found)
+                144 GRANT SELECT, INSERT, UPDATE, DELETE ON USERLOGINS5.COMMENTSEQUENCE TO COMM_WDK_W;
+                155 GRANT SELECT ON USERLOGINS5.COMMENTSEQUENCE_PKSEQ TO COMM_WDK_W;
+            update_sequences.pl  (2 usages found)
+                84 $seqInfo ->{19} [0] = 'userlogins5.commentSequence_pkseq';
+                86 $seqInfo ->{19} [2] = 'userlogins5.commentSequence';

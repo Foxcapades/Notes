@@ -49,7 +49,7 @@ RENAME userlogins5.commentreference_pkseq TO comment_reference_pkseq;
 
 ==== `commentsequence`
 
-link:{curDir}/csv/commentsequence.csv[External References]
+link:{curDir}/csv/commentsequence.txt[External References]
 
 ===== Rename to `comment_sequence`
 
