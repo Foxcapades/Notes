@@ -179,57 +179,67 @@ RENAME userlogins5.commenttargetcategory_pkseq TO comment_target_category_pkseq;
 
 ==== `comment_target`
 
-Action:: Rename to `comment_target_type`
-Has Sequence:: [green]#No#
-References::
-+
-[cols=">1,8", options="header"]
+===== Rename to `comment_target_type`
+
+[source, sql]
+----
+RENAME userlogins5.comment_target TO comment_target_type;
+----
+
+===== External References
+
+[cols=">1,8,2", options="header"]
 |====
-| Usages | File
-| 1 | DeleteCommentsMapper.xml
-| 1 | initialize_wdk_roles.sql
-| 2 | MigrateCommentsMapper.xml
-| 3 | migration_comment_b21.sql
+| Usages | File                      | Actions
+| 1      | DeleteCommentsMapper.xml  |
+| 1      | initialize_wdk_roles.sql  |
+| 2      | MigrateCommentsMapper.xml |
+| 3      | migration_comment_b21.sql |
 |====
 
 
 ==== `categories`
 
-Action:: Drop
-Has Sequence:: [red]#Yes#
-References::
-+
-[cols=">1,8", options="header"]
+===== Drop Table
+
+[source, sql]
+----
+DROP TABLE userlogins5.categories; 
+----
+
+===== External References
+
+[cols=">1,8,2", options="header"]
 |====
-| Usages | File
-| 1 | migration_user_b21.sql
-| 9 | migration_userlogins5_archive.sql
-| 7 | userlogins5_archive.sql
-| 2 | DeleteCommentsMapper.xml
-| 2 | MigrateCommentsMapper.xml
-| 4 | CommentsCleanupTask.java
-| 4 | CommentsMigrateTask.java
-| 2 | DeleteCommentsMapper.java
-| 2 | MigrateCommentsMapper.java
-| 3 | CommentFactory.java
-| 8 | Comment.java
-| 1 | FindCommentQuery.java
-| 4 | GetCategoriesQuery.java
-| 1 | GetCommentQuery.java
-| 1 | Table.java
-| 1 | UserCommentsService.java
-| 2 | full-comment.json
-| 2 | UserCommentShowController.tsx
-| 3 | UserCommentsService.ts
-| 3 | UserCommentFormStoreModule.ts
-| 7 | create_schema_userlogins5.sql
-| 7 | create_schema_userlogins5_postgres.sql
-| 3 | create_schema_userlogins5_south_sequences.sql
-| 2 | drop_schema_userlogins5.sql
-| 2 | initialize_wdk_roles.sql
-| 2 | update_sequences.pl
-| 5 | persistent_tables_oracle.sql
-| 5 | persistent_tables_postgres.sql
+| Usages | File                                          | Actions
+| 1      | migration_user_b21.sql                        |
+| 9      | migration_userlogins5_archive.sql             |
+| 7      | userlogins5_archive.sql                       |
+| 2      | DeleteCommentsMapper.xml                      |
+| 2      | MigrateCommentsMapper.xml                     |
+| 4      | CommentsCleanupTask.java                      |
+| 4      | CommentsMigrateTask.java                      |
+| 2      | DeleteCommentsMapper.java                     |
+| 2      | MigrateCommentsMapper.java                    |
+| 3      | CommentFactory.java                           |
+| 8      | Comment.java                                  |
+| 1      | FindCommentQuery.java                         |
+| 4      | GetCategoriesQuery.java                       |
+| 1      | GetCommentQuery.java                          |
+| 1      | Table.java                                    |
+| 1      | UserCommentsService.java                      |
+| 2      | full-comment.json                             |
+| 2      | UserCommentShowController.tsx                 |
+| 3      | UserCommentsService.ts                        |
+| 3      | UserCommentFormStoreModule.ts                 |
+| 7      | create_schema_userlogins5.sql                 |
+| 7      | create_schema_userlogins5_postgres.sql        |
+| 3      | create_schema_userlogins5_south_sequences.sql |
+| 2      | drop_schema_userlogins5.sql                   |
+| 2      | initialize_wdk_roles.sql                      |
+| 2      | update_sequences.pl                           |
+| 5      | persistent_tables_oracle.sql                  |
+| 5      | persistent_tables_postgres.sql                |
 |====
 
 
