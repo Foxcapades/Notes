@@ -1,0 +1,173 @@
+Targets
+    Occurrences of 'stable_id' in Project
+Found Occurrences  (122 usages found)
+    api-common-data-load  (30 usages found)
+        ApiCommonData/Load/bin  (6 usages found)
+            deleteComment  (1 usage found)
+                72     select stable_id, project_name, project_version, organism, comment_target_id, is_visible, email, headline, content
+            extractCommentsFile  (2 usages found)
+                70        c.stable_id, c.content,
+                79        c.stable_id,
+            extractTextSearchFiles  (1 usage found)
+                90 #    AND c.stable_id = gf.source_id
+            loadBulkUserCommentsFromExcel.pl  (2 usages found)
+                230                                 comment_target_id, stable_id, conceptual, 
+                281         (comment_stable_id, stable_id, comment_id)
+        ApiCommonData/Load/lib/sql/comments  (24 usages found)
+            createCategoryTables.sql  (2 usages found)
+                154 stable_id VARCHAR2(200) NOT NULL,
+                162 CREATE UNIQUE INDEX userlogins5.CommentStableId_ux01 ON userlogins5.CommentStableId (stable_id, comment_id);
+            createCommentTables.sql  (7 usages found)
+                101 stable_id varchar(200),
+                123 ON userlogins5.comments (project_name, is_visible, stable_id, comment_id, comment_target_id, review_status_id);
+                125 CREATE UNIQUE INDEX userlogins5.comments_ux02 ON userlogins5.comments (stable_id, project_name, comment_id);
+                180 -- view of comments with stable_id either as-is or mapped through commentStableId
+                183 idMap.stable_id, c.conceptual, c.project_name, c.project_version, c.headline,
+                186 (select stable_id, comment_id
+                189 select stable_id, comment_id
+            createCommentTriggers.sql  (12 usages found)
+                52 values (:new.comment_id, :new.stable_id, :new.project_name, :new.organism,
+                93 values (:new.comment_id, :new.stable_id, :new.project_name, :new.organism,
+                97 select :new.comment_id, stable_id, :new.project_name, :new.organism,
+                101 and stable_id != :new.stable_id;
+                126 select comment_id, :new.stable_id, project_name, organism,
+                132 and stable_id != :new.stable_id; -- don't duplicate comment-gene pairs
+                142 and source_id = :old.stable_id
+                145 and source_id != (select stable_id
+                161 and source_id = :old.stable_id
+                162 and (:old.comment_id, :old.stable_id)
+                163 not in (select comment_id, stable_id from userlogins5.Comments);
+                178 select comment_id, :new.stable_id, project_name, organism,
+            reindexComments.sql  (3 usages found)
+                25 select c.comment_id, ci.stable_id, c.project_name, c.organism,
+                29 (select comment_id, stable_id from userlogins5.comments
+                31 select comment_id, stable_id from userlogins5.commentStableId) ci
+    api-common-model-model  (73 usages found)
+        ApiCommonModel/Model/bin  (5 usages found)
+            buildAnnotationChangeTT  (1 usage found)
+                392     --   select stable_id
+            generateGeneMetrics  (1 usage found)
+                95 stable_id
+            generateGeneMetrics_New  (1 usage found)
+                109 stable_id
+            showNewCommentLinks  (2 usages found)
+                29      select nc.comment_stable_id, nc.stable_id, nc.comment_id, c.headline
+                40 printf STDERR "%12s %12s %-48s %-100s\n", "cmnt_stbl_id", "comment_id", "stable_id", "headline";
+        ApiCommonModel/Model/lib/sql  (4 usages found)
+            migration_comment_b21.sql  (4 usages found)
+                25 INSERT INTO userlogins5.comments (comment_id, prev_comment_id, prev_schema, user_id, email, comment_date, comment_target_id, stable_id, conceptual,
+                27 SELECT comment_id, prev_comment_id, prev_schema, user_id, email, comment_date, comment_target_id, stable_id, conceptual, 
+                72 INSERT INTO userlogins5.CommentStableId (comment_stable_id, stable_id, comment_id)
+                73 SELECT comment_stable_id, stable_id, comment_id
+        ApiCommonModel/Model/lib/wdk/model/questions/queries  (5 usages found)
+            geneQueries.xml  (5 usages found)
+                5609             from (select stable_id, sum(comment_count) as comment_count,
+                5613                   from (select stable_id, substr(headline, 1, 80) as headline, count(*) as comment_count,
+                5619                                group by stable_id, headline)
+                5620                   group by stable_id
+                5623             where comm.stable_id = ta.gene_source_id
+        ApiCommonModel/Model/lib/wdk/model/records  (45 usages found)
+            commentTableQueries.xml  (28 usages found)
+                33 <!--  ++ the link (URL) to the comment uses 'stable_id' which needs to be the old ID existing in commentstableid table  -->
+                39 <!-- GUS4 TODO: WE MUST UPDATE THE STABLE_ID TO GENE_SOURCE_IDS WHEN RELEASE GUS4 -->
+                65 <column name="stable_id"/>
+                93                     and c.stable_id = rc.gene (+)
+                101                          ga.source_id, c.stable_id, c.comment_date, c.headline,
+                121                        (SELECT comment_id, COUNT(DISTINCT stable_id) AS geneCount
+                123                         WHERE stable_id IN (SELECT source_id FROM apidbTuning.GeneAttributes)
+                146                     AND c.stable_id = ga.source_id
+                151                     and c.stable_id = reviewed_comments.gene_source_id(+)
+                183 <column name="stable_id"/>
+                192                            c.stable_id, c.stable_id as source_id, c.comment_date, c.headline,
+                212                          (SELECT comment_id, count(stable_id) as geneCount
+                240 <column name="stable_id"/>
+                249                      apicomm.stable_id, apicomm.comment_date, apicomm.geneCount,
+                252                    (SELECT c.comment_target_id, c.project_name as project_id, c.comment_id, c.stable_id, c.comment_date, c.headline,
+                265                          (SELECT comment_id, count(stable_id) as geneCount
+                278               WHERE ga.source_id = apicomm.stable_id
+                297               SELECT c.stable_id AS source_id, c.project_name as project_id,
+                304               GROUP BY c.stable_id, t.category
+                323 <column name="stable_id"/>
+                332                      apicomm.stable_id, apicomm.comment_date, apicomm.geneCount,
+                335                    (SELECT c.comment_target_id, c.project_name as project_id, c.comment_id, c.stable_id, c.comment_date, c.headline,
+                348                          (SELECT comment_id, count(stable_id) as geneCount
+                361               WHERE ga.source_id = apicomm.stable_id
+                376             <column name="stable_id"/>
+                385                      apicomm.stable_id, apicomm.comment_date, 
+                388                    (SELECT c.comment_target_id, c.project_name as project_id, c.comment_id, c.stable_id, 
+                411               WHERE ga.source_id = apicomm.stable_id
+            geneAttributeQueries.xml  (2 usages found)
+                333                    (SELECT stable_id AS gene_id, project_name, count(distinct comment_id) AS num_user_comments
+                336                     GROUP BY stable_id, project_name) comm
+            geneRecord.xml  (3 usages found)
+                1419 <columnAttribute name="stable_id" internal="true"/>
+                1463 <columnAttribute name="stable_id" internal="true"/>
+                1505         <columnAttribute name="stable_id" internal="true"/>
+            geneTableQueries.xml  (10 usages found)
+                1618                      CASE WHEN c.stable_id IS NULL THEN 'No' ELSE 'Yes' END AS user_comment
+                1625                     (SELECT DISTINCT stable_id, cmnts.project_name
+                1634                  AND tb.source_id = c.stable_id(+)
+                1859             <column name="stable_id"/>
+                1869                      c.comment_id, c.stable_id,
+                1879                     AND c.stable_id = toa.old_source_id
+                2064                    AS (SELECT DISTINCT stable_id
+                2076                          WHEN comments.stable_id IS NULL
+                2087                             WHEN comments.stable_id IS NULL
+                2093                    LEFT OUTER JOIN comments ON og.ortho_source_id = comments.stable_id
+            genomicRecords.xml  (1 usage found)
+                965 <columnAttribute name="stable_id" internal="true"/>
+            popsetRecords.xml  (1 usage found)
+                507 <columnAttribute name="stable_id" internal="true"/>
+        ApiCommonModel/Model/lib/xml/tuningManager  (10 usages found)
+            apiTuningManager.xml  (10 usages found)
+                815               in (select distinct stable_id, project_name
+                1346        (SELECT stable_id, comment_id
+                1350   SELECT stable_id, comment_id
+                1353   SELECT csi.stable_id, csi.comment_id
+                1361 SELECT stable_id, comment_id, userlogins5.CommentStableId_pkseq.nextval@&dblink as comment_stable_id
+                1362 FROM (  SELECT gi.gene AS stable_id, ca.comment_id
+                1364         WHERE gi.id = ca.stable_id
+                1367         SELECT stable_id, comment_id
+                1374            (stable_id, comment_id, comment_stable_id)
+                1375 SELECT stable_id, comment_id, comment_stable_id
+        mappers.migrate5  (4 usages found)
+            MigrateCommentsMapper.xml  (4 usages found)
+                21 comment_target_id, stable_id, conceptual, project_name, project_version, headline, 
+                24 comment_target_id, stable_id, conceptual, project_name, project_version, headline, 
+                82 INSERT INTO userlogins5.CommentStableId (comment_stable_id, stable_id, comment_id)
+                83 SELECT comment_stable_id, stable_id, comment_id
+    api-common-website-model  (12 usages found)
+        org.apidb.apicommon.model.comment.repo  (12 usages found)
+            BaseCommentQuery.java  (1 usage found)
+                rs2Comment(ResultSet)  (1 usage found)
+                    133 .setId(rs.getString(Column.Comment.STABLE_ID))
+            Column.java  (2 usages found)
+                17 STABLE_ID         = "stable_id",
+                28 String STABLE_ID = "stable_id",
+            FindCommentQuery.java  (3 usages found)
+                39 "  co." + Column.Comment.STABLE_ID        + ",\n" +
+                51 "  id." + CommentStableId.STABLE_ID       + " " + RELATED + ",\n" +
+                92 "    AND ? IN (a." + Column.Comment.STABLE_ID + ", b." + CommentStableId.STABLE_ID + ")";
+            GetCommentQuery.java  (2 usages found)
+                23 "  co." + Column.Comment.STABLE_ID        + ",\n" +
+                35 "  id." + CommentStableId.STABLE_ID       + " " + RELATED + ",\n" +
+            InsertCommentQuery.java  (3 usages found)
+                getArguments()  (1 usage found)
+                    81 _req.getTarget().getId(),            // STABLE_ID
+                25 "    STABLE_ID,\n" +
+                43 VARCHAR, // STABLE_ID
+            InsertStableIdQuery.java  (1 usage found)
+                19 "    COMMENT_STABLE_ID, STABLE_ID, COMMENT_ID)\n" +
+    api-common-website-site  (7 usages found)
+        ApiCommonWebsite/Site/bin  (3 usages found)
+            extractCommentsFile  (2 usages found)
+                49        c.stable_id, c.content,
+                58        c.stable_id,
+            extractTextSearchFiles  (1 usage found)
+                69 #    AND c.stable_id = gf.source_id
+        ApiCommonWebsite/Site/webapp  (4 usages found)
+            showComments.jsp  (4 usages found)
+                9     stable_id: the stable id the comments are on
+                17 <imp:pageFrame title="${wdkModel.displayName} : User Comments on ${stable_id}" >
+                51 <p>There's currently no comment for <a href="${returnUrl}">${stable_id}</a>.</p>
+                55 <p align="center">${comment_target_id} comments on <a href="${returnUrl}">${stable_id}</a></p>

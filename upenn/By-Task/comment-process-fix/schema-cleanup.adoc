@@ -22,7 +22,7 @@
 
 ==== `commentfile`
 
-link:{curDir}/csv/commentfile.txt[External References]
+link:{curDir}/search/commentfile.txt[External References]
 
 ===== Rename to `comment_file`
 
@@ -35,7 +35,7 @@ RENAME userlogins5.commentfile_pkseq TO comment_file_pkseq;
 
 ==== `commentreference`
 
-link:{curDir}/csv/commentreference.txt[External References]
+link:{curDir}/search/commentreference.txt[External References]
 
 ===== Rename to `comment_reference`
 
@@ -49,7 +49,7 @@ RENAME userlogins5.commentreference_pkseq TO comment_reference_pkseq;
 
 ==== `commentsequence`
 
-link:{curDir}/csv/commentsequence.txt[External References]
+link:{curDir}/search/commentsequence.txt[External References]
 
 ===== Rename to `comment_sequence`
 
@@ -62,7 +62,7 @@ RENAME userlogins5.commentsequence_pkseq TO comment_sequence_pkseq;
 
 ==== `commentstableid`
 
-link:{curDir}/csv/commentstableid.txt[External References]
+link:{curDir}/search/commentstableid.txt[External References]
 
 ===== Rename to `comment_target_id`
 
@@ -76,7 +76,7 @@ RENAME userlogins5.commentstableid_pkseq TO comment_target_id_pkseq;
 
 ==== `commenttargetcategory`
 
-link:{curDir}/csv/commenttargetcategory.txt[External References]
+link:{curDir}/search/commenttargetcategory.txt[External References]
 
 ===== Rename to `comment_target_category`
 
@@ -90,7 +90,7 @@ RENAME userlogins5.commenttargetcategory_pkseq TO comment_target_category_pkseq;
 
 ==== `comment_target`
 
-link:{curDir}/csv/comment_target.txt[External References]
+link:{curDir}/search/comment_target.txt[External References]
 
 ===== Rename to `comment_target_type`
 
@@ -101,7 +101,7 @@ RENAME userlogins5.comment_target TO comment_target_type;
 
 ==== `categories`
 
-link:{curDir}/csv/categories.txt[External References]
+link:{curDir}/search/categories.txt[External References]
 
 ===== Drop Table
 
@@ -116,7 +116,7 @@ DROP TABLE userlogins5.categories;
 
 ==== Drop the `comments.stable_id` column
 
-link:{curDir}/csv/comments.stable_id.csv[External References]
+link:{curDir}/search/comments.stable_id.txt[External References]
 
 [source, sql]
 ----
@@ -126,7 +126,7 @@ DROP COLUMN stable_id;
 
 ==== Rename `comments.comment_target_id`
 
-link:{curDir}/csv/comments.comment_target_id.txt[External References]
+link:{curDir}/search/comments.comment_target_id.txt[External References]
 
 [source, sql]
 ----
