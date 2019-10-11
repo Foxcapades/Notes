@@ -90,24 +90,14 @@ RENAME userlogins5.commenttargetcategory_pkseq TO comment_target_category_pkseq;
 
 ==== `comment_target`
 
+link:{curDir}/csv/commenttargetcategory.csv[External References]
+
 ===== Rename to `comment_target_type`
 
 [source, sql]
 ----
 RENAME userlogins5.comment_target TO comment_target_type;
 ----
-
-===== External References
-
-[cols=">1,8,2", options="header"]
-|====
-| Usages | File                      | Actions
-| 1      | DeleteCommentsMapper.xml  |
-| 1      | initialize_wdk_roles.sql  |
-| 2      | MigrateCommentsMapper.xml |
-| 3      | migration_comment_b21.sql |
-|====
-
 
 ==== `categories`
 
