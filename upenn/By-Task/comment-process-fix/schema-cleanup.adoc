@@ -110,6 +110,12 @@ link:{curDir}/search/categories.txt[External References]
 DROP TABLE userlogins5.categories; 
 ----
 
+==== `targetcategory`
+
+===== Rename to `target_category`
+
+TODO
+
 == Column Cleanup
 
 === `comments` Table
@@ -167,6 +173,15 @@ ON userlogins5.commentstableid (
 );
 ----
 
+=== `targetcategory` Table
+
+==== Create missing foreign key on `comment_target_id`
+
+[source, sql]
+----
+TODO
+----
+
 == Data Cleanup
 
 === Move comment target links
@@ -218,7 +233,7 @@ DELETE FROM userlogins5.comment_target_type
 WHERE comment_target_type_id IN ('protein', 'phenotype');
 ----
 
-==== Insert missing data
+==== Insert missing target types
 
 [source, sql]
 ----
@@ -279,3 +294,4 @@ USERLOGINS5	COMMENTUSERS_UPDATE
 . <<Add `is_primary_target` Column>>
 . <<Move comment target links>>
 . <<Drop the `comments.stable_id` column>>
+. <<Insert missing target types>>
