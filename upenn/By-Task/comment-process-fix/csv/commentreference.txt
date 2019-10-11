@@ -1,0 +1,107 @@
+Targets
+    Occurrences of 'commentreference' in Project
+Found Occurrences  (69 usages found)
+    api-common-data-load  (37 usages found)
+        ApiCommonData/Load/bin  (10 usages found)
+            deleteComment  (2 usages found)
+                143     delete from comments2.CommentReference where comment_id = $commentId
+                146 print "CommentReference: $rows row(s)\n";
+            loadBulkUserCommentsFromExcel.pl  (8 usages found)
+                297 INSERT INTO userlogins5.CommentReference 
+                299 VALUES (userlogins5.commentReference_pkseq.nextval, $id, 'pubmed', $comment_id)
+                308 INSERT INTO userlogins5.CommentReference 
+                310 VALUES (userlogins5.commentReference_pkseq.nextval, '$doi', 'doi', $comment_id)
+                319 INSERT INTO userlogins5.CommentReference 
+                321 VALUES (userlogins5.commentReference_pkseq.nextval, '$_', 'author', $comment_id)
+                331 INSERT INTO userlogins5.CommentReference 
+                333 VALUES (userlogins5.commentReference_pkseq.nextval, '$genbank_acc', 'genbank', $comment_id)
+        ApiCommonData/Load/lib/sql/comments  (27 usages found)
+            createCategoryTables.sql  (10 usages found)
+                5 DROP TABLE userlogins5.CommentReference;
+                10 DROP SEQUENCE userlogins5.commentReference_pkseq; 
+                90 CREATE TABLE userlogins5.CommentReference
+                101 CREATE INDEX userlogins5.CommentReference_idx01 ON userlogins5.CommentReference (comment_id);
+                102 CREATE INDEX userlogins5.CommentReference_idx02 ON userlogins5.CommentReference (database_name, comment_id, source_id);
+                105 GRANT insert, update, delete on userlogins5.CommentReference to GUS_W;
+                106 GRANT select on userlogins5.CommentReference to GUS_R;
+                108 CREATE SEQUENCE userlogins5.commentReference_pkseq START WITH 1 INCREMENT BY 1;
+                109 GRANT select on userlogins5.commentReference_pkseq to GUS_W;
+                110 GRANT select on userlogins5.commentReference_pkseq to GUS_R;
+            createCommentTables.sql  (5 usages found)
+                4 DROP SEQUENCE userlogins5.commentReference_pkseq; 
+                15 DROP TABLE userlogins5.CommentReference;
+                50 CREATE SEQUENCE userlogins5.commentReference_pkseq START WITH 100000000 INCREMENT BY 10;
+                51 GRANT select on userlogins5.commentReference_pkseq to GUS_W;
+                52 GRANT select on userlogins5.commentReference_pkseq to GUS_R;
+            createCommentTriggers.sql  (11 usages found)
+                20 from userlogins5.CommentReference
+                188 -- Changes to CommentReference can trigger only updates to TextSearchableComment.
+                191 -- "ORA-04091: table CommentReference is mutating, trigger/function may not see it".
+                192 -- This is an issue for CommentReference (unlike Comments and CommentStableId) because
+                194 -- in CommentReference.
+                210 -- once per statement, initialize the list of comments IDs affected by the triggering change to CommentReference.
+                212 before insert or update or delete on userlogins5.CommentReference
+                220 before insert on userlogins5.CommentReference
+                231 before delete on userlogins5.CommentReference
+                242 before update on userlogins5.CommentReference
+                254 after insert or update or delete on userlogins5.CommentReference
+            reindexComments.sql  (1 usage found)
+                4 -- in sync with the Comments / CommentStableId / CommentReference tables, which
+    api-common-model-model  (12 usages found)
+        ApiCommonModel/Model/lib/sql  (3 usages found)
+            migration_comment_b21.sql  (3 usages found)
+                4 DELETE FROM userlogins5.CommentReference;
+                57 INSERT INTO userlogins5.CommentReference (comment_reference_id, source_id, database_name, comment_id)
+                59 FROM comments2.CommentReference;
+        ApiCommonModel/Model/lib/wdk/model/records  (6 usages found)
+            commentTableQueries.xml  (6 usages found)
+                117                         FROM @COMMENT_SCHEMA@CommentReference@COMMENT_DBLINK@
+                202                           FROM @COMMENT_SCHEMA@CommentReference@COMMENT_DBLINK@
+                208                           FROM @COMMENT_SCHEMA@CommentReference@COMMENT_DBLINK@
+                261                           FROM @COMMENT_SCHEMA@CommentReference@COMMENT_DBLINK@
+                344                           FROM @COMMENT_SCHEMA@CommentReference@COMMENT_DBLINK@
+                398                           FROM @COMMENT_SCHEMA@CommentReference@COMMENT_DBLINK@
+        mappers.migrate5  (3 usages found)
+            DeleteCommentsMapper.xml  (1 usage found)
+                20 DELETE FROM userlogins5.CommentReference
+            MigrateCommentsMapper.xml  (2 usages found)
+                64 INSERT INTO userlogins5.CommentReference (comment_reference_id, source_id, database_name, comment_id)
+                66 FROM comments2.CommentReference
+    api-common-website-model  (11 usages found)
+        org.apidb.apicommon.model.comment.repo  (11 usages found)
+            BaseCommentQuery.java  (2 usages found)
+                rs2Reference(ResultSet)  (2 usages found)
+                    83 final String value = rs.getString(Column.CommentReference.SOURCE_ID);
+                    88 return ReferenceType.fromDbName(rs.getString(Column.CommentReference.DATABASE))
+            Column.java  (1 usage found)
+                32 interface CommentReference {
+            FindCommentQuery.java  (3 usages found)
+                58 "  re." + CommentReference.SOURCE_ID      + ",\n" +
+                59 "  re." + CommentReference.DATABASE       + ",\n" +
+                81 "    ON co." + Column.Comment.ID + " = re." + CommentReference.COMMENT_ID + "\n" +
+            GetCommentQuery.java  (3 usages found)
+                42 "  re." + CommentReference.SOURCE_ID      + ",\n" +
+                43 "  re." + CommentReference.DATABASE       + ",\n" +
+                63 "    ON co." + Column.Comment.ID + " = re." + CommentReference.COMMENT_ID + "\n" +
+            InsertReferencesQuery.java  (1 usage found)
+                19 private static final String QUERY = "INSERT INTO %s.COMMENTREFERENCE (" +
+            Table.java  (1 usage found)
+                5 String COMMENT_TO_REFERENCE = "COMMENTREFERENCE";
+    api-common-website-service  (2 usages found)
+        schema.apicomm.user-comments.includes  (2 usages found)
+            commentreference.source_id.json  (1 usage found)
+                3 "description": "Type for the COMMENTREFERENCE.SOURCE_ID database column",
+            reference-array.json  (1 usage found)
+                6 "$ref": "./commentreference.source_id.json"
+    wdk-model  (7 usages found)
+        WDK/Model/data  (7 usages found)
+            create_schema_userlogins5_south_sequences.sql  (3 usages found)
+                23 DROP SEQUENCE userlogins5.commentReference_pkseq; 
+                77 CREATE SEQUENCE userlogins5.commentReference_pkseq START WITH 100000000 INCREMENT BY 10;
+                78 GRANT select on userlogins5.commentReference_pkseq to COMM_WDK_W;
+            initialize_wdk_roles.sql  (2 usages found)
+                142 GRANT SELECT, INSERT, UPDATE, DELETE ON USERLOGINS5.COMMENTREFERENCE TO COMM_WDK_W;
+                153 GRANT SELECT ON USERLOGINS5.COMMENTREFERENCE_PKSEQ TO COMM_WDK_W;
+            update_sequences.pl  (2 usages found)
+                76 $seqInfo ->{17} [0] = 'userlogins5.commentReference_pkseq';
+                78 $seqInfo ->{17} [2] = 'userlogins5.commentReference';

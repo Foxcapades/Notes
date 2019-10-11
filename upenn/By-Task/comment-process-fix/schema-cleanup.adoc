@@ -35,7 +35,7 @@ RENAME userlogins5.commentfile_pkseq TO comment_file_pkseq;
 
 ==== `commentreference`
 
-link:{curDir}/csv/commentreference.csv[External References]
+link:{curDir}/csv/commentreference.txt[External References]
 
 ===== Rename to `comment_reference`
 
