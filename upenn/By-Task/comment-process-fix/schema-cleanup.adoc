@@ -5,6 +5,9 @@
 :source-highlighter: pygments
 :icons: font
 :curDir: /upenn/By-Task/comment-process-fix
+ifdef::env-github[]
+:warning-caption: ⚠
+endif::[]
 
 == Questions / Concerns
 
