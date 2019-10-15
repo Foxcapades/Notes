@@ -22,13 +22,14 @@ endif::[]
 * [ ] Migration script?
 * [ ] Should all the comment tables have a `comment_` prefix? +
   (`locations`, `targetcategory`, `review_status`)
-* [ ] What is the use case for keeping the `comment_stable_id`
+* [x] What is the use case for keeping the `comment_stable_id`
   column on the `commentstableid` table?  The table is just
   a linking table at this point and i don't think the links
   themselves will need identifiers?
   ** Steve says no need for a pk in a joining table
 * [ ] What about the `comment.location_string` column? That
   data should exist in the locations table.
+  link:{curDir}/search/comments.location_string.txt[External References].
 
 == Tables
 
