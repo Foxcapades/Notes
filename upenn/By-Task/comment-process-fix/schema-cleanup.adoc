@@ -130,6 +130,43 @@ ON userlogins5.commentstableid (
 );
 ----
 
+==== Cleanup conflicts
+
+There will likely be some junk records in the related record
+table that will cause conflicts when trying to copy over the
+comment targets.
+
+[source, sql]
+----
+DELETE FROM
+  userlogins5.commentstableid
+WHERE
+  (comment_id, stable_id) IN (
+    SELECT comment_id, stable_id
+    FROM userlogins5.comments
+  );
+----
+
+==== Copy over targets
+
+[source, sql]
+----
+INSERT INTO
+  userlogins5.commentstableid (
+    comment_stable_id
+  , stable_id
+  , comment_id
+  , is_primary_target
+)
+SELECT
+  (SELECT userlogins5.commentstableid_pkseq.nextval FROM dual)
+, stable_id
+, comment_id
+, 1
+FROM
+  userlogins5.comments
+----
+
 
 === `commenttargetcategory`
 
@@ -154,6 +191,32 @@ link:{curDir}/search/comment_target.txt[External References]
 [source, sql]
 ----
 RENAME userlogins5.comment_target TO comment_target_type;
+----
+
+==== Cleanup dead data
+
+[source, sql]
+----
+DELETE FROM userlogins5.comment_target_type
+WHERE comment_target_type_id IN ('protein', 'phenotype');
+----
+
+==== Insert missing target types
+
+[source, sql]
+----
+INSERT INTO
+  userlogins5.comment_target_type (
+    comment_target_type_id
+  , comment_target_type_name
+  , require_location
+  )
+VALUES
+  ('snp',      'SNP',      0)
+, ('est',      'EST',      0)
+, ('assembly', 'Assembly', 0)
+, ('sage',     'Sage',     0)
+, ('orf',      'ORF',      0)
 ----
 
 === `categories`
@@ -194,75 +257,6 @@ ALTER TABLE userlogins5.target_category
   ADD CONSTRAINT comment_target_type_ref_fkey
   FOREIGN KEY (comment_target_id)
   REFERENCES userlogins5.comment_target_type (comment_target_type);
-----
-
-== Data Cleanup
-
-=== Move comment target links
-
-==== Cleanup conflicts
-
-There will likely be some junk records in the related record
-table that will cause conflicts when trying to copy over the
-comment targets.
-
-[source, sql]
-----
-DELETE FROM
-  userlogins5.commentstableid
-WHERE
-  (comment_id, stable_id) IN (
-    SELECT comment_id, stable_id
-    FROM userlogins5.comments
-  );
-----
-
-==== Copy over targets
-
-[source, sql]
-----
-INSERT INTO
-  userlogins5.commentstableid (
-    comment_stable_id
-  , stable_id
-  , comment_id
-  , is_primary_target
-)
-SELECT
-  (SELECT userlogins5.commentstableid_pkseq.nextval FROM dual)
-, stable_id
-, comment_id
-, 1
-FROM
-  userlogins5.comments
-----
-
-=== `comment_target` Table
-
-==== Cleanup dead data
-
-[source, sql]
-----
-DELETE FROM userlogins5.comment_target_type
-WHERE comment_target_type_id IN ('protein', 'phenotype');
-----
-
-==== Insert missing target types
-
-[source, sql]
-----
-INSERT INTO
-  userlogins5.comment_target_type (
-    comment_target_type_id
-  , comment_target_type_name
-  , require_location
-  )
-VALUES
-  ('snp',      'SNP',      0)
-, ('est',      'EST',      0)
-, ('assembly', 'Assembly', 0)
-, ('sage',     'Sage',     0)
-, ('orf',      'ORF',      0)
 ----
 
 == Trigger / Function / Package Cleanup
