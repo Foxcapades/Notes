@@ -1,0 +1,37 @@
+Targets
+    Occurrences of 'comment_stable_id' in Project
+Found Occurrences  (14 usages found)
+    api-common-data-load  (4 usages found)
+        ApiCommonData/Load/bin  (1 usage found)
+            loadBulkUserCommentsFromExcel.pl  (1 usage found)
+                281         (comment_stable_id, stable_id, comment_id)
+        ApiCommonData/Load/lib/sql/comments  (3 usages found)
+            createCategoryTables.sql  (3 usages found)
+                153 comment_stable_id NUMBER(10) NOT NULL,
+                156 CONSTRAINT comment_stable_id_key PRIMARY KEY (comment_stable_id),
+                157 CONSTRAINT comment_stable_id_fkey FOREIGN KEY (comment_id)
+    api-common-model-model  (8 usages found)
+        ApiCommonModel/Model/bin  (1 usage found)
+            showNewCommentLinks  (1 usage found)
+                29      select nc.comment_stable_id, nc.stable_id, nc.comment_id, c.headline
+        ApiCommonModel/Model/lib/sql  (2 usages found)
+            migration_comment_b21.sql  (2 usages found)
+                72 INSERT INTO userlogins5.CommentStableId (comment_stable_id, stable_id, comment_id)
+                73 SELECT comment_stable_id, stable_id, comment_id
+        ApiCommonModel/Model/lib/xml/tuningManager  (3 usages found)
+            apiTuningManager.xml  (3 usages found)
+                1361 SELECT stable_id, comment_id, userlogins5.CommentStableId_pkseq.nextval@&dblink as comment_stable_id
+                1374            (stable_id, comment_id, comment_stable_id)
+                1375 SELECT stable_id, comment_id, comment_stable_id
+        mappers.migrate5  (2 usages found)
+            MigrateCommentsMapper.xml  (2 usages found)
+                82 INSERT INTO userlogins5.CommentStableId (comment_stable_id, stable_id, comment_id)
+                83 SELECT comment_stable_id, stable_id, comment_id
+    api-common-website-model  (1 usage found)
+        org.apidb.apicommon.model.comment.repo  (1 usage found)
+            InsertStableIdQuery.java  (1 usage found)
+                19 "    COMMENT_STABLE_ID, STABLE_ID, COMMENT_ID)\n" +
+    wdk-model  (1 usage found)
+        WDK/Model/data  (1 usage found)
+            update_sequences.pl  (1 usage found)
+                69 $seqInfo ->{15} [1] = 'COMMENT_STABLE_ID';

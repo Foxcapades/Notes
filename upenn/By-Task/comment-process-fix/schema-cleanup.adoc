@@ -145,14 +145,14 @@ ALTER TABLE userlogins5.comment_target
 RENAME COLUMN stable_id TO target_id;
 ----
 
-==== Rename `comment_stable_id` column
+==== Drop `comment_stable_id`
 
-WARNING: TODO: References?
+link:{curDir}/search/commentstableid.comment_stable_id.txt[External References]
 
 [source, sql]
 ----
 ALTER TABLE userlogins5.comment_target
-RENAME COLUMN comment_stable_id TO comment_target_link_id;
+DROP COLUMN comment_stable_id;
 ----
 
 
