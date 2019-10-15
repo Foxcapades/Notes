@@ -10,13 +10,17 @@
 
 === Questions / Concerns
 
-. This will also mean updating the pk sequences since our
-  code uses the table name to generate the sequence names
-  for lookup.
+. Code around sequences from table names?
+.. This will also mean updating the pk sequences since our
+   code uses the table name to generate the sequence names
+   for lookup.
 . Will the triggers need to be updated?
 .. Triggers will be removed
-. What is `cmntRef_trggr_pkg.stale(i)`?
-. What is `cmntRef_trggr_pkg.empty`
+. What is `cmntRef_trggr_pkg`?
+.. This is a custom package that will need to be removed.
+. Migration script?
+. Should all the comment tables have a `comment_` prefix? +
+  (`locations`, `targetcategory`, `review_status`)
 
 === Tables
 
@@ -114,7 +118,10 @@ DROP TABLE userlogins5.categories;
 
 ===== Rename to `target_category`
 
-TODO
+[source, sql]
+----
+RENAME userlogins5.targetcategory TO target_category;
+----
 
 == Column Cleanup
 
