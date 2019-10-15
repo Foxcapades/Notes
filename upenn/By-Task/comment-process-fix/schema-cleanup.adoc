@@ -130,7 +130,7 @@ ON userlogins5.commentstableid (
 );
 ----
 
-==== Cleanup conflicts
+==== Cleanup comment link conflicts
 
 There will likely be some junk records in the related record
 table that will cause conflicts when trying to copy over the
@@ -147,7 +147,7 @@ WHERE
   );
 ----
 
-==== Copy over targets
+==== Insert primary comment targets
 
 [source, sql]
 ----
@@ -300,6 +300,7 @@ USERLOGINS5	COMMENTUSERS_UPDATE
 == Sequence
 
 . <<Add `is_primary_target` Column>>
-. <<Move comment target links>>
+. <<Cleanup comment link conflicts>>
+. <<Insert primary comment targets>>
 . <<Drop the `comments.stable_id` column>>
 . <<Insert missing target types>>
