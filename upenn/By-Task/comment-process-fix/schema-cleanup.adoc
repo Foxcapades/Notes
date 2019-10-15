@@ -36,10 +36,10 @@ endif::[]
   link:{curDir}/search/comments.location_string.txt[External References].
 
 
-== Tables
+== Tables / Views
 
 
-=== `comments`
+=== `comments` Table
 
 
 ==== Drop the `comments.stable_id` column
@@ -64,7 +64,7 @@ RENAME COLUMN comment_target_id TO comment_target_type;
 ----
 
 
-=== `commentfile`
+=== `commentfile` Table
 
 
 ==== Rename to `comment_file`
@@ -79,7 +79,7 @@ RENAME userlogins5.commentfile_pkseq TO comment_file_pkseq;
 ----
 
 
-=== `commentreference`
+=== `commentreference` Table
 
 
 ==== Rename to `comment_reference`
@@ -95,7 +95,7 @@ RENAME userlogins5.commentreference_pkseq TO comment_reference_pkseq;
 ----
 
 
-=== `commentsequence`
+=== `commentsequence` Table
 
 
 ==== Rename to `comment_sequence`
@@ -110,7 +110,7 @@ RENAME userlogins5.commentsequence_pkseq TO comment_sequence_pkseq;
 ----
 
 
-=== `commentstableid`
+=== `commentstableid` Table
 
 
 ==== Rename to `comment_target_id`
@@ -144,6 +144,7 @@ link:{curDir}/search/commentstableid.stable_id.txt[External References]
 ALTER TABLE userlogins5.comment_target
 RENAME COLUMN stable_id TO target_id;
 ----
+
 
 ==== Drop `comment_stable_id`
 
@@ -217,23 +218,47 @@ FROM
 ----
 
 
-=== `commenttargetcategory`
+=== `commenttargetcategory` Table
 
 
-==== Rename to `comment_target_category`
+==== Rename to `comment_comment_target_category`
 
 link:{curDir}/search/commenttargetcategory.txt[External References]
 
 [source, sql]
 ----
-RENAME userlogins5.commenttargetcategory TO comment_target_category;
-RENAME userlogins5.commenttargetcategory_idx01 TO comment_target_category_idx01;
-RENAME userlogins5.commenttargetcategory_idx02 TO comment_target_category_idx02;
-RENAME userlogins5.commenttargetcategory_pkseq TO comment_target_category_pkseq;
+RENAME userlogins5.commenttargetcategory TO comment_comment_target_category;
+RENAME userlogins5.commenttargetcategory_idx01 TO comment_comment_target_category_idx01;
+RENAME userlogins5.commenttargetcategory_idx02 TO comment_comment_target_category_idx02;
+RENAME userlogins5.commenttargetcategory_pkseq TO comment_comment_target_category_pkseq;
 ----
 
 
-=== `comment_target`
+==== Drop `comment_target_category_id` Column
+
+Column is not used for anything other than inserts.
+
+link:{curDir}/search/commenttargetcategory.comment_target_category_id.txt[External References]
+
+[source, sql]
+----
+ALTER TABLE userlogins5.comment_comment_target_category
+DROP COLUMN comment_target_category_id;
+----
+
+
+==== Rename `target_category_id` Column
+
+link:{curDir}/search/commenttargetcategory.target_category_id.txt[External References]
+
+[source, sql]
+----
+ALTER TABLE userlogins5.comment_comment_target_category
+RENAME COLUMN target_category_id TO comment_target_category_id.
+----
+
+
+=== `comment_target` Table
 
 
 ==== Rename to `comment_target_type`
@@ -274,7 +299,7 @@ VALUES
 ----
 
 
-=== `categories`
+=== `categories` Table
 
 
 ==== Drop Table
@@ -287,16 +312,16 @@ DROP TABLE userlogins5.categories;
 ----
 
 
-=== `targetcategory`
+=== `targetcategory` Table
 
 
-==== Rename to `target_category`
+==== Rename to `comment_target_category`
 
 WARNING: TODO: references to this?
 
 [source, sql]
 ----
-RENAME userlogins5.targetcategory TO target_category;
+RENAME userlogins5.targetcategory TO comment_target_category;
 ----
 
 
@@ -320,6 +345,9 @@ ALTER TABLE userlogins5.target_category
   FOREIGN KEY (comment_target_id)
   REFERENCES userlogins5.comment_target_type (comment_target_type);
 ----
+
+
+=== `mappedcomment` View
 
 
 == Trigger / Function / Package Cleanup

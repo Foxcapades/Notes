@@ -1,0 +1,28 @@
+Targets
+    Occurrences of 'comment_target_category_id' in Project
+Found Occurrences  (9 usages found)
+    api-common-data-load  (3 usages found)
+        ApiCommonData/Load/bin  (1 usage found)
+            loadBulkUserCommentsFromExcel.pl  (1 usage found)
+                267        (comment_target_category_id, comment_id, target_category_id )
+        ApiCommonData/Load/lib/sql/comments  (2 usages found)
+            createCategoryTables.sql  (2 usages found)
+                68 comment_target_category_id NUMBER(10) NOT NULL,
+                71 CONSTRAINT comment_target_category_key PRIMARY KEY (comment_target_category_id),
+    api-common-model-model  (4 usages found)
+        ApiCommonModel/Model/lib/sql  (2 usages found)
+            migration_comment_b21.sql  (2 usages found)
+                52 INSERT INTO userlogins5.CommentTargetCategory (comment_target_category_id, comment_id, target_category_id)
+                53 SELECT comment_target_category_id, comment_id, target_category_id
+        mappers.migrate5  (2 usages found)
+            MigrateCommentsMapper.xml  (2 usages found)
+                58 INSERT INTO userlogins5.CommentTargetCategory (comment_target_category_id, comment_id, target_category_id)
+                59 SELECT comment_target_category_id, comment_id, target_category_id
+    api-common-website-model  (1 usage found)
+        org.apidb.apicommon.model.comment.repo  (1 usage found)
+            InsertCategoryQuery.java  (1 usage found)
+                18 "COMMENT_TARGET_CATEGORY_ID, COMMENT_ID, TARGET_CATEGORY_ID) " +
+    wdk-model  (1 usage found)
+        WDK/Model/data  (1 usage found)
+            update_sequences.pl  (1 usage found)
+                73 $seqInfo ->{16} [1] = 'COMMENT_TARGET_CATEGORY_ID';

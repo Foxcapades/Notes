@@ -1,0 +1,31 @@
+Targets
+    Occurrences of 'target_Category_id' in Project
+Found Occurrences  (12 usages found)
+    api-common-data-load  (5 usages found)
+        ApiCommonData/Load/bin  (1 usage found)
+            loadBulkUserCommentsFromExcel.pl  (1 usage found)
+                267        (comment_target_category_id, comment_id, target_category_id )
+        ApiCommonData/Load/lib/sql/comments  (4 usages found)
+            createCategoryTables.sql  (4 usages found)
+                70 target_category_id NUMBER(10) NOT NULL,
+                74 CONSTRAINT target_category_id_fkey FOREIGN KEY (target_category_id)
+                75 REFERENCES userlogins5.TargetCategory (target_category_id)
+                79 CREATE INDEX userlogins5.CommentTargetCategory_idx02 ON userlogins5.CommentTargetCategory (target_category_id);
+    api-common-model-model  (5 usages found)
+        ApiCommonModel/Model/lib/sql  (2 usages found)
+            migration_comment_b21.sql  (2 usages found)
+                52 INSERT INTO userlogins5.CommentTargetCategory (comment_target_category_id, comment_id, target_category_id)
+                53 SELECT comment_target_category_id, comment_id, target_category_id
+        ApiCommonModel/Model/lib/wdk/model/records  (1 usage found)
+            commentTableQueries.xml  (1 usage found)
+                303                  AND t.target_category_id = tc.target_category_id
+        mappers.migrate5  (2 usages found)
+            MigrateCommentsMapper.xml  (2 usages found)
+                58 INSERT INTO userlogins5.CommentTargetCategory (comment_target_category_id, comment_id, target_category_id)
+                59 SELECT comment_target_category_id, comment_id, target_category_id
+    api-common-website-model  (2 usages found)
+        org.apidb.apicommon.model.comment.repo  (2 usages found)
+            Column.java  (1 usage found)
+                80 CATEGORY_ID = "target_category_id";
+            InsertCategoryQuery.java  (1 usage found)
+                18 "COMMENT_TARGET_CATEGORY_ID, COMMENT_ID, TARGET_CATEGORY_ID) " +
