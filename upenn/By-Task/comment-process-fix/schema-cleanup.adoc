@@ -6,9 +6,7 @@
 :icons: font
 :curDir: /upenn/By-Task/comment-process-fix
 
-== Table Cleanup
-
-=== Questions / Concerns
+== Questions / Concerns
 
 . Code around sequences from table names?
 .. This will also mean updating the pk sequences since our
@@ -22,110 +20,9 @@
 . Should all the comment tables have a `comment_` prefix? +
   (`locations`, `targetcategory`, `review_status`)
 
-=== Tables
+== Tables
 
-==== `commentfile`
-
-link:{curDir}/search/commentfile.txt[External References]
-
-===== Rename to `comment_file`
-
-[source, sql]
-----
-RENAME userlogins5.commentfile TO comment_file;
-RENAME userlogins5.commentfile_idx01 TO comment_file_idx01;
-RENAME userlogins5.commentfile_pkseq TO comment_file_pkseq;
-----
-
-==== `commentreference`
-
-link:{curDir}/search/commentreference.txt[External References]
-
-===== Rename to `comment_reference`
-
-[source, sql]
-----
-RENAME userlogins5.commentreference TO comment_reference;
-RENAME userlogins5.commentreference_idx01 TO comment_reference_idx01;
-RENAME userlogins5.commentreference_idx02 TO comment_reference_idx02;
-RENAME userlogins5.commentreference_pkseq TO comment_reference_pkseq;
-----
-
-==== `commentsequence`
-
-link:{curDir}/search/commentsequence.txt[External References]
-
-===== Rename to `comment_sequence`
-
-[source, sql]
-----
-RENAME userlogins5.commentsequence TO comment_sequence;
-RENAME userlogins5.commentsequence_idx01 TO comment_sequence_idx01;
-RENAME userlogins5.commentsequence_pkseq TO comment_sequence_pkseq;
-----
-
-==== `commentstableid`
-
-link:{curDir}/search/commentstableid.txt[External References]
-
-===== Rename to `comment_target_id`
-
-[source, sql]
-----
-RENAME userlogins5.commentstableid TO comment_target_id;
-RENAME userlogins5.commentstableid_idx01 TO comment_target_id_idx01;
-RENAME userlogins5.commentstableid_ux01 TO comment_target_id_ux01;
-RENAME userlogins5.commentstableid_pkseq TO comment_target_id_pkseq;
-----
-
-==== `commenttargetcategory`
-
-link:{curDir}/search/commenttargetcategory.txt[External References]
-
-===== Rename to `comment_target_category`
-
-[source, sql]
-----
-RENAME userlogins5.commenttargetcategory TO comment_target_category;
-RENAME userlogins5.commenttargetcategory_idx01 TO comment_target_category_idx01;
-RENAME userlogins5.commenttargetcategory_idx02 TO comment_target_category_idx02;
-RENAME userlogins5.commenttargetcategory_pkseq TO comment_target_category_pkseq;
-----
-
-==== `comment_target`
-
-link:{curDir}/search/comment_target.txt[External References]
-
-===== Rename to `comment_target_type`
-
-[source, sql]
-----
-RENAME userlogins5.comment_target TO comment_target_type;
-----
-
-==== `categories`
-
-link:{curDir}/search/categories.txt[External References]
-
-===== Drop Table
-
-[source, sql]
-----
-DROP TABLE userlogins5.categories; 
-----
-
-==== `targetcategory`
-
-===== Rename to `target_category`
-
-[source, sql]
-----
-RENAME userlogins5.targetcategory TO target_category;
-----
-
-== Column Cleanup
-
-=== `comments` Table
+=== `comments`
 
 ==== Drop the `comments.stable_id` column
 
@@ -147,11 +44,61 @@ ALTER TABLE userlogins5.comments
 RENAME COLUMN comment_target_id TO comment_target_type;
 ----
 
-=== `commentstableid` Table
+=== `commentfile`
+
+==== Rename to `comment_file`
+
+link:{curDir}/search/commentfile.txt[External References]
+
+[source, sql]
+----
+RENAME userlogins5.commentfile TO comment_file;
+RENAME userlogins5.commentfile_idx01 TO comment_file_idx01;
+RENAME userlogins5.commentfile_pkseq TO comment_file_pkseq;
+----
+
+=== `commentreference`
+
+==== Rename to `comment_reference`
+
+link:{curDir}/search/commentreference.txt[External References]
+
+[source, sql]
+----
+RENAME userlogins5.commentreference TO comment_reference;
+RENAME userlogins5.commentreference_idx01 TO comment_reference_idx01;
+RENAME userlogins5.commentreference_idx02 TO comment_reference_idx02;
+RENAME userlogins5.commentreference_pkseq TO comment_reference_pkseq;
+----
+
+=== `commentsequence`
+
+==== Rename to `comment_sequence`
+
+link:{curDir}/search/commentsequence.txt[External References]
+
+[source, sql]
+----
+RENAME userlogins5.commentsequence TO comment_sequence;
+RENAME userlogins5.commentsequence_idx01 TO comment_sequence_idx01;
+RENAME userlogins5.commentsequence_pkseq TO comment_sequence_pkseq;
+----
+
+=== `commentstableid`
+
+==== Rename to `comment_target_id`
+
+link:{curDir}/search/commentstableid.txt[External References]
+
+[source, sql]
+----
+RENAME userlogins5.commentstableid TO comment_target_id;
+RENAME userlogins5.commentstableid_idx01 TO comment_target_id_idx01;
+RENAME userlogins5.commentstableid_ux01 TO comment_target_id_ux01;
+RENAME userlogins5.commentstableid_pkseq TO comment_target_id_pkseq;
+----
 
 ==== Add `is_primary_target` Column
-
-===== Create Column
 
 [source, sql]
 ----
@@ -159,7 +106,7 @@ ALTER TABLE userlogins5.commentstableid
 ADD is_primary_target NUMBER(1) DEFAULT 0 NOT NULL;
 ----
 
-===== Create Constraints
+==== Create new column Constraints
 
 Creates a unique index on the comment id value for records
 that have the `is_primary_target` flag set to `1`.
@@ -180,13 +127,70 @@ ON userlogins5.commentstableid (
 );
 ----
 
-=== `targetcategory` Table
 
-==== Create missing foreign key on `comment_target_id`
+=== `commenttargetcategory`
+
+==== Rename to `comment_target_category`
+
+link:{curDir}/search/commenttargetcategory.txt[External References]
 
 [source, sql]
 ----
-TODO
+RENAME userlogins5.commenttargetcategory TO comment_target_category;
+RENAME userlogins5.commenttargetcategory_idx01 TO comment_target_category_idx01;
+RENAME userlogins5.commenttargetcategory_idx02 TO comment_target_category_idx02;
+RENAME userlogins5.commenttargetcategory_pkseq TO comment_target_category_pkseq;
+----
+
+=== `comment_target`
+
+==== Rename to `comment_target_type`
+
+link:{curDir}/search/comment_target.txt[External References]
+
+[source, sql]
+----
+RENAME userlogins5.comment_target TO comment_target_type;
+----
+
+=== `categories`
+
+==== Drop Table
+
+link:{curDir}/search/categories.txt[External References]
+
+[source, sql]
+----
+DROP TABLE userlogins5.categories; 
+----
+
+=== `targetcategory`
+
+==== Rename to `target_category`
+
+WARNING: TODO: references to this?
+
+[source, sql]
+----
+RENAME userlogins5.targetcategory TO target_category;
+----
+
+==== Rename `comment_target_id` column
+
+[source, sql]
+----
+ALTER TABLE userlogins5.target_category
+  RENAME COLUMN comment_target_id TO comment_target_type;
+----
+
+==== Add foreign key to `comment_target_type`
+
+[source, sql]
+----
+ALTER TABLE userlogins5.target_category
+  ADD CONSTRAINT comment_target_type_ref_fkey
+  FOREIGN KEY (comment_target_id)
+  REFERENCES userlogins5.comment_target_type (comment_target_type);
 ----
 
 == Data Cleanup
