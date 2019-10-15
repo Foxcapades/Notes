@@ -11,17 +11,24 @@ endif::[]
 
 == Questions / Concerns
 
-. Code around sequences from table names?
-.. This will also mean updating the pk sequences since our
-   code uses the table name to generate the sequence names
-   for lookup.
-. Will the triggers need to be updated?
-.. Triggers will be removed
-. What is `cmntRef_trggr_pkg`?
-.. This is a custom package that will need to be removed.
-. Migration script?
-. Should all the comment tables have a `comment_` prefix? +
+* [x] Code around sequences from table names?
+  ** This will also mean updating the pk sequences since our
+    code uses the table name to generate the sequence names
+    for lookup.
+* [x] Will the triggers need to be updated?
+  ** Triggers will be removed
+* [x] What is `cmntRef_trggr_pkg`?
+  ** This is a custom package that will need to be removed.
+* [ ] Migration script?
+* [ ] Should all the comment tables have a `comment_` prefix? +
   (`locations`, `targetcategory`, `review_status`)
+* [ ] What is the use case for keeping the `comment_stable_id`
+  column on the `commentstableid` table?  The table is just
+  a linking table at this point and i don't think the links
+  themselves will need identifiers?
+  ** Steve says no need for a pk in a joining table
+* [ ] What about the `comment.location_string` column? That
+  data should exist in the locations table.
 
 == Tables
 
@@ -74,7 +81,9 @@ RENAME userlogins5.commentreference_idx02 TO comment_reference_idx02;
 RENAME userlogins5.commentreference_pkseq TO comment_reference_pkseq;
 ----
 
+
 === `commentsequence`
+
 
 ==== Rename to `comment_sequence`
 
@@ -87,7 +96,9 @@ RENAME userlogins5.commentsequence_idx01 TO comment_sequence_idx01;
 RENAME userlogins5.commentsequence_pkseq TO comment_sequence_pkseq;
 ----
 
+
 === `commentstableid`
+
 
 ==== Rename to `comment_target_id`
 
@@ -95,19 +106,42 @@ link:{curDir}/search/commentstableid.txt[External References]
 
 [source, sql]
 ----
-RENAME userlogins5.commentstableid TO comment_target_id;
-RENAME userlogins5.commentstableid_idx01 TO comment_target_id_idx01;
-RENAME userlogins5.commentstableid_ux01 TO comment_target_id_ux01;
-RENAME userlogins5.commentstableid_pkseq TO comment_target_id_pkseq;
+RENAME userlogins5.commentstableid TO comment_target;
+RENAME userlogins5.commentstableid_idx01 TO comment_target_idx01;
+RENAME userlogins5.commentstableid_ux01 TO comment_target_ux01;
+RENAME userlogins5.commentstableid_pkseq TO comment_target_pkseq;
 ----
+
 
 ==== Add `is_primary_target` Column
 
 [source, sql]
 ----
-ALTER TABLE userlogins5.commentstableid
+ALTER TABLE userlogins5.comment_target
 ADD is_primary_target NUMBER(1) DEFAULT 0 NOT NULL;
 ----
+
+
+==== Rename `stable_id` column
+
+link:{curDir}/search/commentstableid.stable_id.txt[External References]
+
+[source, sql]
+----
+ALTER TABLE userlogins5.comment_target
+RENAME COLUMN stable_id TO target_id;
+----
+
+==== Rename `comment_stable_id` column
+
+WARNING: TODO: References?
+
+[source, sql]
+----
+ALTER TABLE userlogins5.comment_target
+RENAME COLUMN comment_stable_id TO comment_target_link_id;
+----
+
 
 ==== Create new column Constraints
 
@@ -121,7 +155,7 @@ functions.
 [source, sql]
 ----
 CREATE UNIQUE INDEX comment_target_id_one_primary
-ON userlogins5.commentstableid (
+ON userlogins5.comment_target (
   CASE
     WHEN is_primary_target = 1
     THEN comment_id
@@ -129,6 +163,7 @@ ON userlogins5.commentstableid (
   END
 );
 ----
+
 
 ==== Cleanup comment link conflicts
 
@@ -139,7 +174,7 @@ comment targets.
 [source, sql]
 ----
 DELETE FROM
-  userlogins5.commentstableid
+  userlogins5.comment_target
 WHERE
   (comment_id, stable_id) IN (
     SELECT comment_id, stable_id
@@ -147,14 +182,15 @@ WHERE
   );
 ----
 
+
 ==== Insert primary comment targets
 
 [source, sql]
 ----
 INSERT INTO
-  userlogins5.commentstableid (
-    comment_stable_id
-  , stable_id
+  userlogins5.comment_target (
+    comment_target_link_id
+  , target_id
   , comment_id
   , is_primary_target
 )
@@ -170,6 +206,7 @@ FROM
 
 === `commenttargetcategory`
 
+
 ==== Rename to `comment_target_category`
 
 link:{curDir}/search/commenttargetcategory.txt[External References]
@@ -182,7 +219,9 @@ RENAME userlogins5.commenttargetcategory_idx02 TO comment_target_category_idx02;
 RENAME userlogins5.commenttargetcategory_pkseq TO comment_target_category_pkseq;
 ----
 
+
 === `comment_target`
+
 
 ==== Rename to `comment_target_type`
 
@@ -193,6 +232,7 @@ link:{curDir}/search/comment_target.txt[External References]
 RENAME userlogins5.comment_target TO comment_target_type;
 ----
 
+
 ==== Cleanup dead data
 
 [source, sql]
@@ -200,6 +240,7 @@ RENAME userlogins5.comment_target TO comment_target_type;
 DELETE FROM userlogins5.comment_target_type
 WHERE comment_target_type_id IN ('protein', 'phenotype');
 ----
+
 
 ==== Insert missing target types
 
@@ -219,7 +260,9 @@ VALUES
 , ('orf',      'ORF',      0)
 ----
 
+
 === `categories`
+
 
 ==== Drop Table
 
@@ -230,7 +273,9 @@ link:{curDir}/search/categories.txt[External References]
 DROP TABLE userlogins5.categories; 
 ----
 
+
 === `targetcategory`
+
 
 ==== Rename to `target_category`
 
@@ -241,13 +286,17 @@ WARNING: TODO: references to this?
 RENAME userlogins5.targetcategory TO target_category;
 ----
 
+
 ==== Rename `comment_target_id` column
+
+WARNING: TODO: References?
 
 [source, sql]
 ----
 ALTER TABLE userlogins5.target_category
   RENAME COLUMN comment_target_id TO comment_target_type;
 ----
+
 
 ==== Add foreign key to `comment_target_type`
 
@@ -258,6 +307,7 @@ ALTER TABLE userlogins5.target_category
   FOREIGN KEY (comment_target_id)
   REFERENCES userlogins5.comment_target_type (comment_target_type);
 ----
+
 
 == Trigger / Function / Package Cleanup
 
@@ -279,7 +329,9 @@ USERLOGINS5	CMNTREF_MARKDELETEDID
 USERLOGINS5	COMMENTUSERS_UPDATE
 ----
 
+
 === Packages
+
 
 ==== `cmntRef_trggr_pkg`
 
@@ -296,6 +348,7 @@ USERLOGINS5	COMMENTUSERS_UPDATE
 . Fix the mapped comments view
 . Copy targets from comment table to linking table
 . Rework queries from original task?
+
 
 == Sequence
 
