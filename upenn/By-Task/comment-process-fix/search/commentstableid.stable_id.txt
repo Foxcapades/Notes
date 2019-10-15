@@ -1,0 +1,71 @@
+Targets
+    Occurrences of 'stable_id' in Project
+Found Occurrences  (40 usages found)
+    api-common-data-load  (18 usages found)
+        ApiCommonData/Load/bin  (1 usage found)
+            loadBulkUserCommentsFromExcel.pl  (1 usage found)
+                281         (comment_stable_id, stable_id, comment_id)
+        ApiCommonData/Load/lib/sql/comments  (17 usages found)
+            createCategoryTables.sql  (2 usages found)
+                154 stable_id VARCHAR2(200) NOT NULL,
+                162 CREATE UNIQUE INDEX userlogins5.CommentStableId_ux01 ON userlogins5.CommentStableId (stable_id, comment_id);
+            createCommentTables.sql  (4 usages found)
+                180 -- view of comments with stable_id either as-is or mapped through commentStableId
+                183 idMap.stable_id, c.conceptual, c.project_name, c.project_version, c.headline,
+                186 (select stable_id, comment_id
+                189 select stable_id, comment_id
+            createCommentTriggers.sql  (8 usages found)
+                126 select comment_id, :new.stable_id, project_name, organism,
+                132 and stable_id != :new.stable_id; -- don't duplicate comment-gene pairs
+                142 and source_id = :old.stable_id
+                145 and source_id != (select stable_id
+                161 and source_id = :old.stable_id
+                162 and (:old.comment_id, :old.stable_id)
+                163 not in (select comment_id, stable_id from userlogins5.Comments);
+                178 select comment_id, :new.stable_id, project_name, organism,
+            reindexComments.sql  (3 usages found)
+                25 select c.comment_id, ci.stable_id, c.project_name, c.organism,
+                29 (select comment_id, stable_id from userlogins5.comments
+                31 select comment_id, stable_id from userlogins5.commentStableId) ci
+    api-common-model-model  (10 usages found)
+        ApiCommonModel/Model/bin  (2 usages found)
+            generateGeneMetrics_New  (1 usage found)
+                109 stable_id
+            showNewCommentLinks  (1 usage found)
+                40 printf STDERR "%12s %12s %-48s %-100s\n", "cmnt_stbl_id", "comment_id", "stable_id", "headline";
+        ApiCommonModel/Model/lib/sql  (2 usages found)
+            migration_comment_b21.sql  (2 usages found)
+                72 INSERT INTO userlogins5.CommentStableId (comment_stable_id, stable_id, comment_id)
+                73 SELECT comment_stable_id, stable_id, comment_id
+        ApiCommonModel/Model/lib/xml/tuningManager  (4 usages found)
+            apiTuningManager.xml  (4 usages found)
+                1353   SELECT csi.stable_id, csi.comment_id
+                1361 SELECT stable_id, comment_id, userlogins5.CommentStableId_pkseq.nextval@&dblink as comment_stable_id
+                1364         WHERE gi.id = ca.stable_id
+                1375 SELECT stable_id, comment_id, comment_stable_id
+        mappers.migrate5  (2 usages found)
+            MigrateCommentsMapper.xml  (2 usages found)
+                82 INSERT INTO userlogins5.CommentStableId (comment_stable_id, stable_id, comment_id)
+                83 SELECT comment_stable_id, stable_id, comment_id
+    api-common-website-model  (12 usages found)
+        org.apidb.apicommon.model.comment.repo  (12 usages found)
+            BaseCommentQuery.java  (1 usage found)
+                rs2Comment(ResultSet)  (1 usage found)
+                    133 .setId(rs.getString(Column.Comment.STABLE_ID))
+            Column.java  (2 usages found)
+                17 STABLE_ID         = "stable_id",
+                28 String STABLE_ID = "stable_id",
+            FindCommentQuery.java  (3 usages found)
+                39 "  co." + Column.Comment.STABLE_ID        + ",\n" +
+                51 "  id." + CommentStableId.STABLE_ID       + " " + RELATED + ",\n" +
+                92 "    AND ? IN (a." + Column.Comment.STABLE_ID + ", b." + CommentStableId.STABLE_ID + ")";
+            GetCommentQuery.java  (2 usages found)
+                23 "  co." + Column.Comment.STABLE_ID        + ",\n" +
+                35 "  id." + CommentStableId.STABLE_ID       + " " + RELATED + ",\n" +
+            InsertCommentQuery.java  (3 usages found)
+                getArguments()  (1 usage found)
+                    81 _req.getTarget().getId(),            // STABLE_ID
+                25 "    STABLE_ID,\n" +
+                43 VARCHAR, // STABLE_ID
+            InsertStableIdQuery.java  (1 usage found)
+                19 "    COMMENT_STABLE_ID, STABLE_ID, COMMENT_ID)\n" +
