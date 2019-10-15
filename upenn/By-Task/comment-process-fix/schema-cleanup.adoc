@@ -22,6 +22,9 @@ endif::[]
 * [ ] Migration script?
 * [ ] Should all the comment tables have a `comment_` prefix? +
   (`locations`, `targetcategory`, `review_status`)
+  ** [ ] Steve says these should be prefixed, however this will
+    will create a conflict with the existing `commenttargetcategory`
+    table.  This needs to be resolved.
 * [x] What is the use case for keeping the `comment_stable_id`
   column on the `commentstableid` table?  The table is just
   a linking table at this point and i don't think the links
@@ -31,9 +34,12 @@ endif::[]
   data should exist in the locations table.
   link:{curDir}/search/comments.location_string.txt[External References].
 
+
 == Tables
 
+
 === `comments`
+
 
 ==== Drop the `comments.stable_id` column
 
@@ -45,6 +51,7 @@ ALTER TABLE userlogins5.comments
 DROP COLUMN stable_id;
 ----
 
+
 ==== Rename `comments.comment_target_id`
 
 link:{curDir}/search/comments.comment_target_id.txt[External References]
@@ -55,7 +62,9 @@ ALTER TABLE userlogins5.comments
 RENAME COLUMN comment_target_id TO comment_target_type;
 ----
 
+
 === `commentfile`
+
 
 ==== Rename to `comment_file`
 
@@ -68,7 +77,9 @@ RENAME userlogins5.commentfile_idx01 TO comment_file_idx01;
 RENAME userlogins5.commentfile_pkseq TO comment_file_pkseq;
 ----
 
+
 === `commentreference`
+
 
 ==== Rename to `comment_reference`
 
@@ -347,7 +358,6 @@ USERLOGINS5	COMMENTUSERS_UPDATE
 == Misc / Followup
 
 . Fix the mapped comments view
-. Copy targets from comment table to linking table
 . Rework queries from original task?
 
 
