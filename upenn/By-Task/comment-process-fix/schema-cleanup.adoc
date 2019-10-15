@@ -20,10 +20,11 @@ endif::[]
 * [x] What is `cmntRef_trggr_pkg`?
   ** This is a custom package that will need to be removed.
 * [ ] Migration script?
-* [ ] Should all the comment tables have a `comment_` prefix? +
+* [x] Should all the comment tables have a `comment_` prefix? +
   (`locations`, `targetcategory`, `review_status`)
-  ** [ ] Steve says these should be prefixed, however this will
+  ** [x] Steve says these should be prefixed, however this will
     will create a conflict with the existing `commenttargetcategory`
+    *** Steve says `comment_comment_target_category`
     table.  This needs to be resolved.
 * [x] What is the use case for keeping the `comment_stable_id`
   column on the `commentstableid` table?  The table is just
