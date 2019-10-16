@@ -220,6 +220,9 @@ FROM
 
 === `commenttargetcategory` Table
 
+NOTE: All columns in this table are currently indexed and
+  this will still be the case after all the changes below.
+  Not sure if we view that as a problem.
 
 ==== Rename to `comment_comment_target_category`
 
@@ -230,7 +233,16 @@ link:{curDir}/search/commenttargetcategory.txt[External References]
 RENAME userlogins5.commenttargetcategory TO comment_comment_target_category;
 RENAME userlogins5.commenttargetcategory_idx01 TO comment_comment_target_category_idx01;
 RENAME userlogins5.commenttargetcategory_idx02 TO comment_comment_target_category_idx02;
-RENAME userlogins5.commenttargetcategory_pkseq TO comment_comment_target_category_pkseq;
+----
+
+
+==== Drop `commenttargetcategory_pkseq` Sequence
+
+link:{curDir}/search/commenttargetcategory_pkseq.txt[External References]
+
+[source, sql]
+----
+DROP SEQUENCE userlogins5.commentTargetCategory_pkseq;
 ----
 
 
