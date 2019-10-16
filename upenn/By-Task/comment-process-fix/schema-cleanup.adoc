@@ -67,7 +67,7 @@ RENAME COLUMN comment_target_id TO comment_target_type;
 === `commentfile` Table
 
 
-==== Rename to `comment_file`
+==== Rename `commentfile` table
 
 link:{curDir}/search/commentfile.txt[External References]
 
@@ -82,7 +82,7 @@ RENAME userlogins5.commentfile_pkseq TO comment_file_pkseq;
 === `commentreference` Table
 
 
-==== Rename to `comment_reference`
+==== Rename `commentreference` table
 
 link:{curDir}/search/commentreference.txt[External References]
 
@@ -98,7 +98,7 @@ RENAME userlogins5.commentreference_pkseq TO comment_reference_pkseq;
 === `commentsequence` Table
 
 
-==== Rename to `comment_sequence`
+==== Rename `commentsequence` table
 
 link:{curDir}/search/commentsequence.txt[External References]
 
@@ -113,7 +113,7 @@ RENAME userlogins5.commentsequence_pkseq TO comment_sequence_pkseq;
 === `commentstableid` Table
 
 
-==== Rename to `comment_target_id`
+==== Rename `commentstableid` table
 
 link:{curDir}/search/commentstableid.txt[External References]
 
@@ -224,7 +224,7 @@ NOTE: All columns in this table are currently indexed and
   this will still be the case after all the changes below.
   Not sure if we view that as a problem.
 
-==== Rename to `comment_comment_target_category`
+==== Rename `commenttargetcategory` table
 
 link:{curDir}/search/commenttargetcategory.txt[External References]
 
@@ -273,7 +273,7 @@ RENAME COLUMN target_category_id TO comment_target_category_id.
 === `comment_target` Table
 
 
-==== Rename to `comment_target_type`
+==== Rename `comment_target` table
 
 link:{curDir}/search/comment_target.txt[External References]
 
@@ -314,7 +314,7 @@ VALUES
 === `categories` Table
 
 
-==== Drop Table
+==== Drop `categories` Table
 
 link:{curDir}/search/categories.txt[External References]
 
@@ -404,6 +404,12 @@ USERLOGINS5	COMMENTUSERS_UPDATE
 
 == Sequence
 
+. <<Drop `categories` Table>>
+. <<Rename `commentfile` table>>
+. <<Rename `commentreference` table>>
+. <<Rename `commentsequence` table>>
+. <<Rename `commenttargetcategory` table>>
+. <<Rename `comment_target` table>>
 . <<Add `is_primary_target` Column>>
 . <<Cleanup comment link conflicts>>
 . <<Insert primary comment targets>>
