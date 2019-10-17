@@ -1,0 +1,34 @@
+Targets
+    Occurrences of 'mappedcomment' in Project
+Found Occurrences  (17 usages found)
+    api-common-data-load  (2 usages found)
+        ApiCommonData/Load/lib/sql/comments  (2 usages found)
+            createCommentTables.sql  (2 usages found)
+                181 create or replace view userlogins5.mappedComment as
+                193 grant select on userlogins5.mappedComment to gus_r;
+    api-common-model-model  (15 usages found)
+        ApiCommonModel/Model/bin  (1 usage found)
+            buildAnnotationChangeTT  (1 usage found)
+                393     --   from userlogins5.mappedComment\@prodn.login_comment
+        ApiCommonModel/Model/lib/wdk/model/questions/queries  (1 usage found)
+            geneQueries.xml  (1 usage found)
+                5616                         from @COMMENT_SCHEMA@MappedComment@COMMENT_DBLINK@
+        ApiCommonModel/Model/lib/wdk/model/records  (12 usages found)
+            commentTableQueries.xml  (9 usages found)
+                111                   FROM @COMMENT_SCHEMA@MappedComment@COMMENT_DBLINK@ c, @COMMENT_SCHEMA@comment_users@COMMENT_DBLINK@ u,
+                122                         FROM @COMMENT_SCHEMA@MappedComment@COMMENT_DBLINK@
+                196                     FROM @COMMENT_SCHEMA@MappedComment@COMMENT_DBLINK@ c, @COMMENT_SCHEMA@comment_users@COMMENT_DBLINK@ u,
+                213                           FROM @COMMENT_SCHEMA@MappedComment@COMMENT_DBLINK@
+                255                     FROM @COMMENT_SCHEMA@MappedComment@COMMENT_DBLINK@ c, @COMMENT_SCHEMA@comment_users@COMMENT_DBLINK@ u,
+                266                           FROM @COMMENT_SCHEMA@mappedComment@COMMENT_DBLINK@
+                338                     FROM @COMMENT_SCHEMA@MappedComment@COMMENT_DBLINK@ c, @COMMENT_SCHEMA@comment_users@COMMENT_DBLINK@ u,
+                349                           FROM @COMMENT_SCHEMA@MappedComment@COMMENT_DBLINK@
+                392                     FROM @COMMENT_SCHEMA@MappedComment@COMMENT_DBLINK@ c, @COMMENT_SCHEMA@comment_users@COMMENT_DBLINK@ u,
+            geneAttributeQueries.xml  (1 usage found)
+                334                     FROM @COMMENT_SCHEMA@MappedComment@COMMENT_DBLINK@
+            geneTableQueries.xml  (2 usages found)
+                1626                      FROM @COMMENT_SCHEMA@mappedComment@COMMENT_DBLINK@ cmnts
+                2065                        FROM @COMMENT_SCHEMA@MappedComment@COMMENT_DBLINK@
+        ApiCommonModel/Model/lib/xml/tuningManager  (1 usage found)
+            apiTuningManager.xml  (1 usage found)
+                816                   from userlogins5.mappedComment@prodn.login_comment

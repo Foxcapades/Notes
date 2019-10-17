@@ -4,11 +4,12 @@
 :sectnums:
 :source-highlighter: pygments
 :icons: font
-:curDir: /upenn/By-Task/comment-process-fix
 ifdef::env-github[]
 :warning-caption: ⚠
 :note-caption: ❕
+:tip-caption: 💡
 endif::[]
+:curDir: /upenn/By-Task/comment-process-fix
 
 == Questions / Concerns
 
@@ -225,6 +226,7 @@ NOTE: All columns in this table are currently indexed and
   this will still be the case after all the changes below.
   Not sure if we view that as a problem.
 
+
 ==== Rename `commenttargetcategory` table
 
 link:{curDir}/search/commenttargetcategory.txt[External References]
@@ -328,7 +330,7 @@ DROP TABLE userlogins5.categories;
 === `targetcategory` Table
 
 
-==== Rename to `comment_target_category`
+==== Rename `targetcategory` table
 
 WARNING: TODO: references to this?
 
@@ -362,6 +364,31 @@ ALTER TABLE userlogins5.target_category
 
 === `mappedcomment` View
 
+[source, sql]
+----
+CREATE OR REPLACE VIEW userlogins5.mappedcomment AS
+  SELECT
+    c.comment_id
+  , c.user_id
+  , c.email
+  , c.comment_date
+  , c.comment_target_id
+  , t.stable_id
+  , c.conceptual
+  , c.project_name
+  , c.project_version
+  , c.headline
+  , c.review_status_id
+  , c.accepted_version
+  , c.location_string
+  , c.organism
+  , c.is_visible
+  FROM
+    userlogins5.comments c
+    LEFT JOIN userlogins5.commentstableid t
+      ON c.comment_id = t.comment_id
+;
+----
 
 == Trigger / Function / Package Cleanup
 
@@ -411,6 +438,7 @@ USERLOGINS5	COMMENTUSERS_UPDATE
 . <<Rename `commentsequence` table>>
 . <<Rename `commenttargetcategory` table>>
 . <<Rename `comment_target` table>>
+. <<Rename `targetcategory` table>>
 . <<Add `is_primary_target` Column>>
 . <<Cleanup comment link conflicts>>
 . <<Insert primary comment targets>>
