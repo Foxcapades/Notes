@@ -75,7 +75,7 @@ ALTER TABLE userlogins5.commentfile
   RENAME TO comment_file;
 
 
-=== Rename Comment to File Indexes
+=== Rename Comment to File Indices
 
 [WARNING]
 .Remaining TODOs
@@ -126,7 +126,7 @@ ALTER TABLE userlogins5.commentreference
   RENAME TO comment_reference;
 
 
-=== Rename Comment Reference Indexes
+=== Rename Comment Reference Indices
 
 [WARNING]
 .Remaining TODOs
@@ -182,7 +182,7 @@ ALTER TABLE userlogins5.commentsequence
   RENAME TO comment_sequence;
 
 
-=== Rename Comment to Sequence Indexes
+=== Rename Comment to Sequence Indices
 
 [WARNING]
 .Remaining TODOs
@@ -221,7 +221,7 @@ GRANT SELECT ON userlogins5.comment_sequence_pkseq TO GUS_R;
 ----
 
 
-== `commentstableid` Table
+== Comment to Comment Target Table
 
 
 === Rename `commentstableid` table
@@ -229,23 +229,55 @@ GRANT SELECT ON userlogins5.comment_sequence_pkseq TO GUS_R;
 link:{curDir}/search/commentstableid.txt[External References]
 
 [source, sql]
-----
 ALTER TABLE commentstableid
   RENAME TO comment_target;
+
+
+=== Rename Comment to Comment Target Indices
+
+[WARNING]
+.Remaining TODOs
+====
+* [ ] Find references
+====
+
+[source, sql]
+----
 ALTER INDEX commentstableid_idx01
   RENAME TO comment_target_idx01;
+
 ALTER INDEX commentstableid_ux01
   RENAME TO comment_target_ux01;
 ----
 
 
+=== Drop Comment to Comment Target Primary Key Column
+
+link:{curDir}/search/commentstableid.comment_stable_id.txt[External References]
+
+[source, sql]
+ALTER TABLE userlogins5.comment_target
+  DROP COLUMN comment_stable_id;
+
+
+=== Remove Sequence `commentstableid_pkseq`
+
+[WARNING]
+.Remaining TODOs
+====
+* [ ] Find references
+====
+
+[source, sql]
+DROP SEQUENCE userlogins5.commentstableid_pkseq;
+
+
+
 === Add `is_primary_target` Column
 
 [source, sql]
-----
 ALTER TABLE userlogins5.comment_target
   ADD is_primary_target NUMBER(1) DEFAULT 0 NOT NULL;
-----
 
 
 === Rename `stable_id` column
@@ -253,29 +285,8 @@ ALTER TABLE userlogins5.comment_target
 link:{curDir}/search/commentstableid.stable_id.txt[External References]
 
 [source, sql]
-----
 ALTER TABLE userlogins5.comment_target
   RENAME COLUMN stable_id TO target_id;
-----
-
-
-=== Drop `comment_stable_id`
-
-link:{curDir}/search/commentstableid.comment_stable_id.txt[External References]
-
-[source, sql]
-----
-ALTER TABLE userlogins5.comment_target
-  DROP COLUMN comment_stable_id;
-----
-
-
-=== Drop `commentstableid_pkseq` Sequence
-
-[source, sql]
----
-DROP SEQUENCE userlogins5.commentstableid_pkseq;
----
 
 
 === Create new column Constraints
@@ -339,23 +350,25 @@ FROM
 ----
 
 
-== `commenttargetcategory` Table
-
-NOTE: All columns in this table are currently indexed and
-  this will still be the case after all the changes below.
-  Not sure if we view that as a problem.
+== Comment to Comment Target Category Table
 
 
-=== Rename `commenttargetcategory` table
+=== Rename Table `commenttargetcategory`
 
 link:{curDir}/search/commenttargetcategory.txt[External References]
 
 [source, sql]
-----
 ALTER TABLE commenttargetcategory
   RENAME TO comment_comment_target_category;
+
+
+=== Rename Comment to Comment Target Category Indices
+
+[source, sql]
+----
 ALTER INDEX commenttargetcategory_idx01
   RENAME TO comment_comment_target_category_idx01;
+
 ALTER INDEX commenttargetcategory_idx02
   RENAME TO comment_comment_target_category_idx02;
 ----
@@ -376,10 +389,8 @@ Column is not used for anything other than inserts.
 link:{curDir}/search/commenttargetcategory.comment_target_category_id.txt[External References]
 
 [source, sql]
-----
 ALTER TABLE comment_comment_target_category
   DROP COLUMN comment_target_category_id;
-----
 
 
 === Rename `target_category_id` Column
@@ -387,10 +398,8 @@ ALTER TABLE comment_comment_target_category
 link:{curDir}/search/commenttargetcategory.target_category_id.txt[External References]
 
 [source, sql]
-----
 ALTER TABLE comment_comment_target_category
   RENAME COLUMN target_category_id TO comment_target_category_id;
-----
 
 
 == `comment_target` Table
