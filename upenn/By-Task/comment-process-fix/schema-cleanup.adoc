@@ -51,7 +51,7 @@ link:{curDir}/search/comments.stable_id.txt[External References]
 [source, sql]
 ----
 ALTER TABLE userlogins5.comments
-DROP COLUMN stable_id;
+  DROP COLUMN stable_id;
 ----
 
 
@@ -61,12 +61,12 @@ link:{curDir}/search/comments.comment_target_id.txt[External References]
 
 [source, sql]
 ----
-ALTER TABLE userlogins5.comments
-RENAME COLUMN comment_target_id TO comment_target_type;
+ALTER TABLE comments
+  RENAME COLUMN comment_target_id TO comment_target_type;
 ----
 
 
-=== `commentfile` Table
+=== Comment to File Table
 
 
 ==== Rename `commentfile` table
@@ -74,20 +74,50 @@ RENAME COLUMN comment_target_id TO comment_target_type;
 link:{curDir}/search/commentfile.txt[External References]
 
 [source, sql]
+ALTER TABLE userlogins5.commentfile
+  RENAME TO comment_file;
+
+
+==== Rename Comment to File Indexes
+
+[WARNING]
+.Remaining TODOs
+====
+* [ ] Find References
+====
+
+[source, sql]
+ALTER INDEX userlogins5.commentfile_idx01
+  RENAME TO comment_file_idx01;
+
+
+==== Recreate Sequence `commentfile_pkseq`
+
+[WARNING]
+.Remaining TODOs
+====
+* [ ] Find References
+* [ ] Is this sequence/pkey actually needed?
+* [x] Find the actual increment value
+====
+
+[source, sql]
 ----
-ALTER TABLE commentfile RENAME TO comment_file;
-ALTER INDEX commentfile_idx01 RENAME TO comment_file_idx01;
 DECLARE
   seq_start NUMBER;
 BEGIN
-  SELECT commentfile_pkseq.nextval INTO seq_start FROM dual;
-  EXECUTE IMMEDIATE 'CREATE SEQUENCE comment_file_pkseq START WITH ' || seq_start || ' INCREMENT BY 1';
+  SELECT userlogins5.commentfile_pkseq.nextval INTO seq_start FROM dual;
+  EXECUTE IMMEDIATE 'CREATE SEQUENCE userlogins5.comment_file_pkseq START WITH ' || seq_start || ' INCREMENT BY 1';
 END;
-DROP SEQUENCE commentfile_pkseq;
+
+DROP SEQUENCE userlogins5.commentfile_pkseq;
+
+GRANT SELECT ON userlogins5.comment_file_pkseq TO GUS_W;
+GRANT SELECT ON userlogins5.comment_file_pkseq TO GUS_R;
 ----
 
 
-=== `commentreference` Table
+=== Comment to Reference Table
 
 
 ==== Rename `commentreference` table
@@ -95,22 +125,55 @@ DROP SEQUENCE commentfile_pkseq;
 link:{curDir}/search/commentreference.txt[External References]
 
 [source, sql]
+ALTER TABLE userlogins5.commentreference
+  RENAME TO comment_reference;
+
+
+==== Rename Comment Reference Indexes
+
+[WARNING]
+.Remaining TODOs
+====
+* [ ] Find References
+====
+
+[source, sql]
+----
+ALTER INDEX userlogins5.commentreference_idx01
+  RENAME TO comment_reference_idx01;
+
+ALTER INDEX userlogins5.commentreference_idx02
+  RENAME TO comment_reference_idx02;
 ----
 
-ALTER TABLE commentreference RENAME TO comment_reference;
-ALTER INDEX commentreference_idx01 RENAME TO comment_reference_idx01;
-ALTER INDEX commentreference_idx02 RENAME TO comment_reference_idx02;
+
+==== Recreate Sequence `commentreference_pkseq`
+
+[WARNING]
+.Remaining TODOs
+====
+* [ ] Find References
+* [ ] Is the pkey/sequence needed on this table?
+* [ ] Lookup actual increment value for sequence
+====
+
+[source, sql]
+----
 DECLARE
   seq_start NUMBER;
 BEGIN
-  SELECT commentreference_pkseq.nextval INTO seq_start FROM dual;
-  EXECUTE IMMEDIATE 'CREATE SEQUENCE comment_reference_pkseq START WITH ' || seq_start || ' INCREMENT BY 1';
+  SELECT userlogins5.commentreference_pkseq.nextval INTO seq_start FROM dual;
+  EXECUTE IMMEDIATE 'CREATE SEQUENCE userlogins5.comment_reference_pkseq START WITH ' || seq_start || ' INCREMENT BY 1';
 END;
-DROP SEQUENCE commentreference_pkseq;
+
+DROP SEQUENCE userlogins5.commentreference_pkseq;
+
+GRANT SELECT ON userlogins5.comment_reference_pkseq TO GUS_W;
+GRANT SELECT ON userlogins5.comment_reference_pkseq TO GUS_R;
 ----
 
 
-=== `commentsequence` Table
+=== Comment to Sequence Table
 
 
 ==== Rename `commentsequence` table
@@ -118,16 +181,46 @@ DROP SEQUENCE commentreference_pkseq;
 link:{curDir}/search/commentsequence.txt[External References]
 
 [source, sql]
+ALTER TABLE userlogins5.commentsequence
+  RENAME TO comment_sequence;
+
+
+==== Rename Comment to Sequence Indexes
+
+[WARNING]
+.Remaining TODOs
+====
+* [ ] Find References
+====
+
+[source, sql]
+ALTER INDEX userlogins5.commentsequence_idx01
+  RENAME TO comment_sequence_idx01;
+
+
+==== Recreate Sequence `commentsequence_pkseq`
+
+[WARNING]
+.Remaining TODOs
+====
+* [ ] Find References
+* [ ] Is this sequence / pkey even needed?
+* [ ] Find actual increment value
+====
+
+[source, sql]
 ----
-ALTER TABLE commentsequence RENAME TO comment_sequence;
-ALTER INDEX commentsequence_idx01 RENAME TO comment_sequence_idx01;
 DECLARE
   seq_start NUMBER;
 BEGIN
-  SELECT commentsequence_pkseq.nextval INTO seq_start FROM dual;
-  EXECUTE IMMEDIATE 'CREATE SEQUENCE comment_sequence_pkseq START WITH ' || seq_start || ' INCREMENT BY 1';
+  SELECT userlogins5.commentsequence_pkseq.nextval INTO seq_start FROM dual;
+  EXECUTE IMMEDIATE 'CREATE SEQUENCE userlogins5.comment_sequence_pkseq START WITH ' || seq_start || ' INCREMENT BY 1';
 END;
-DROP SEQUENCE commentsequence_pkseq;
+
+DROP SEQUENCE userlogins5.commentsequence_pkseq;
+
+GRANT SELECT ON userlogins5.comment_sequence_pkseq TO GUS_W;
+GRANT SELECT ON userlogins5.comment_sequence_pkseq TO GUS_R;
 ----
 
 
@@ -140,10 +233,12 @@ link:{curDir}/search/commentstableid.txt[External References]
 
 [source, sql]
 ----
-RENAME userlogins5.commentstableid TO comment_target;
-RENAME userlogins5.commentstableid_idx01 TO comment_target_idx01;
-RENAME userlogins5.commentstableid_ux01 TO comment_target_ux01;
-RENAME userlogins5.commentstableid_pkseq TO comment_target_pkseq;
+ALTER TABLE commentstableid
+  RENAME TO comment_target;
+ALTER INDEX commentstableid_idx01
+  RENAME TO comment_target_idx01;
+ALTER INDEX commentstableid_ux01
+  RENAME TO comment_target_ux01;
 ----
 
 
@@ -152,7 +247,7 @@ RENAME userlogins5.commentstableid_pkseq TO comment_target_pkseq;
 [source, sql]
 ----
 ALTER TABLE userlogins5.comment_target
-ADD is_primary_target NUMBER(1) DEFAULT 0 NOT NULL;
+  ADD is_primary_target NUMBER(1) DEFAULT 0 NOT NULL;
 ----
 
 
@@ -163,7 +258,7 @@ link:{curDir}/search/commentstableid.stable_id.txt[External References]
 [source, sql]
 ----
 ALTER TABLE userlogins5.comment_target
-RENAME COLUMN stable_id TO target_id;
+  RENAME COLUMN stable_id TO target_id;
 ----
 
 
@@ -174,8 +269,16 @@ link:{curDir}/search/commentstableid.comment_stable_id.txt[External References]
 [source, sql]
 ----
 ALTER TABLE userlogins5.comment_target
-DROP COLUMN comment_stable_id;
+  DROP COLUMN comment_stable_id;
 ----
+
+
+==== Drop `commentstableid_pkseq` Sequence
+
+[source, sql]
+---
+DROP SEQUENCE userlogins5.commentstableid_pkseq;
+---
 
 
 ==== Create new column Constraints
@@ -211,10 +314,11 @@ comment targets.
 DELETE FROM
   userlogins5.comment_target
 WHERE
-  (comment_id, stable_id) IN (
+  (comment_id, target_id) IN (
     SELECT comment_id, stable_id
     FROM userlogins5.comments
-  );
+  )
+;
 ----
 
 
@@ -224,18 +328,17 @@ WHERE
 ----
 INSERT INTO
   userlogins5.comment_target (
-    comment_target_link_id
-  , target_id
+    target_id
   , comment_id
   , is_primary_target
 )
 SELECT
-  (SELECT userlogins5.commentstableid_pkseq.nextval FROM dual)
-, stable_id
+  stable_id
 , comment_id
 , 1
 FROM
   userlogins5.comments
+;
 ----
 
 
@@ -331,7 +434,7 @@ ALTER TABLE comment_target_type
 [source, sql]
 ----
 DELETE FROM userlogins5.comment_target_type
-WHERE comment_target_type_id IN ('protein', 'phenotype');
+  WHERE comment_target_type_id IN ('protein', 'phenotype');
 ----
 
 
@@ -374,17 +477,27 @@ WARNING: TODO: references to this?
 
 [source, sql]
 ----
-RENAME userlogins5.targetcategory TO comment_target_category;
+ALTER TABLE userlogins5.targetcategory
+  RENAME TO comment_target_category;
 ----
 
 
-==== Rename `comment_target_id` column
+==== Rename `target_category_id` column
 
 WARNING: TODO: References?
 
 [source, sql]
 ----
-ALTER TABLE userlogins5.target_category
+ALTER TABLE userlogins5.comment_target_category
+  RENAME COLUMN target_category_id TO comment_target_category_id;
+----
+
+
+==== Rename `comment_target_id` column
+
+[source, sql]
+----
+ALTER TABLE userlogins5.comment_target_category
   RENAME COLUMN comment_target_id TO comment_target_type;
 ----
 
@@ -393,10 +506,10 @@ ALTER TABLE userlogins5.target_category
 
 [source, sql]
 ----
-ALTER TABLE userlogins5.target_category
+ALTER TABLE userlogins5.comment_target_category
   ADD CONSTRAINT comment_target_type_ref_fkey
-  FOREIGN KEY (comment_target_id)
-  REFERENCES userlogins5.comment_target_type (comment_target_type);
+  FOREIGN KEY (comment_target_type)
+  REFERENCES userlogins5.comment_target_type (comment_target_type_id);
 ----
 
 
@@ -437,9 +550,9 @@ OWNER	TRIGGER_NAME
 USERLOGINS5	COMMENTS_UPDATE
 USERLOGINS5	COMMENTS_DELETE
 USERLOGINS5	COMMENTS_INSERT
-USERLOGINS5	CSI_INSERT
-USERLOGINS5	CSI_DELETE
-USERLOGINS5	CSI_UPDATE
+DROP TRIGGER userlogins5.csi_insert;
+DROP TRIGGER userlogins5.csi_delete;
+DROP TRIGGER userlogins5.csi_update;
 USERLOGINS5	CMNTREF_MARKUPDATEDID
 USERLOGINS5	CMNTREF_SETUP
 USERLOGINS5	CMNTREF_MARKINSERTEDID
@@ -471,11 +584,6 @@ USERLOGINS5	COMMENTUSERS_UPDATE
 == Sequence
 
 . <<Drop `categories` Table>>
-. <<Rename `commentfile` table>>
-. <<Rename `commentreference` table>>
-. <<Rename `commentsequence` table>>
-. <<Rename `commenttargetcategory` table>>
-. <<Rename `comment_target` table>>
 . <<Rename `targetcategory` table>>
 . <<Add `is_primary_target` Column>>
 . <<Cleanup comment link conflicts>>
