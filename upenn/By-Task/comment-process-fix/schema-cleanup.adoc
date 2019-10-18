@@ -38,13 +38,10 @@ endif::[]
   link:{curDir}/search/comments.location_string.txt[External References].
 
 
-== Tables / Views
+== `comments` Table
 
 
-=== `comments` Table
-
-
-==== Drop the `comments.stable_id` column
+=== Drop the `comments.stable_id` column
 
 link:{curDir}/search/comments.stable_id.txt[External References]
 
@@ -55,7 +52,7 @@ ALTER TABLE userlogins5.comments
 ----
 
 
-==== Rename `comments.comment_target_id`
+=== Rename `comments.comment_target_id`
 
 link:{curDir}/search/comments.comment_target_id.txt[External References]
 
@@ -66,10 +63,10 @@ ALTER TABLE comments
 ----
 
 
-=== Comment to File Table
+== Comment to File Table
 
 
-==== Rename `commentfile` table
+=== Rename `commentfile` table
 
 link:{curDir}/search/commentfile.txt[External References]
 
@@ -78,7 +75,7 @@ ALTER TABLE userlogins5.commentfile
   RENAME TO comment_file;
 
 
-==== Rename Comment to File Indexes
+=== Rename Comment to File Indexes
 
 [WARNING]
 .Remaining TODOs
@@ -91,7 +88,7 @@ ALTER INDEX userlogins5.commentfile_idx01
   RENAME TO comment_file_idx01;
 
 
-==== Recreate Sequence `commentfile_pkseq`
+=== Recreate Sequence `commentfile_pkseq`
 
 [WARNING]
 .Remaining TODOs
@@ -117,10 +114,10 @@ GRANT SELECT ON userlogins5.comment_file_pkseq TO GUS_R;
 ----
 
 
-=== Comment to Reference Table
+== Comment to Reference Table
 
 
-==== Rename `commentreference` table
+=== Rename `commentreference` table
 
 link:{curDir}/search/commentreference.txt[External References]
 
@@ -129,7 +126,7 @@ ALTER TABLE userlogins5.commentreference
   RENAME TO comment_reference;
 
 
-==== Rename Comment Reference Indexes
+=== Rename Comment Reference Indexes
 
 [WARNING]
 .Remaining TODOs
@@ -147,7 +144,7 @@ ALTER INDEX userlogins5.commentreference_idx02
 ----
 
 
-==== Recreate Sequence `commentreference_pkseq`
+=== Recreate Sequence `commentreference_pkseq`
 
 [WARNING]
 .Remaining TODOs
@@ -173,10 +170,10 @@ GRANT SELECT ON userlogins5.comment_reference_pkseq TO GUS_R;
 ----
 
 
-=== Comment to Sequence Table
+== Comment to Sequence Table
 
 
-==== Rename `commentsequence` table
+=== Rename `commentsequence` table
 
 link:{curDir}/search/commentsequence.txt[External References]
 
@@ -185,7 +182,7 @@ ALTER TABLE userlogins5.commentsequence
   RENAME TO comment_sequence;
 
 
-==== Rename Comment to Sequence Indexes
+=== Rename Comment to Sequence Indexes
 
 [WARNING]
 .Remaining TODOs
@@ -198,7 +195,7 @@ ALTER INDEX userlogins5.commentsequence_idx01
   RENAME TO comment_sequence_idx01;
 
 
-==== Recreate Sequence `commentsequence_pkseq`
+=== Recreate Sequence `commentsequence_pkseq`
 
 [WARNING]
 .Remaining TODOs
@@ -224,10 +221,10 @@ GRANT SELECT ON userlogins5.comment_sequence_pkseq TO GUS_R;
 ----
 
 
-=== `commentstableid` Table
+== `commentstableid` Table
 
 
-==== Rename `commentstableid` table
+=== Rename `commentstableid` table
 
 link:{curDir}/search/commentstableid.txt[External References]
 
@@ -242,7 +239,7 @@ ALTER INDEX commentstableid_ux01
 ----
 
 
-==== Add `is_primary_target` Column
+=== Add `is_primary_target` Column
 
 [source, sql]
 ----
@@ -251,7 +248,7 @@ ALTER TABLE userlogins5.comment_target
 ----
 
 
-==== Rename `stable_id` column
+=== Rename `stable_id` column
 
 link:{curDir}/search/commentstableid.stable_id.txt[External References]
 
@@ -262,7 +259,7 @@ ALTER TABLE userlogins5.comment_target
 ----
 
 
-==== Drop `comment_stable_id`
+=== Drop `comment_stable_id`
 
 link:{curDir}/search/commentstableid.comment_stable_id.txt[External References]
 
@@ -273,7 +270,7 @@ ALTER TABLE userlogins5.comment_target
 ----
 
 
-==== Drop `commentstableid_pkseq` Sequence
+=== Drop `commentstableid_pkseq` Sequence
 
 [source, sql]
 ---
@@ -281,7 +278,7 @@ DROP SEQUENCE userlogins5.commentstableid_pkseq;
 ---
 
 
-==== Create new column Constraints
+=== Create new column Constraints
 
 Creates a unique index on the comment id value for records
 that have the `is_primary_target` flag set to `1`.
@@ -303,7 +300,7 @@ ON userlogins5.comment_target (
 ----
 
 
-==== Cleanup comment link conflicts
+=== Cleanup comment link conflicts
 
 There will likely be some junk records in the related record
 table that will cause conflicts when trying to copy over the
@@ -322,7 +319,7 @@ WHERE
 ----
 
 
-==== Insert primary comment targets
+=== Insert primary comment targets
 
 [source, sql]
 ----
@@ -342,14 +339,14 @@ FROM
 ----
 
 
-=== `commenttargetcategory` Table
+== `commenttargetcategory` Table
 
 NOTE: All columns in this table are currently indexed and
   this will still be the case after all the changes below.
   Not sure if we view that as a problem.
 
 
-==== Rename `commenttargetcategory` table
+=== Rename `commenttargetcategory` table
 
 link:{curDir}/search/commenttargetcategory.txt[External References]
 
@@ -364,17 +361,15 @@ ALTER INDEX commenttargetcategory_idx02
 ----
 
 
-==== Drop `commenttargetcategory_pkseq` Sequence
+=== Drop `commenttargetcategory_pkseq` Sequence
 
 link:{curDir}/search/commenttargetcategory_pkseq.txt[External References]
 
 [source, sql]
-----
 DROP SEQUENCE commentTargetCategory_pkseq;
-----
 
 
-==== Drop `comment_target_category_id` Column
+=== Drop `comment_target_category_id` Column
 
 Column is not used for anything other than inserts.
 
@@ -387,7 +382,7 @@ ALTER TABLE comment_comment_target_category
 ----
 
 
-==== Rename `target_category_id` Column
+=== Rename `target_category_id` Column
 
 link:{curDir}/search/commenttargetcategory.target_category_id.txt[External References]
 
@@ -398,10 +393,10 @@ ALTER TABLE comment_comment_target_category
 ----
 
 
-=== `comment_target` Table
+== `comment_target` Table
 
 
-==== Rename `comment_target` table
+=== Rename `comment_target` table
 
 link:{curDir}/search/comment_target.txt[External References]
 
@@ -411,7 +406,7 @@ RENAME userlogins5.comment_target TO comment_target_type;
 ----
 
 
-==== Rename `comment_target_id` column
+=== Rename `comment_target_id` column
 
 [source, sql]
 ----
@@ -420,7 +415,7 @@ ALTER TABLE comment_target_type
 ----
 
 
-==== Rename `comment_target_name` column
+=== Rename `comment_target_name` column
 
 [source, sql]
 ----
@@ -429,7 +424,7 @@ ALTER TABLE comment_target_type
 ----
 
 
-==== Cleanup dead data
+=== Cleanup dead data
 
 [source, sql]
 ----
@@ -438,7 +433,7 @@ DELETE FROM userlogins5.comment_target_type
 ----
 
 
-==== Insert missing target types
+=== Insert missing target types
 
 [source, sql]
 ----
@@ -455,10 +450,10 @@ INSERT INTO comment_target_type (comment_target_type_id, comment_target_type_nam
 ----
 
 
-=== `categories` Table
+== `categories` Table
 
 
-==== Drop `categories` Table
+=== Drop `categories` Table
 
 link:{curDir}/search/categories.txt[External References]
 
@@ -468,10 +463,10 @@ DROP TABLE userlogins5.categories;
 ----
 
 
-=== `targetcategory` Table
+== `targetcategory` Table
 
 
-==== Rename `targetcategory` table
+=== Rename `targetcategory` table
 
 WARNING: TODO: references to this?
 
@@ -482,7 +477,7 @@ ALTER TABLE userlogins5.targetcategory
 ----
 
 
-==== Rename `target_category_id` column
+=== Rename `target_category_id` column
 
 WARNING: TODO: References?
 
@@ -493,7 +488,7 @@ ALTER TABLE userlogins5.comment_target_category
 ----
 
 
-==== Rename `comment_target_id` column
+=== Rename `comment_target_id` column
 
 [source, sql]
 ----
@@ -502,7 +497,7 @@ ALTER TABLE userlogins5.comment_target_category
 ----
 
 
-==== Add foreign key to `comment_target_type`
+=== Add foreign key to `comment_target_type`
 
 [source, sql]
 ----
@@ -513,7 +508,7 @@ ALTER TABLE userlogins5.comment_target_category
 ----
 
 
-=== `mappedcomment` View
+== `mappedcomment` View
 
 [source, sql]
 ----
