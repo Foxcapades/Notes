@@ -46,10 +46,8 @@ endif::[]
 link:{curDir}/search/comments.stable_id.txt[External References]
 
 [source, sql]
-----
 ALTER TABLE userlogins5.comments
   DROP COLUMN stable_id;
-----
 
 
 === Rename `comments.comment_target_id`
@@ -57,10 +55,8 @@ ALTER TABLE userlogins5.comments
 link:{curDir}/search/comments.comment_target_id.txt[External References]
 
 [source, sql]
-----
 ALTER TABLE comments
   RENAME COLUMN comment_target_id TO comment_target_type;
-----
 
 
 == Comment to File Table
@@ -229,7 +225,7 @@ GRANT SELECT ON userlogins5.comment_sequence_pkseq TO GUS_R;
 link:{curDir}/search/commentstableid.txt[External References]
 
 [source, sql]
-ALTER TABLE commentstableid
+ALTER TABLE userlogins5.commentstableid
   RENAME TO comment_target;
 
 
@@ -243,10 +239,10 @@ ALTER TABLE commentstableid
 
 [source, sql]
 ----
-ALTER INDEX commentstableid_idx01
+ALTER INDEX userlogins5.commentstableid_idx01
   RENAME TO comment_target_idx01;
 
-ALTER INDEX commentstableid_ux01
+ALTER INDEX userlogins5.commentstableid_ux01
   RENAME TO comment_target_ux01;
 ----
 
@@ -270,7 +266,6 @@ ALTER TABLE userlogins5.comment_target
 
 [source, sql]
 DROP SEQUENCE userlogins5.commentstableid_pkseq;
-
 
 
 === Add `is_primary_target` Column
@@ -308,6 +303,22 @@ ON userlogins5.comment_target (
     ELSE NULL
   END
 );
+----
+
+
+=== Drop Comment to Comment Target Triggers
+
+[WARNING]
+.Remaining TODOs
+====
+* [ ] Find References
+====
+
+[source, sql]
+----
+DROP TRIGGER userlogins5.csi_insert;
+DROP TRIGGER userlogins5.csi_delete;
+DROP TRIGGER userlogins5.csi_update;
 ----
 
 
