@@ -75,9 +75,15 @@ link:{curDir}/search/commentfile.txt[External References]
 
 [source, sql]
 ----
-RENAME userlogins5.commentfile TO comment_file;
-RENAME userlogins5.commentfile_idx01 TO comment_file_idx01;
-RENAME userlogins5.commentfile_pkseq TO comment_file_pkseq;
+ALTER TABLE commentfile RENAME TO comment_file;
+ALTER INDEX commentfile_idx01 RENAME TO comment_file_idx01;
+DECLARE
+  seq_start NUMBER;
+BEGIN
+  SELECT commentfile_pkseq.nextval INTO seq_start FROM dual;
+  EXECUTE IMMEDIATE 'CREATE SEQUENCE comment_file_pkseq START WITH ' || seq_start || ' INCREMENT BY 1';
+END;
+DROP SEQUENCE commentfile_pkseq;
 ----
 
 
@@ -90,10 +96,17 @@ link:{curDir}/search/commentreference.txt[External References]
 
 [source, sql]
 ----
-RENAME userlogins5.commentreference TO comment_reference;
-RENAME userlogins5.commentreference_idx01 TO comment_reference_idx01;
-RENAME userlogins5.commentreference_idx02 TO comment_reference_idx02;
-RENAME userlogins5.commentreference_pkseq TO comment_reference_pkseq;
+
+ALTER TABLE commentreference RENAME TO comment_reference;
+ALTER INDEX commentreference_idx01 RENAME TO comment_reference_idx01;
+ALTER INDEX commentreference_idx02 RENAME TO comment_reference_idx02;
+DECLARE
+  seq_start NUMBER;
+BEGIN
+  SELECT commentreference_pkseq.nextval INTO seq_start FROM dual;
+  EXECUTE IMMEDIATE 'CREATE SEQUENCE comment_reference_pkseq START WITH ' || seq_start || ' INCREMENT BY 1';
+END;
+DROP SEQUENCE commentreference_pkseq;
 ----
 
 
@@ -106,9 +119,15 @@ link:{curDir}/search/commentsequence.txt[External References]
 
 [source, sql]
 ----
-RENAME userlogins5.commentsequence TO comment_sequence;
-RENAME userlogins5.commentsequence_idx01 TO comment_sequence_idx01;
-RENAME userlogins5.commentsequence_pkseq TO comment_sequence_pkseq;
+ALTER TABLE commentsequence RENAME TO comment_sequence;
+ALTER INDEX commentsequence_idx01 RENAME TO comment_sequence_idx01;
+DECLARE
+  seq_start NUMBER;
+BEGIN
+  SELECT commentsequence_pkseq.nextval INTO seq_start FROM dual;
+  EXECUTE IMMEDIATE 'CREATE SEQUENCE comment_sequence_pkseq START WITH ' || seq_start || ' INCREMENT BY 1';
+END;
+DROP SEQUENCE commentsequence_pkseq;
 ----
 
 
@@ -233,9 +252,12 @@ link:{curDir}/search/commenttargetcategory.txt[External References]
 
 [source, sql]
 ----
-RENAME userlogins5.commenttargetcategory TO comment_comment_target_category;
-RENAME userlogins5.commenttargetcategory_idx01 TO comment_comment_target_category_idx01;
-RENAME userlogins5.commenttargetcategory_idx02 TO comment_comment_target_category_idx02;
+ALTER TABLE commenttargetcategory
+  RENAME TO comment_comment_target_category;
+ALTER INDEX commenttargetcategory_idx01
+  RENAME TO comment_comment_target_category_idx01;
+ALTER INDEX commenttargetcategory_idx02
+  RENAME TO comment_comment_target_category_idx02;
 ----
 
 
@@ -245,7 +267,7 @@ link:{curDir}/search/commenttargetcategory_pkseq.txt[External References]
 
 [source, sql]
 ----
-DROP SEQUENCE userlogins5.commentTargetCategory_pkseq;
+DROP SEQUENCE commentTargetCategory_pkseq;
 ----
 
 
@@ -257,8 +279,8 @@ link:{curDir}/search/commenttargetcategory.comment_target_category_id.txt[Extern
 
 [source, sql]
 ----
-ALTER TABLE userlogins5.comment_comment_target_category
-DROP COLUMN comment_target_category_id;
+ALTER TABLE comment_comment_target_category
+  DROP COLUMN comment_target_category_id;
 ----
 
 
@@ -268,8 +290,8 @@ link:{curDir}/search/commenttargetcategory.target_category_id.txt[External Refer
 
 [source, sql]
 ----
-ALTER TABLE userlogins5.comment_comment_target_category
-RENAME COLUMN target_category_id TO comment_target_category_id.
+ALTER TABLE comment_comment_target_category
+  RENAME COLUMN target_category_id TO comment_target_category_id;
 ----
 
 
@@ -286,6 +308,24 @@ RENAME userlogins5.comment_target TO comment_target_type;
 ----
 
 
+==== Rename `comment_target_id` column
+
+[source, sql]
+----
+ALTER TABLE comment_target_type
+  RENAME COLUMN comment_target_id TO comment_target_type_id;
+----
+
+
+==== Rename `comment_target_name` column
+
+[source, sql]
+----
+ALTER TABLE comment_target_type
+  RENAME COLUMN comment_target_name TO comment_target_type_name;
+----
+
+
 ==== Cleanup dead data
 
 [source, sql]
@@ -299,18 +339,16 @@ WHERE comment_target_type_id IN ('protein', 'phenotype');
 
 [source, sql]
 ----
-INSERT INTO
-  userlogins5.comment_target_type (
-    comment_target_type_id
-  , comment_target_type_name
-  , require_location
-  )
-VALUES
-  ('snp',      'SNP',      0)
-, ('est',      'EST',      0)
-, ('assembly', 'Assembly', 0)
-, ('sage',     'Sage',     0)
-, ('orf',      'ORF',      0)
+INSERT INTO comment_target_type (comment_target_type_id, comment_target_type_name, require_location)
+  VALUES ('snp', 'SNP', 0);
+INSERT INTO comment_target_type (comment_target_type_id, comment_target_type_name, require_location)
+  VALUES ('est', 'EST', 0);
+INSERT INTO comment_target_type (comment_target_type_id, comment_target_type_name, require_location)
+  VALUES ('assembly', 'Assembly', 0);
+INSERT INTO comment_target_type (comment_target_type_id, comment_target_type_name, require_location)
+  VALUES ('sage', 'Sage', 0);
+INSERT INTO comment_target_type (comment_target_type_id, comment_target_type_name, require_location)
+  VALUES ('orf', 'ORF', 0);
 ----
 
 
