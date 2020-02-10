@@ -11,6 +11,27 @@ ifdef::env-github[]
 endif::[]
 :curDir: /upenn/By-Task/comment-process-fix
 
+== Goals
+
+=== Remove the `mappedcomment` table
+
+WARNING: TODO: what was the full scope of this?
+
+. Comments will be linked to targets exclusively through the
+  `comment_target` table, meaning no stable id column.
+. References to the `mappedcomment` table will be replaced with a join between
+  the app db data and the target table.
++
+NOTE: I believe there was some sort of mapping in the app database for
+      determining the correct stable id if the id has changed +
+      +
+      (struggling to remember if this is how it was supposed to go or if we were
+      gonna use some other mechanism for this...)
+
+=== Existing table cleanup
+
+WARNING: TODO: What was the extra stuff that was being cleaned up?
+
 == Questions / Concerns
 
 * [x] Code around sequences from table names?
@@ -479,7 +500,7 @@ link:{curDir}/search/categories.txt[External References]
 
 [source, sql]
 ----
-DROP TABLE userlogins5.categories; 
+DROP TABLE userlogins5.categories;
 ----
 
 
