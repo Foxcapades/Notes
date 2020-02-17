@@ -1,6 +1,6 @@
 Targets
-    Occurrences of 'categories' in Project
-Found Occurrences  (101 usages found)
+    Occurrences of 'categories' in project with mask '!*.owl,!*.csv,!*.txt,!*.dst'
+Found Occurrences  (102 usages found)
     api-common-model-model  (33 usages found)
         ApiCommonModel/Model/lib/sql  (17 usages found)
             migration_user_b21.sql  (1 usage found)
@@ -94,7 +94,7 @@ Found Occurrences  (101 usages found)
             Table.java  (1 usage found)
                 15 String CATEGORIES    = "TARGETCATEGORY";
     api-common-website-service  (3 usages found)
-        org.apidb.apicommon.service.services  (1 usage found)
+        org.apidb.apicommon.service.services.comments  (1 usage found)
             UserCommentsService.java  (1 usage found)
                 getCategoryList(String)  (1 usage found)
                     146 return getCommentFactory().getCategoriesByType(targetType);
@@ -102,7 +102,7 @@ Found Occurrences  (101 usages found)
             full-comment.json  (2 usages found)
                 27 "categories": {
                 127 "categories",
-    wdk-client  (8 usages found)
+    wdk-client  (9 usages found)
         WDKClient/Client/src/Controllers  (2 usages found)
             UserCommentShowController.tsx  (2 usages found)
                 270 key: 'categories',
@@ -117,6 +117,9 @@ Found Occurrences  (101 usages found)
                 92 .filter(({ display }) => userCommentGetResponse.categories.includes(display))
                 252 categoryIdOptions: await wdkService.getUserCommentCategories(
                 258 const categoryIdOptions = await wdkService.getUserCommentCategories(formValues.target.type);
+        WDKClient/Client/src/Utils  (1 usage found)
+            WdkUser.ts  (1 usage found)
+                240 categories: string[];
     wdk-model  (37 usages found)
         WDK/Model/data  (23 usages found)
             create_schema_userlogins5.sql  (7 usages found)

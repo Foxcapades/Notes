@@ -1,31 +1,85 @@
 Targets
-    Occurrences of 'target_Category_id' in Project
-Found Occurrences  (12 usages found)
-    api-common-data-load  (5 usages found)
-        ApiCommonData/Load/bin  (1 usage found)
-            loadBulkUserCommentsFromExcel.pl  (1 usage found)
+    Occurrences of 'target_Category_id' in project with mask '!*.owl,!*.csv,!*.txt,!*.dst,!*.md'
+Found Occurrences  (63 usages found)
+    api-common-data-load  (50 usages found)
+        ApiCommonData/Load/bin  (10 usages found)
+            loadBulkUserCommentsFromExcel.pl  (10 usages found)
+                196 my $target_category_id = 1;
+                198 $target_category_id = 1;
+                200 $target_category_id = 2;
+                202 $target_category_id = 3;
+                204 $target_category_id = 4;
+                206 $target_category_id = 5;
+                208 $target_category_id = 6;
+                210 $target_category_id = 3;
                 267        (comment_target_category_id, comment_id, target_category_id )
-        ApiCommonData/Load/lib/sql/comments  (4 usages found)
-            createCategoryTables.sql  (4 usages found)
+                268 VALUES (userlogins5.commentTargetCategory_pkseq.nextval, $comment_id, $target_category_id)
+        ApiCommonData/Load/lib/sql/comments  (40 usages found)
+            createCategoryTables.sql  (40 usages found)
+                16 target_category_id NUMBER(10) NOT NULL,
+                19 CONSTRAINT target_category_key PRIMARY KEY (target_category_id)
+                25 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(1, 'Gene Model', 'gene');
+                26 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(2, 'Name/Product', 'gene');
+                27 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(3, 'Function', 'gene');
+                28 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(4, 'Expression', 'gene');
+                29 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(5, 'Sequence', 'gene');
+                30 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(6, 'Phenotype', 'gene');
+                32 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(7, 'Characteristics/Overview', 'isolate');
+                33 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(8, 'Reference', 'isolate');
+                34 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(9, 'Sequence', 'isolate');
+                36 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(10, 'New Gene', 'genome');
+                37 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(11, 'New Feature', 'genome');
+                38 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(12, 'Centromere', 'genome');
+                39 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(13, 'Genomic Assembly', 'genome');
+                40 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(14, 'Sequence', 'genome');
+                41 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(33, 'Phenotype', 'genome');
+                43 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(15, 'Characteristics/Overview', 'snp');
+                44 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(16, 'Gene Context', 'snp');
+                45 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(17, 'Strains', 'snp');
+                47 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(19, 'Characteristics/Overview', 'est');
+                48 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(20, 'Alignment', 'est');
+                49 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(21, 'Sequence', 'est');
+                50 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(22, 'Assembly', 'est');
+                52 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(23, 'Characteristics/Overview', 'assembly');
+                53 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(24, 'Consensus Sequence', 'assembly');
+                54 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(25, 'Alignment', 'assembly');
+                55 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(26, 'Included Est''s', 'assembly');
+                57 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(27, 'Characteristics/Overview ', 'sage');
+                58 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(28, 'Gene', 'sage');
+                59 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(29, 'Alignment', 'sage');
+                60 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(30, 'Library Counts', 'sage');
+                62 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(31, 'Alignment', 'orf');
+                63 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(32, 'Sequence', 'orf');
+                68 comment_target_category_id NUMBER(10) NOT NULL,
                 70 target_category_id NUMBER(10) NOT NULL,
+                71 CONSTRAINT comment_target_category_key PRIMARY KEY (comment_target_category_id),
                 74 CONSTRAINT target_category_id_fkey FOREIGN KEY (target_category_id)
                 75 REFERENCES userlogins5.TargetCategory (target_category_id)
                 79 CREATE INDEX userlogins5.CommentTargetCategory_idx02 ON userlogins5.CommentTargetCategory (target_category_id);
-    api-common-model-model  (5 usages found)
-        ApiCommonModel/Model/lib/sql  (2 usages found)
-            migration_comment_b21.sql  (2 usages found)
+    api-common-model-model  (9 usages found)
+        ApiCommonModel/Model/lib/sql  (4 usages found)
+            migration_comment_b21.sql  (4 usages found)
+                47 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id)
+                48 SELECT target_category_id, category, comment_target_id
                 52 INSERT INTO userlogins5.CommentTargetCategory (comment_target_category_id, comment_id, target_category_id)
                 53 SELECT comment_target_category_id, comment_id, target_category_id
         ApiCommonModel/Model/lib/wdk/model/records  (1 usage found)
             commentTableQueries.xml  (1 usage found)
                 303                  AND t.target_category_id = tc.target_category_id
-        mappers.migrate5  (2 usages found)
-            MigrateCommentsMapper.xml  (2 usages found)
+        mappers.migrate5  (4 usages found)
+            MigrateCommentsMapper.xml  (4 usages found)
+                52 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id)
+                53 SELECT target_category_id, category, comment_target_id
                 58 INSERT INTO userlogins5.CommentTargetCategory (comment_target_category_id, comment_id, target_category_id)
                 59 SELECT comment_target_category_id, comment_id, target_category_id
-    api-common-website-model  (2 usages found)
-        org.apidb.apicommon.model.comment.repo  (2 usages found)
-            Column.java  (1 usage found)
+    api-common-website-model  (3 usages found)
+        org.apidb.apicommon.model.comment.repo  (3 usages found)
+            Column.java  (2 usages found)
+                68 String ID = "target_category_id",
                 80 CATEGORY_ID = "target_category_id";
             InsertCategoryQuery.java  (1 usage found)
                 18 "COMMENT_TARGET_CATEGORY_ID, COMMENT_ID, TARGET_CATEGORY_ID) " +
+    wdk-model  (1 usage found)
+        WDK/Model/data  (1 usage found)
+            update_sequences.pl  (1 usage found)
+                73 $seqInfo ->{16} [1] = 'COMMENT_TARGET_CATEGORY_ID';

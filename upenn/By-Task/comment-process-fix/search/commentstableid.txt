@@ -1,11 +1,11 @@
 Targets
-    Occurrences of 'commentstableid' in Project
+    Occurrences of 'commentstableid' in project with mask '!*.owl,!*.csv,!*.txt,!*.dst,!*.md'
 Found Occurrences  (61 usages found)
     api-common-data-load  (28 usages found)
         ApiCommonData/Load/bin  (4 usages found)
             deleteComment  (2 usages found)
                 137     delete from comments2.CommentStableId where comment_id = $commentId
-                140 print "CommentStableId: $rows row(s)\n";
+                140   print "CommentStableId: $rows row(s)\n";
             loadBulkUserCommentsFromExcel.pl  (2 usages found)
                 280 INSERT INTO userlogins5.CommentStableId 
                 282 VALUES (userlogins5.commentStableId_pkseq.nextval, '$gene', $comment_id)
@@ -32,8 +32,8 @@ Found Occurrences  (61 usages found)
             createCommentTriggers.sql  (5 usages found)
                 99 from userlogins5.CommentStableId
                 107 after insert on userlogins5.CommentStableId
-                137 after delete on userlogins5.CommentStableId
-                152 after update on userlogins5.CommentStableId
+                138 after delete on userlogins5.CommentStableId
+                153 after update on userlogins5.CommentStableId
                 192 -- This is an issue for CommentReference (unlike Comments and CommentStableId) because
             reindexComments.sql  (2 usages found)
                 4 -- in sync with the Comments / CommentStableId / CommentReference tables, which
@@ -44,8 +44,8 @@ Found Occurrences  (61 usages found)
                 28 my $stmt = $dbh->prepare(<<SQL) or die "preparing new-CommentStableId query";
                 34 $stmt->execute() or die "executing new-CommentStableId query";
                 37 while (my ($commentStableId, $stableId, $commentId, $headline) = $stmt->fetchrow_array()) {
-                39 print STDERR "\nRecords added to CommentStableId to link old comments to new IDs:\n\n";
-                45 printf STDERR "%12d %12d %-48s %-100s\n", $commentStableId, $commentId, $stableId, $headline;
+                39     print STDERR "\nRecords added to CommentStableId to link old comments to new IDs:\n\n";
+                45   printf STDERR "%12d %12d %-48s %-100s\n", $commentStableId, $commentId, $stableId, $headline;
         ApiCommonModel/Model/lib/sql  (3 usages found)
             migration_comment_b21.sql  (3 usages found)
                 1 DELETE FROM userlogins5.CommentStableId;

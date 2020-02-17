@@ -1,5 +1,5 @@
 Targets
-    Occurrences of 'comment_target_category_id' in Project
+    Occurrences of 'comment_target_category_id' in project with mask '!*.owl,!*.csv,!*.txt,!*.dst,!*.md'
 Found Occurrences  (9 usages found)
     api-common-data-load  (3 usages found)
         ApiCommonData/Load/bin  (1 usage found)

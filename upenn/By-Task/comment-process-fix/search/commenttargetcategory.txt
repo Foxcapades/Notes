@@ -1,11 +1,11 @@
 Targets
-    Occurrences of 'commenttargetcategory' in Project
+    Occurrences of 'commenttargetcategory' in project with mask '!*.owl,!*.csv,!*.txt,!*.dst,!*.md'
 Found Occurrences  (35 usages found)
     api-common-data-load  (19 usages found)
         ApiCommonData/Load/bin  (4 usages found)
             deleteComment  (2 usages found)
                 131     delete from comments2.CommentTargetCategory where comment_id = $commentId
-                134 print "CommentTargetCategory: $rows row(s)\n";
+                134   print "CommentTargetCategory: $rows row(s)\n";
             loadBulkUserCommentsFromExcel.pl  (2 usages found)
                 266 INSERT INTO userlogins5.CommentTargetCategory 
                 268 VALUES (userlogins5.commentTargetCategory_pkseq.nextval, $comment_id, $target_category_id)

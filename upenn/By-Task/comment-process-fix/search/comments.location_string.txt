@@ -1,6 +1,6 @@
 Targets
-    Occurrences of 'location_string' in Project
-Found Occurrences  (28 usages found)
+    Occurrences of 'location_string' in project with mask '!*.owl,!*.csv,!*.txt,!*.dst,!*.md'
+Found Occurrences  (13 usages found)
     api-common-data-load  (6 usages found)
         ApiCommonData/Load/bin  (4 usages found)
             loadBulkUserCommentsFromExcel.pl  (4 usages found)
@@ -25,34 +25,9 @@ Found Occurrences  (28 usages found)
         org.apidb.apicommon.model.comment.repo  (1 usage found)
             Column.java  (1 usage found)
                 12 LOCATION          = "location_string",
-    api-common-website-site  (3 usages found)
-        ApiCommonWebsite/Site/cgi-bin  (1 usage found)
-            gbrowse_img_1_64  (1 usage found)
-                461 $feature->can('location_string') ? $feature->location_string
+    api-common-website-site  (2 usages found)
         ApiCommonWebsite/Site/webapp/wdkCustomization/jsp/records  (2 usages found)
             UserCommentsRecordClasses.GeneCommentsClass.jsp  (1 usage found)
                 24 <c:set var="locations" value="${row['location_string'].value}"/>
             UserCommentsRecordClasses.SequenceCommentsClass.jsp  (1 usage found)
                 24 <c:set var="locations" value="${row['location_string'].value}"/>
-    workspace  (14 usages found)
-        GBrowse/src/BioGraphics/Bio/Graphics  (3 usages found)
-            Feature.pm  (3 usages found)
-                306 =head2 location_string
-                308  Title   : location_string
-                309  Usage   : my $string = $seqfeature->location_string()
-        GBrowse/src/BioPerl/Bio/SeqFeature  (4 usages found)
-            Lite.pm  (4 usages found)
-                588 =head2 location_string
-                590  Title   : location_string
-                591  Usage   : my $string = $seqfeature->location_string()
-                604 sub location_string {
-        GBrowse/src/BioPerl/Bio/Tools  (7 usages found)
-            Genemark.pm  (2 usages found)
-                304 my $location_string = join('..', $start, $end);
-                306 my $location_obj = $location_factory->from_string($location_string);
-            Glimmer.pm  (5 usages found)
-                540 my $location_string;
-                544 $location_string = "join($start..$seqlength,1..$end)";
-                547 $location_string = "join($start..1,$seqlength..$end)";
-                555 $location_string = "$start..$end";
-                559 $location_factory->from_string($location_string);

@@ -1,5 +1,5 @@
 Targets
-    Occurrences of 'commentsequence' in Project
+    Occurrences of 'commentsequence' in project with mask '!*.owl,!*.csv,!*.txt,!*.dst,!*.md'
 Found Occurrences  (38 usages found)
     api-common-data-load  (17 usages found)
         ApiCommonData/Load/bin  (3 usages found)

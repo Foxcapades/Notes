@@ -1,5 +1,5 @@
 Targets
-    Occurrences of 'comment_stable_id' in Project
+    Occurrences of 'comment_stable_id' in project with mask '!*.owl,!*.csv,!*.txt,!*.dst,!*.md'
 Found Occurrences  (14 usages found)
     api-common-data-load  (4 usages found)
         ApiCommonData/Load/bin  (1 usage found)

@@ -1,8 +1,8 @@
 Targets
-    Occurrences of 'comment_target_id' in Project
+    Occurrences of 'comment_target_id' in project with mask '!*.owl,!*.csv,!*.txt,!*.dst,!*.md'
 Found Occurrences  (103 usages found)
-    api-common-data-load  (50 usages found)
-        ApiCommonData/Load/bin  (5 usages found)
+    api-common-data-load  (53 usages found)
+        ApiCommonData/Load/bin  (7 usages found)
             deleteComment  (1 usage found)
                 72     select stable_id, project_name, project_version, organism, comment_target_id, is_visible, email, headline, content
             extractCommentsFile  (2 usages found)
@@ -10,9 +10,11 @@ Found Occurrences  (103 usages found)
                 77   AND c.comment_target_id = 'gene'
             extractTextSearchFiles  (1 usage found)
                 89 #    AND c.comment_target_id='gene'
-            loadBulkUserCommentsFromExcel.pl  (1 usage found)
+            loadBulkUserCommentsFromExcel.pl  (3 usages found)
+                42 my $comment_target_id = 'gene';
                 230                                 comment_target_id, stable_id, conceptual, 
-        ApiCommonData/Load/lib/sql/comments  (45 usages found)
+                235         '$comment_target_id', '$source_id', 0, 
+        ApiCommonData/Load/lib/sql/comments  (46 usages found)
             createCategoryTables.sql  (33 usages found)
                 18 comment_target_id varchar(20) NOT NULL,
                 25 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id) VALUES(1, 'Gene Model', 'gene');
@@ -55,14 +57,15 @@ Found Occurrences  (103 usages found)
                 114 REFERENCES userlogins5.comment_target (comment_target_id),
                 123 ON userlogins5.comments (project_name, is_visible, stable_id, comment_id, comment_target_id, review_status_id);
                 182 select c.comment_id, c.user_id, c.email, c.comment_date, c.comment_target_id,
-            createCommentTriggers.sql  (4 usages found)
-                40 if :new.comment_target_id = 'gene' and :new.is_visible = 1 then
-                77 if :new.comment_target_id = 'gene' and :new.is_visible = 1 then
-                130 and comment_target_id = 'gene'
-                182 and comment_target_id = 'gene'
+            createCommentTriggers.sql  (5 usages found)
+                52 values (:new.comment_id, :new.comment_target_id, :new.stable_id, :new.project_name, :new.organism,
+                93 values (:new.comment_id, :new.comment_target_id, :new.stable_id, :new.project_name, :new.organism,
+                97 select :new.comment_id, :new.comment_target_id, stable_id, :new.project_name, :new.organism,
+                126 select comment_id, comment_target_id, :new.stable_id, project_name, organism,
+                179 select comment_id, comment_target_id, :new.stable_id, project_name, organism,
             reindexComments.sql  (1 usage found)
                 32 where c.comment_target_id = 'gene'
-    api-common-model-model  (40 usages found)
+    api-common-model-model  (36 usages found)
         ApiCommonModel/Model/bin  (1 usage found)
             buildAnnotationChangeTT  (1 usage found)
                 396     --     and comment_target_id = 'gene'
@@ -74,8 +77,8 @@ Found Occurrences  (103 usages found)
                 27 SELECT comment_id, prev_comment_id, prev_schema, user_id, email, comment_date, comment_target_id, stable_id, conceptual, 
                 47 INSERT INTO userlogins5.TargetCategory (target_category_id, category, comment_target_id)
                 48 SELECT target_category_id, category, comment_target_id
-        ApiCommonModel/Model/lib/wdk/model/records  (25 usages found)
-            commentTableQueries.xml  (18 usages found)
+        ApiCommonModel/Model/lib/wdk/model/records  (20 usages found)
+            commentTableQueries.xml  (14 usages found)
                 69 <column name="comment_target_id"/>
                 100                   SELECT c.comment_target_id, c.project_name as project_id, c.comment_id,
                 140                     AND c.comment_target_id = 'gene'
@@ -90,21 +93,19 @@ Found Occurrences  (103 usages found)
                 331                      apicomm.comment_target_id,
                 335                    (SELECT c.comment_target_id, c.project_name as project_id, c.comment_id, c.stable_id, c.comment_date, c.headline,
                 352                       AND c.comment_target_id = 'genome'
-                380             <column name="comment_target_id"/>
-                384                      apicomm.comment_target_id,
-                388                    (SELECT c.comment_target_id, c.project_name as project_id, c.comment_id, c.stable_id, 
-                403                       AND c.comment_target_id = 'phenotype'
             geneRecord.xml  (2 usages found)
-                1420 <columnAttribute name="comment_target_id" internal="true"/>
-                1464 <columnAttribute name="comment_target_id" internal="true"/>
-            geneTableQueries.xml  (3 usages found)
+                1441 <columnAttribute name="comment_target_id" internal="true"/>
+                1485 <columnAttribute name="comment_target_id" internal="true"/>
+            geneTableQueries.xml  (2 usages found)
                 1627                      WHERE cmnts.comment_target_id = 'gene'
-                1878                     AND c.comment_target_id = 'gene'
-                2066                        WHERE comment_target_id = 'gene'
+                2088                        WHERE comment_target_id = 'gene'
             genomicRecords.xml  (1 usage found)
-                966 <columnAttribute name="comment_target_id" internal="true"/> 
+                968 <columnAttribute name="comment_target_id" internal="true"/> 
             popsetRecords.xml  (1 usage found)
-                508 <columnAttribute name="comment_target_id" internal="true"/>
+                505 <columnAttribute name="comment_target_id" internal="true"/>
+        ApiCommonModel/Model/lib/wdk/model/siteSearch  (1 usage found)
+            geneTableQueries.xml  (1 usage found)
+                256                  WHERE cmnts.comment_target_id = 'gene'
         ApiCommonModel/Model/lib/xml/tuningManager  (2 usages found)
             apiTuningManager.xml  (2 usages found)
                 818                     and comment_target_id = 'gene')
@@ -139,11 +140,12 @@ Found Occurrences  (103 usages found)
                 30 <c:when test="${comment_target_id eq 'gene'}">
                 36 <c:when test="${comment_target_id eq 'isolate'}">
                 55 <p align="center">${comment_target_id} comments on <a href="${returnUrl}">${stable_id}</a></p>
-    api-common-websvc-wsfplugin  (2 usages found)
-        org.apidb.apicomplexa.wsfplugin.textsearch  (2 usages found)
+    api-common-websvc-wsfplugin  (3 usages found)
+        org.apidb.apicomplexa.wsfplugin.textsearch  (3 usages found)
             KeywordSearchPlugin.java  (1 usage found)
                 getCommentQuery(String, String, boolean, boolean, boolean)  (1 usage found)
                     198 recordTypePredicate = " AND comment_target_id = '" + recordType + "'\n";
-            TranscriptSearchPlugin.java  (1 usage found)
-                getCommentQuery(String, boolean, boolean, String)  (1 usage found)
+            TranscriptSearchPlugin.java  (2 usages found)
+                getCommentQuery(String, boolean, boolean, String)  (2 usages found)
                     185 recordTypePredicate = " AND comment_target_id = 'gene' \n";
+                    211 + "               AND c.comment_target_id = 'gene'\n"

@@ -1,5 +1,5 @@
 Targets
-    Occurrences of 'comment_target' in Project
+    Occurrences of 'comment_target' in project with mask '!*.owl,!*.csv,!*.txt,!*.dst,!*.md'
 Found Occurrences  (12 usages found)
     api-common-data-load  (5 usages found)
         ApiCommonData/Load/lib/sql/comments  (5 usages found)

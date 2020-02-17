@@ -1,17 +1,13 @@
 Targets
-    Occurrences of 'commentfile' in Project
-Found Occurrences  (64 usages found)
-    api-common-data-load  (19 usages found)
-        ApiCommonData/Load/bin  (5 usages found)
+    Occurrences of 'commentfile' in project with mask '!*.owl,!*.csv,!*.txt,!*.dst,!*.md'
+Found Occurrences  (59 usages found)
+    api-common-data-load  (17 usages found)
+        ApiCommonData/Load/bin  (3 usages found)
             deleteComment  (2 usages found)
                 149     delete from comments2.CommentFile where comment_id = $commentId
-                152 print "CommentFile: $rows row(s)\n";
-            extractTextSearchFiles  (1 usage found)
-                105 die "extractTextSearchFiles can't get comments through db_link.  Use extractCommentFile."
+                152   print "CommentFile: $rows row(s)\n";
             loadBulkUserCommentsFromExcel.pl  (1 usage found)
                 360 INSERT INTO userlogins5.CommentFile (file_id, name, notes, comment_id)
-            makeCommentFile  (1 usage found)
-                266 my $usage = "usage:  perl makeCommentFile \\
         ApiCommonData/Load/lib/sql/comments  (14 usages found)
             createCategoryTables.sql  (9 usages found)
                 2 DROP TABLE userlogins5.CommentFile;
@@ -48,12 +44,7 @@ Found Occurrences  (64 usages found)
             MigrateCommentsMapper.xml  (2 usages found)
                 76 INSERT INTO userlogins5.CommentFile (file_id, name, notes, comment_id)
                 78 FROM comments2.CommentFile
-    api-common-website-model  (26 usages found)
-        org.apidb.apicommon.controller  (2 usages found)
-            BBCode.java  (2 usages found)
-                main(String[])  (2 usages found)
-                    121 File commentFile = new File(args[0]);
-                    125 BufferedReader br = new BufferedReader(new FileReader(commentFile));
+    api-common-website-model  (24 usages found)
         org.apidb.apicommon.model.comment.repo  (24 usages found)
             BaseCommentQuery.java  (3 usages found)
                 rs2Attachment(ResultSet)  (3 usages found)
@@ -92,10 +83,6 @@ Found Occurrences  (64 usages found)
                 10 String COMMENT_TO_FILE      = "COMMENTFILE";
             UpdateAttachmentQuery.java  (1 usage found)
                 19 private static final String SQL = "UPDATE %s.COMMENTFILE SET COMMENT_ID = ?" +
-    api-common-website-site  (1 usage found)
-        ApiCommonWebsite/Site/bin  (1 usage found)
-            extractTextSearchFiles  (1 usage found)
-                84 die "extractTextSearchFiles can't get comments through db_link.  Use extractCommentFile."
     wdk-model  (7 usages found)
         WDK/Model/data  (7 usages found)
             create_schema_userlogins5_south_sequences.sql  (3 usages found)

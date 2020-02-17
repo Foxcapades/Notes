@@ -1,11 +1,11 @@
 Targets
-    Occurrences of 'commentreference' in Project
+    Occurrences of 'commentreference' in project with mask '!*.owl,!*.csv,!*.txt,!*.dst,!*.md'
 Found Occurrences  (69 usages found)
     api-common-data-load  (37 usages found)
         ApiCommonData/Load/bin  (10 usages found)
             deleteComment  (2 usages found)
                 143     delete from comments2.CommentReference where comment_id = $commentId
-                146 print "CommentReference: $rows row(s)\n";
+                146   print "CommentReference: $rows row(s)\n";
             loadBulkUserCommentsFromExcel.pl  (8 usages found)
                 297 INSERT INTO userlogins5.CommentReference 
                 299 VALUES (userlogins5.commentReference_pkseq.nextval, $id, 'pubmed', $comment_id)
