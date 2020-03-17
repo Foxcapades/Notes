@@ -3,11 +3,15 @@ Targets
 Found Occurrences  (59 usages found)
     api-common-data-load  (17 usages found)
         ApiCommonData/Load/bin  (3 usages found)
+
+            TODO: What is comment 2
             deleteComment  (2 usages found)
                 149     delete from comments2.CommentFile where comment_id = $commentId
                 152   print "CommentFile: $rows row(s)\n";
+
             loadBulkUserCommentsFromExcel.pl  (1 usage found)
                 360 INSERT INTO userlogins5.CommentFile (file_id, name, notes, comment_id)
+
         ApiCommonData/Load/lib/sql/comments  (14 usages found)
             createCategoryTables.sql  (9 usages found)
                 2 DROP TABLE userlogins5.CommentFile;
