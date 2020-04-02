@@ -1,0 +1,82 @@
+= 500s
+:source-highlighter: pygments
+Elizabeth Paige Harper <foxcapade@gmail.com>
+
+== Get requests
+
+=== qa.clinepidb.org
+
+. https://qa.clinepidb.org/ce.b12/service/record-types/dataset/searches/DatasetsByReferenceName/
++
+[source, java]
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.WdkModelException: Unable to create cache.
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+----
+
+
+=== qa.microbiomedb.org
+
+. https://qa.microbiomedb.org/mbio.b17/service/record-types/dataset/searches/DatasetsByReferenceName/
++
+[source, java]
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.WdkModelException: Unable to create cache.
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+----
+. https://qa.microbiomedb.org/mbio.b17/service/record-types/sample/searches/SamplesByMetadata_CrossStudy_RSRC/
++
+[source, java]
+----
+org.gusdb.fgputil.validation.ValidObjectWrappingException: Attempt made to wrap invalid or unvalidated object in a Valid wrapper.  This is almost certainly a bug in the calling code.
+{"keyedErrors":{"metadata_datasets":["Invalid value 'DS_a4a0757110'."]},"validationLevel":"RUNNABLE","validationStatus":"FAILED","errors":[]}
+        at org.gusdb.fgputil.validation.ValidObjectFactory.getRunnable(ValidObjectFactory.java:125)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildRunnable(QueryInstanceSpecBuilder.java:48)
+        at org.gusdb.wdk.model.query.param.FilterParamNew.getOntology(FilterParamNew.java:416)
+        at org.gusdb.wdk.model.query.param.FilterParamNewStableValue.validateSyntaxAndSemantics(FilterParamNewStableValue.java:102)
+        at org.gusdb.wdk.model.query.param.FilterParamNew.validateValue(FilterParamNew.java:1003)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:618)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+----
+. https://qa.microbiomedb.org/mbio.b17/service/record-types/sample/searches/SamplesByTaxonAbundance_CrossStudy_RSRC/
++
+[source, java]
+----
+org.gusdb.fgputil.validation.ValidObjectWrappingException: Attempt made to wrap invalid or unvalidated object in a Valid wrapper.  This is almost certainly a bug in the calling code.
+{"keyedErrors":{"metadata_datasets":["Invalid value 'DS_a4a0757110'."]},"validationLevel":"RUNNABLE","validationStatus":"FAILED","errors":[]}
+        at org.gusdb.fgputil.validation.ValidObjectFactory.getRunnable(ValidObjectFactory.java:125)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildRunnable(QueryInstanceSpecBuilder.java:48)
+        at org.gusdb.wdk.model.query.param.FilterParamNew.getOntology(FilterParamNew.java:416)
+        at org.gusdb.wdk.model.query.param.FilterParamNewStableValue.validateSyntaxAndSemantics(FilterParamNewStableValue.java:102)
+        at org.gusdb.wdk.model.query.param.FilterParamNew.validateValue(FilterParamNew.java:1003)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:618)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+----
