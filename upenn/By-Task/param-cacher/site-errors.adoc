@@ -1,7 +1,7 @@
 = Search Detail `GET` Errors
 Elizabeth Paige Harper <foxcapade@gmail.com>
 
-== All ApiDB sites
+== All ApiComm sites
 
 . /service/record-types/transcript/searches/GenesByMetabolicPathwayIDKegg/
 . /service/record-types/transcript/searches/GenesByRNASeqUserDataset/
