@@ -1,82 +1,66 @@
-= 500s
-:source-highlighter: pygments
+= Search Detail `GET` Errors
 Elizabeth Paige Harper <foxcapade@gmail.com>
 
-== Get requests
+== All ApiDB sites
 
-=== qa.clinepidb.org
+. /service/record-types/transcript/searches/GenesByMetabolicPathwayIDKegg/
+. /service/record-types/transcript/searches/GenesByRNASeqUserDataset/
+. /service/record-types/transcript/searches/GenesByUserDatasetAntisense/
+
+
+== qa.clinepidb.org
 
 . https://qa.clinepidb.org/ce.b12/service/record-types/dataset/searches/DatasetsByReferenceName/
-+
-[source, java]
-----
-org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.WdkModelException: Unable to create cache.
-        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
-        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
-        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
-        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
-        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
-        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
-        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
-        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
-        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
-        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
-----
 
 
-=== qa.microbiomedb.org
+== qa.fungidb.org
+
+.Timeouts
+. https://qa.fungidb.org/fungidb.b47/service/record-types/popsetSequence/searches/PopsetByTaxon/
+
+
+== qa.giardiadb.org
+
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/est/searches/EstsByText/
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/compound/searches/CompoundsByText/
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/genomic-sequence/searches/GenomicSeqByText/
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/popsetSequence/searches/PopsetIsolatesByText/
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/transcript/searches/GenesByText/
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/organism/searches/OrganismsByText/
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/pathway/searches/PathwaysByText/
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/dataset/searches/DatasetsByText/
+
+
+== qa.microbiomedb.org
 
 . https://qa.microbiomedb.org/mbio.b17/service/record-types/dataset/searches/DatasetsByReferenceName/
-+
-[source, java]
-----
-org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.WdkModelException: Unable to create cache.
-        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
-        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
-        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
-        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
-        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
-        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
-        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
-        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
-        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
-        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
-----
 . https://qa.microbiomedb.org/mbio.b17/service/record-types/sample/searches/SamplesByMetadata_CrossStudy_RSRC/
-+
-[source, java]
-----
-org.gusdb.fgputil.validation.ValidObjectWrappingException: Attempt made to wrap invalid or unvalidated object in a Valid wrapper.  This is almost certainly a bug in the calling code.
-{"keyedErrors":{"metadata_datasets":["Invalid value 'DS_a4a0757110'."]},"validationLevel":"RUNNABLE","validationStatus":"FAILED","errors":[]}
-        at org.gusdb.fgputil.validation.ValidObjectFactory.getRunnable(ValidObjectFactory.java:125)
-        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildRunnable(QueryInstanceSpecBuilder.java:48)
-        at org.gusdb.wdk.model.query.param.FilterParamNew.getOntology(FilterParamNew.java:416)
-        at org.gusdb.wdk.model.query.param.FilterParamNewStableValue.validateSyntaxAndSemantics(FilterParamNewStableValue.java:102)
-        at org.gusdb.wdk.model.query.param.FilterParamNew.validateValue(FilterParamNew.java:1003)
-        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:618)
-        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
-        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
-        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
-        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
-        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
-        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
-----
 . https://qa.microbiomedb.org/mbio.b17/service/record-types/sample/searches/SamplesByTaxonAbundance_CrossStudy_RSRC/
-+
-[source, java]
-----
-org.gusdb.fgputil.validation.ValidObjectWrappingException: Attempt made to wrap invalid or unvalidated object in a Valid wrapper.  This is almost certainly a bug in the calling code.
-{"keyedErrors":{"metadata_datasets":["Invalid value 'DS_a4a0757110'."]},"validationLevel":"RUNNABLE","validationStatus":"FAILED","errors":[]}
-        at org.gusdb.fgputil.validation.ValidObjectFactory.getRunnable(ValidObjectFactory.java:125)
-        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildRunnable(QueryInstanceSpecBuilder.java:48)
-        at org.gusdb.wdk.model.query.param.FilterParamNew.getOntology(FilterParamNew.java:416)
-        at org.gusdb.wdk.model.query.param.FilterParamNewStableValue.validateSyntaxAndSemantics(FilterParamNewStableValue.java:102)
-        at org.gusdb.wdk.model.query.param.FilterParamNew.validateValue(FilterParamNew.java:1003)
-        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:618)
-        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
-        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
-        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
-        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
-        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
-        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
-----
+
+
+== qa.piroplasmadb.org
+
+.502 Errors?
+. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/boolean_question_DynSpanRecordClasses_DynSpanRecordClass/
+. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/single_record_question_DynSpanRecordClasses_DynSpanRecordClass/
+. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/DynSpansBySourceId/
+. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/DynSpansByMotifSearch/
+. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/DynSpansBySpanLogic/
+. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/DynSpansByWeightFilter/
+. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/DynSpanRecordClasses_DynSpanRecordClassByRealtimeBasket/
+
+
+== qa.plasmodb.org
+
+. https://qa.plasmodb.org/plasmo.b47/service/record-types/transcript/searches/GenesByAntibodyArraypfal3D7_microarrayAntibody__ICEMR_RSRC/
+
+
+== qa.schistodb.net
+
+. https://qa.schistodb.net/schisto.b47/service/record-types/est/searches/EstsBySimilarity/
+
+
+== qa.vectorbase.org
+
+. https://qa.vectorbase.org/vectorbase.b47/service/record-types/transcript/searches/GenesByMicroarrayaaegLVP_AGWG_microarrayExpression_E-TABM-385_developmental_series_RSRC/
+. https://qa.vectorbase.org/vectorbase.b47/service/record-types/transcript/searches/GenesByMicroarrayaaegLVP_AGWG_microarrayExpression_E-TABM-385_developmental_series_RSRCPercentile/
