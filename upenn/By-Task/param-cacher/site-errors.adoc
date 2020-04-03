@@ -246,14 +246,24 @@ NOTE: Doesn't seem to happen consistently... Need to test again with cleared cac
 
 == qa.giardiadb.org
 
-. https://qa.giardiadb.org/giardiadb.b47/service/record-types/est/searches/EstsByText/
-. https://qa.giardiadb.org/giardiadb.b47/service/record-types/compound/searches/CompoundsByText/
-. https://qa.giardiadb.org/giardiadb.b47/service/record-types/genomic-sequence/searches/GenomicSeqByText/
-. https://qa.giardiadb.org/giardiadb.b47/service/record-types/popsetSequence/searches/PopsetIsolatesByText/
-. https://qa.giardiadb.org/giardiadb.b47/service/record-types/transcript/searches/GenesByText/
-. https://qa.giardiadb.org/giardiadb.b47/service/record-types/organism/searches/OrganismsByText/
-. https://qa.giardiadb.org/giardiadb.b47/service/record-types/pathway/searches/PathwaysByText/
-. https://qa.giardiadb.org/giardiadb.b47/service/record-types/dataset/searches/DatasetsByText/
+
+NOTE: All of these fail on Q1 but not Q2
+
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/est/searches/EstsByText/
+
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/compound/searches/CompoundsByText/
+
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/genomic-sequence/searches/GenomicSeqByText/
+
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/popsetSequence/searches/PopsetIsolatesByText/
+
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/transcript/searches/GenesByText/
+
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/organism/searches/OrganismsByText/
+
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/pathway/searches/PathwaysByText/
+
+. https://q1.giardiadb.org/giardiadb.b47/service/record-types/dataset/searches/DatasetsByText/
 
 
 == qa.microbiomedb.org
