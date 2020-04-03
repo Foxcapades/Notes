@@ -4,13 +4,236 @@ Elizabeth Paige Harper <foxcapade@gmail.com>
 == All ApiComm sites
 
 . /service/record-types/transcript/searches/GenesByMetabolicPathwayIDKegg/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.WdkModelException: Unable to create cache.
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)                            
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)                                                  
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)                          
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)              
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)  
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.WdkModelException: Unable to create cache.
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.WdkModelException: Unable to create cache.
+        at org.gusdb.wdk.model.query.SqlQueryInstance.createCacheTableAndInsertResult(SqlQueryInstance.java:98)
+        at org.gusdb.wdk.model.dbms.ResultFactory.createCache(ResultFactory.java:91)
+        at org.gusdb.wdk.model.dbms.ResultFactory.cacheResults(ResultFactory.java:67)
+        at org.gusdb.wdk.model.query.QueryInstance.getInstanceInfo(QueryInstance.java:133)
+        at org.gusdb.wdk.model.query.QueryInstance.getCachedResults(QueryInstance.java:224)
+        at org.gusdb.wdk.model.query.SqlQueryInstance.getResults(SqlQueryInstance.java:41)
+        at org.gusdb.wdk.model.query.QueryInstance.getResults(QueryInstance.java:202)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:130)
+Caused by: java.sql.SQLException: Failed to run SQL (name=PathwayVQ.MetbPathwayIDsWithGenesList__create-cache-table):
+CREATE TABLE QueryResult107 AS SELECT 107 AS wdk_instance_id, rownum AS wdk_row_id,  f.* FROM (SELECT o.*  FROM (SELECT DISTINCT n.description ||' ('|| n.name||')' as display,
+                            n.name as term,
+                            n.network_context_id as internal
+            FROM apidb.NetworkContext n, dots.Transcript t,  dots.translatedAaFeature taf,  
+               sres.enzymeClass ec, dots.aaSequenceEnzymeClass asec, ApidbTuning.GeneAttributes ga, 
+               apidb.networkrelationship nr, apidb.networkrelationshiptype nrt, ApiDB.NetworkRelContext nrc, 
+               ApiDB.NetworkRelContextLink nrl, apidb.networknode nn
+            WHERE ga.na_feature_id  = t.parent_id
+            AND t.na_feature_id = taf.na_feature_id
+            AND taf.aa_sequence_id = asec.aa_sequence_id
+            AND asec.enzyme_class_id = ec.enzyme_class_id
+            AND nn.display_label = ec.ec_number
+            AND nr.associated_node_id = nn.network_node_id
+            AND nrc.network_relationship_id = nr.network_relationship_id
+            AND nrt.network_relationship_type_id = nrc.network_relationship_type_id
+            AND nrl.network_rel_context_id = nrc.network_rel_context_id
+            AND nrc.network_context_id = n.network_context_id
+) o) f
+Connect URL: jdbc:oracle:oci:@plas047n
+User: WEBWWW
+        at org.gusdb.fgputil.db.SqlUtils.executeUpdate(SqlUtils.java:256)
+        at org.gusdb.wdk.model.query.SqlQueryInstance.createCacheTableAndInsertResult(SqlQueryInstance.java:93)
+Caused by: java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+
+        at oracle.jdbc.driver.T2CConnection.checkError(T2CConnection.java:1136)
+        at oracle.jdbc.driver.T2CConnection.checkError(T2CConnection.java:1039)
+        at oracle.jdbc.driver.T2CStatement.executeForDescribe(T2CStatement.java:920)
+        at oracle.jdbc.driver.T2CStatement.executeForRows(T2CStatement.java:1163)
+        at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1119)
+        at oracle.jdbc.driver.OracleStatement.executeUpdateInternal(OracleStatement.java:1661)
+        at oracle.jdbc.driver.OracleStatement.executeLargeUpdate(OracleStatement.java:1626)
+        at oracle.jdbc.driver.OracleStatement.executeUpdate(OracleStatement.java:1613)
+        at oracle.jdbc.driver.OracleStatementWrapper.executeUpdate(OracleStatementWrapper.java:282)
+        at org.apache.commons.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:322)
+        at org.apache.commons.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:322)
+        at org.gusdb.fgputil.db.SqlUtils.executeUpdate(SqlUtils.java:251)
+Caused by: Error : 942, Position : 639, Sql = CREATE TABLE QueryResult107 AS SELECT 107 AS wdk_instance_id, rownum AS wdk_row_id,  f.* FROM (SELECT o.*  FROM (SELECT DISTINCT n.description ||' ('|| n.name||')' as display,
+                            n.name as term,
+                            n.network_context_id as internal
+            FROM apidb.NetworkContext n, dots.Transcript t,  dots.translatedAaFeature taf,  
+               sres.enzymeClass ec, dots.aaSequenceEnzymeClass asec, ApidbTuning.GeneAttributes ga, 
+               apidb.networkrelationship nr, apidb.networkrelationshiptype nrt, ApiDB.NetworkRelContext nrc, 
+               ApiDB.NetworkRelContextLink nrl, apidb.networknode nn
+            WHERE ga.na_feature_id  = t.parent_id
+            AND t.na_feature_id = taf.na_feature_id
+            AND taf.aa_sequence_id = asec.aa_sequence_id
+            AND asec.enzyme_class_id = ec.enzyme_class_id
+            AND nn.display_label = ec.ec_number
+            AND nr.associated_node_id = nn.network_node_id
+            AND nrc.network_relationship_id = nr.network_relationship_id
+            AND nrt.network_relationship_type_id = nrc.network_relationship_type_id
+            AND nrl.network_rel_context_id = nrc.network_rel_context_id
+            AND nrc.network_context_id = n.network_context_id
+) o) f, OriginalSql = CREATE TABLE QueryResult107 AS SELECT 107 AS wdk_instance_id, rownum AS wdk_row_id,  f.* FROM (SELECT o.*  FROM (SELECT DISTINCT n.description ||' ('|| n.name||')' as display,
+                            n.name as term,
+                            n.network_context_id as internal
+            FROM apidb.NetworkContext n, dots.Transcript t,  dots.translatedAaFeature taf,  
+               sres.enzymeClass ec, dots.aaSequenceEnzymeClass asec, ApidbTuning.GeneAttributes ga, 
+               apidb.networkrelationship nr, apidb.networkrelationshiptype nrt, ApiDB.NetworkRelContext nrc, 
+               ApiDB.NetworkRelContextLink nrl, apidb.networknode nn
+            WHERE ga.na_feature_id  = t.parent_id
+            AND t.na_feature_id = taf.na_feature_id
+            AND taf.aa_sequence_id = asec.aa_sequence_id
+            AND asec.enzyme_class_id = ec.enzyme_class_id
+            AND nn.display_label = ec.ec_number
+            AND nr.associated_node_id = nn.network_node_id
+            AND nrc.network_relationship_id = nr.network_relationship_id
+            AND nrt.network_relationship_type_id = nrc.network_relationship_type_id
+            AND nrl.network_rel_context_id = nrc.network_rel_context_id
+            AND nrc.network_context_id = n.network_context_id
+) o) f, Error Msg = ORA-00942: table or view does not exist
+
+        at oracle.jdbc.driver.T2CConnection.checkError(T2CConnection.java:1145)
+----
+
 . /service/record-types/transcript/searches/GenesByRNASeqUserDataset/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.RnaSeqUserDataset] of FlatVocabParam [userDatasetParams.rna_seq_dataset].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.RnaSeqUserDataset] of FlatVocabParam [userDatasetParams.rna_seq_dataset].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:131)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.RnaSeqUserDataset] of FlatVocabParam [userDatasetParams.rna_seq_dataset].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . /service/record-types/transcript/searches/GenesByUserDatasetAntisense/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.StrandedRnaSeqUserDataset] of FlatVocabParam [userDatasetParams.rna_seq_dataset].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.StrandedRnaSeqUserDataset] of FlatVocabParam [userDatasetParams.rna_seq_dataset].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:131)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.StrandedRnaSeqUserDataset] of FlatVocabParam [userDatasetParams.rna_seq_dataset].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
 
 
 == qa.clinepidb.org
 
 . https://qa.clinepidb.org/ce.b12/service/record-types/dataset/searches/DatasetsByReferenceName/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.WdkModelException: Unable to create cache.
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.WdkModelException: Unable to create cache.
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.WdkModelException: Unable to create cache.
+        at org.gusdb.wdk.model.query.SqlQueryInstance.createCacheTableAndInsertResult(SqlQueryInstance.java:98)
+        at org.gusdb.wdk.model.dbms.ResultFactory.createCache(ResultFactory.java:91)
+        at org.gusdb.wdk.model.dbms.ResultFactory.cacheResults(ResultFactory.java:67)
+        at org.gusdb.wdk.model.query.QueryInstance.getInstanceInfo(QueryInstance.java:133)
+        at org.gusdb.wdk.model.query.QueryInstance.getCachedResults(QueryInstance.java:224)
+        at org.gusdb.wdk.model.query.SqlQueryInstance.getResults(SqlQueryInstance.java:41)
+        at org.gusdb.wdk.model.query.QueryInstance.getResults(QueryInstance.java:202)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:130)
+Caused by: java.sql.SQLException: Failed to run SQL (name=datasetVQ.taxon__create-cache-table):
+CREATE TABLE QueryResult157 AS SELECT 157 AS wdk_instance_id, rownum AS wdk_row_id,  f.* FROM (SELECT o.*  FROM (select distinct organism_name as term, oa.COMPONENT_TAXON_ID as internal
+from apidbtuning.organismattributes oa
+, apidbtuning.datasetnametaxon dnt
+where dnt.taxon_id = oa.COMPONENT_TAXON_ID
+union
+select 'any', -1 from dual
+) o) f
+Connect URL: jdbc:oracle:oci:@clin047n
+User: WEBWWW
+        at org.gusdb.fgputil.db.SqlUtils.executeUpdate(SqlUtils.java:256)
+        at org.gusdb.wdk.model.query.SqlQueryInstance.createCacheTableAndInsertResult(SqlQueryInstance.java:93)
+        ... 71 more
+Caused by: java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+
+        at oracle.jdbc.driver.T2CConnection.checkError(T2CConnection.java:1136)
+        at oracle.jdbc.driver.T2CConnection.checkError(T2CConnection.java:1039)
+        at oracle.jdbc.driver.T2CStatement.executeForDescribe(T2CStatement.java:920)
+        at oracle.jdbc.driver.T2CStatement.executeForRows(T2CStatement.java:1163)
+        at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1119)
+        at oracle.jdbc.driver.OracleStatement.executeUpdateInternal(OracleStatement.java:1661)
+        at oracle.jdbc.driver.OracleStatement.executeLargeUpdate(OracleStatement.java:1626)
+        at oracle.jdbc.driver.OracleStatement.executeUpdate(OracleStatement.java:1613)
+        at oracle.jdbc.driver.OracleStatementWrapper.executeUpdate(OracleStatementWrapper.java:282)
+        at org.apache.commons.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:322)
+        at org.apache.commons.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:322)
+        at org.gusdb.fgputil.db.SqlUtils.executeUpdate(SqlUtils.java:251)
+Caused by: Error : 942, Position : 203, Sql = CREATE TABLE QueryResult157 AS SELECT 157 AS wdk_instance_id, rownum AS wdk_row_id,  f.* FROM (SELECT o.*  FROM (select distinct organism_name as term, oa.COMPONENT_TAXON_ID as internal
+from apidbtuning.organismattributes oa
+, apidbtuning.datasetnametaxon dnt
+where dnt.taxon_id = oa.COMPONENT_TAXON_ID
+union
+select 'any', -1 from dual
+) o) f, OriginalSql = CREATE TABLE QueryResult157 AS SELECT 157 AS wdk_instance_id, rownum AS wdk_row_id,  f.* FROM (SELECT o.*  FROM (select distinct organism_name as term, oa.COMPONENT_TAXON_ID as internal
+from apidbtuning.organismattributes oa
+, apidbtuning.datasetnametaxon dnt
+where dnt.taxon_id = oa.COMPONENT_TAXON_ID
+union
+select 'any', -1 from dual
+) o) f, Error Msg = ORA-00942: table or view does not exist
+
+        at oracle.jdbc.driver.T2CConnection.checkError(T2CConnection.java:1145)
+----
 
 
 == qa.fungidb.org
@@ -38,21 +261,28 @@ Elizabeth Paige Harper <foxcapade@gmail.com>
 . https://qa.microbiomedb.org/mbio.b17/service/record-types/sample/searches/SamplesByTaxonAbundance_CrossStudy_RSRC/
 
 
-== qa.piroplasmadb.org
-
-.502 Errors?
-. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/boolean_question_DynSpanRecordClasses_DynSpanRecordClass/
-. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/single_record_question_DynSpanRecordClasses_DynSpanRecordClass/
-. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/DynSpansBySourceId/
-. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/DynSpansByMotifSearch/
-. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/DynSpansBySpanLogic/
-. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/DynSpansByWeightFilter/
-. https://qa.piroplasmadb.org/piro.b47/service/record-types/genomic-segment/searches/DynSpanRecordClasses_DynSpanRecordClassByRealtimeBasket/
-
 
 == qa.plasmodb.org
 
 . https://qa.plasmodb.org/plasmo.b47/service/record-types/transcript/searches/GenesByAntibodyArraypfal3D7_microarrayAntibody__ICEMR_RSRC/
++
+.Error
+----
+org.gusdb.fgputil.validation.ValidObjectWrappingException: Attempt made to wrap invalid or unvalidated object in a Valid wrapper.  This is almost certainly a bug in the calling code.
+{"keyedErrors":{"metadata_datasets":["Invalid value 'pfal3D7_microarrayAntibody__ICEMR_RSRC'."]},"validationLevel":"RUNNABLE","validationStatus":"FAILED","errors":[]}
+        at org.gusdb.fgputil.validation.ValidObjectFactory.getRunnable(ValidObjectFactory.java:125)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildRunnable(QueryInstanceSpecBuilder.java:48)
+        at org.gusdb.wdk.model.query.param.FilterParamNew.getOntology(FilterParamNew.java:416)
+        at org.gusdb.wdk.model.query.param.FilterParamNewStableValue.validateSyntaxAndSemantics(FilterParamNewStableValue.java:102)
+        at org.gusdb.wdk.model.query.param.FilterParamNew.validateValue(FilterParamNew.java:1003)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:618)           
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+----
 
 
 == qa.schistodb.net
