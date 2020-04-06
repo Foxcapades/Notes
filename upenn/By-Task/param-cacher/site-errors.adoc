@@ -359,7 +359,6 @@ Caused by: org.gusdb.wdk.model.WdkModelException: Could not get uncached results
         at org.gusdb.wdk.model.query.SqlQueryInstance.getResults(SqlQueryInstance.java:42)
         at org.gusdb.wdk.model.query.QueryInstance.getResults(QueryInstance.java:202)
         at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:130)
-        ... 66 more
 Caused by: java.sql.SQLException: Failed to run query:
 SELECT o.*  FROM (--force 'Choose...' line to be first, then order by display name
    select  term, internal, display from (
@@ -390,7 +389,6 @@ Caused by: java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not e
         at org.apache.commons.dbcp2.DelegatingStatement.executeQuery(DelegatingStatement.java:310)
         at org.apache.commons.dbcp2.DelegatingStatement.executeQuery(DelegatingStatement.java:310)
         at org.gusdb.fgputil.db.SqlUtils.executeQuery(SqlUtils.java:368)
-        ... 70 more
 Caused by: Error : 942, Position : 482, Sql = SELECT o.*  FROM (--force 'Choose...' line to be first, then order by display name
    select  term, internal, display from (
      select 0 as term, 0 as internal, 'Choose a Gene List Dataset, if you have any' as display, 1 as num from dual
@@ -418,7 +416,6 @@ Caused by: Error : 942, Position : 482, Sql = SELECT o.*  FROM (--force 'Choose.
 ) o, Error Msg = ORA-00942: table or view does not exist
 
         at oracle.jdbc.driver.T2CConnection.checkError(T2CConnection.java:1145)
-        ... 79 more
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/popsetSequence/searches/PopsetByStudy/
@@ -1829,196 +1826,728 @@ Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item re
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Glass_EssentialTranscription_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Glass_EssentialTranscription_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Glass_EssentialTranscription_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqncraOR74A_Glass_Starch_Degradation_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Glass_Starch_Degradation_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Glass_Starch_Degradation_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Glass_Starch_Degradation_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqpsojP6497_Chen_mycelium_stage_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.psojP6497_Chen_mycelium_stage_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.psojP6497_Chen_mycelium_stage_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.psojP6497_Chen_mycelium_stage_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqspom972h_Barraud_DicerProtein_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.spom972h_Barraud_DicerProtein_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.spom972h_Barraud_DicerProtein_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.spom972h_Barraud_DicerProtein_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqpramPr-102_Kasuga_SporulationsMedia_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.pramPr-102_Kasuga_SporulationsMedia_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.pramPr-102_Kasuga_SporulationsMedia_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.pramPr-102_Kasuga_SporulationsMedia_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqpsojP6497_Tyler_Infection_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.psojP6497_Tyler_Infection_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.psojP6497_Tyler_Infection_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.psojP6497_Tyler_Infection_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqrdelRA99-880_Stajich_HyphalGrowth_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.rdelRA99-880_Stajich_HyphalGrowth_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.rdelRA99-880_Stajich_HyphalGrowth_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.rdelRA99-880_Stajich_HyphalGrowth_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqspom972h_Vjestica_GeneExprProfile_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.spom972h_Vjestica_GeneExprProfile_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.spom972h_Vjestica_GeneExprProfile_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.spom972h_Vjestica_GeneExprProfile_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqspom972h_Pleiss_AlternativeSplicing_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.spom972h_Pleiss_AlternativeSplicing_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.spom972h_Pleiss_AlternativeSplicing_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.spom972h_Pleiss_AlternativeSplicing_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqanidFGSCA4_Glass_CellulaseSecretion_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.anidFGSCA4_Glass_CellulaseSecretion_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.anidFGSCA4_Glass_CellulaseSecretion_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.anidFGSCA4_Glass_CellulaseSecretion_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqanidFGSCA4_Lind_SecondaryMetabolism_Anid_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.anidFGSCA4_Lind_SecondaryMetabolism_Anid_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.anidFGSCA4_Lind_SecondaryMetabolism_Anid_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.anidFGSCA4_Lind_SecondaryMetabolism_Anid_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqanigCBS513-88_Archer_LignocelluloseResponses_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.anigCBS513-88_Archer_LignocelluloseResponses_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.anigCBS513-88_Archer_LignocelluloseResponses_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.anigCBS513-88_Archer_LignocelluloseResponses_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqafumAf293_Lind_SecondaryMetabolism_Afum_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.afumAf293_Lind_SecondaryMetabolism_Afum_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.afumAf293_Lind_SecondaryMetabolism_Afum_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.afumAf293_Lind_SecondaryMetabolism_Afum_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqcposSilveira_Narra_WT_CBS1mutant_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cposSilveira_Narra_WT_CBS1mutant_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cposSilveira_Narra_WT_CBS1mutant_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cposSilveira_Narra_WT_CBS1mutant_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqscerS288c_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.scerS288c_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.scerS288c_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.scerS288c_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqcneoH99_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqncraOR74A_Wang_fiveCropStraws_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Wang_fiveCropStraws_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Wang_fiveCropStraws_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Wang_fiveCropStraws_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqntetFGSC2508_Lehr_Transcriptome_SexualDevelopment_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ntetFGSC2508_Lehr_Transcriptome_SexualDevelopment_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ntetFGSC2508_Lehr_Transcriptome_SexualDevelopment_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ntetFGSC2508_Lehr_Transcriptome_SexualDevelopment_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqcneoH99_Chen_HumanMeningitis_Single_End_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_Chen_HumanMeningitis_Single_End_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_Chen_HumanMeningitis_Single_End_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_Chen_HumanMeningitis_Single_End_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqmory70-15_Islam_WheatBlast_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.mory70-15_Islam_WheatBlast_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.mory70-15_Islam_WheatBlast_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.mory70-15_Islam_WheatBlast_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqmoryBR32_Islam_WheatBlast_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.moryBR32_Islam_WheatBlast_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.moryBR32_Islam_WheatBlast_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.moryBR32_Islam_WheatBlast_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqcneoH99_Chen_HumanMeningitis_Paired_End_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_Chen_HumanMeningitis_Paired_End_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_Chen_HumanMeningitis_Paired_End_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_Chen_HumanMeningitis_Paired_End_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqanidFGSCA4_Sibthorp_Growth_Conditions_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.anidFGSCA4_Sibthorp_Growth_Conditions_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.anidFGSCA4_Sibthorp_Growth_Conditions_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.anidFGSCA4_Sibthorp_Growth_Conditions_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqncraOR74A_Sachs_Light_Regulated_Genes_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Sachs_Light_Regulated_Genes_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Sachs_Light_Regulated_Genes_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Sachs_Light_Regulated_Genes_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqncraOR74A_Townsend_Transcriptome_SexualDevelopment_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Townsend_Transcriptome_SexualDevelopment_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Townsend_Transcriptome_SexualDevelopment_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_Townsend_Transcriptome_SexualDevelopment_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqndisFGSC8579_Lehr_Transcriptome_SexualDevelopment_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ndisFGSC8579_Lehr_Transcriptome_SexualDevelopment_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ndisFGSC8579_Lehr_Transcriptome_SexualDevelopment_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ndisFGSC8579_Lehr_Transcriptome_SexualDevelopment_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqcneoH99_HD_Genotypes_Comparison_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_HD_Genotypes_Comparison_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_HD_Genotypes_Comparison_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_HD_Genotypes_Comparison_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqfgraPH-1_Xu_Stage_Specific_rnaSeq_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.fgraPH-1_Xu_Stage_Specific_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.fgraPH-1_Xu_Stage_Specific_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.fgraPH-1_Xu_Stage_Specific_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqfoxyrace1_Guo_banana_pathogen_rnaSeq_RSRC/
