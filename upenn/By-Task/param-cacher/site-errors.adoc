@@ -261,98 +261,1707 @@ Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item re
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withChromosomesESTsAssems] of FlatVocabParam [organismParams.organismSinglePick].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withChromosomesESTsAssems] of FlatVocabParam [organismParams.organismSinglePick].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withChromosomesESTsAssems] of FlatVocabParam [organismParams.organismSinglePick].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/est/searches/EstsByLibrary/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.EstLibraries] of FlatVocabParam [sharedParams.libraryId].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.EstLibraries] of FlatVocabParam [sharedParams.libraryId].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.EstLibraries] of FlatVocabParam [sharedParams.libraryId].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/genomic-segment/searches/DynSpansBySourceId/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.ChromosomeOrderNum] of FlatVocabParam [sharedParams.chromosomeOptional].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.ChromosomeOrderNum] of FlatVocabParam [sharedParams.chromosomeOptional].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.ChromosomeOrderNum] of FlatVocabParam [sharedParams.chromosomeOptional].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByUserDatasetGeneList/
 +
 .Error
 ----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.WdkModelException: Could not get uncached results from DB.
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.WdkModelException: Could not get uncached results from DB.
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:131)
+        ... 64 more
+Caused by: org.gusdb.wdk.model.WdkModelException: Could not get uncached results from DB.
+        at org.gusdb.wdk.model.query.SqlQueryInstance.getUncachedResults(SqlQueryInstance.java:74)
+        at org.gusdb.wdk.model.query.SqlQueryInstance.getResults(SqlQueryInstance.java:42)
+        at org.gusdb.wdk.model.query.QueryInstance.getResults(QueryInstance.java:202)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:130)
+        ... 66 more
+Caused by: java.sql.SQLException: Failed to run query:
+SELECT o.*  FROM (--force 'Choose...' line to be first, then order by display name
+   select  term, internal, display from (
+     select 0 as term, 0 as internal, 'Choose a Gene List Dataset, if you have any' as display, 1 as num from dual
+     UNION
+     select distinct a.user_dataset_id as term, a.user_dataset_id as internal, name as display, 2 as num
+      from ApiDbUserDatasets.installedUserDataset i, ApiDbUserDatasets.UserDatasetAccessControl a,
+         ApiDbUserDatasets.UD_GeneId g
+      where a.user_id = 509318853
+      and a.user_dataset_id = i.user_dataset_id
+      and g.user_dataset_id = i.user_dataset_id
+      and (i.is_invalid is null or i.is_invalid = 0)
+   ) order by num, display
+) o
+Connect URL: unknown
+User: unknown
+        at org.gusdb.fgputil.db.SqlUtils.executeQuery(SqlUtils.java:379)
+        at org.gusdb.wdk.model.query.SqlQueryInstance.getUncachedResults(SqlQueryInstance.java:65)
+        ... 69 more
+Caused by: java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
 
+        at oracle.jdbc.driver.T2CConnection.checkError(T2CConnection.java:1136)
+        at oracle.jdbc.driver.T2CConnection.checkError(T2CConnection.java:1039)
+        at oracle.jdbc.driver.T2CStatement.executeForDescribe(T2CStatement.java:920)
+        at oracle.jdbc.driver.OracleStatement.executeMaybeDescribe(OracleStatement.java:904)
+        at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1082)
+        at oracle.jdbc.driver.OracleStatement.executeQuery(OracleStatement.java:1276)
+        at oracle.jdbc.driver.OracleStatementWrapper.executeQuery(OracleStatementWrapper.java:366)
+        at org.apache.commons.dbcp2.DelegatingStatement.executeQuery(DelegatingStatement.java:310)
+        at org.apache.commons.dbcp2.DelegatingStatement.executeQuery(DelegatingStatement.java:310)
+        at org.gusdb.fgputil.db.SqlUtils.executeQuery(SqlUtils.java:368)
+        ... 70 more
+Caused by: Error : 942, Position : 482, Sql = SELECT o.*  FROM (--force 'Choose...' line to be first, then order by display name
+   select  term, internal, display from (
+     select 0 as term, 0 as internal, 'Choose a Gene List Dataset, if you have any' as display, 1 as num from dual
+     UNION
+     select distinct a.user_dataset_id as term, a.user_dataset_id as internal, name as display, 2 as num
+      from ApiDbUserDatasets.installedUserDataset i, ApiDbUserDatasets.UserDatasetAccessControl a,
+         ApiDbUserDatasets.UD_GeneId g
+      where a.user_id = 509318853
+      and a.user_dataset_id = i.user_dataset_id
+      and g.user_dataset_id = i.user_dataset_id
+      and (i.is_invalid is null or i.is_invalid = 0)
+   ) order by num, display
+) o, OriginalSql = SELECT o.*  FROM (--force 'Choose...' line to be first, then order by display name
+   select  term, internal, display from (
+     select 0 as term, 0 as internal, 'Choose a Gene List Dataset, if you have any' as display, 1 as num from dual
+     UNION
+     select distinct a.user_dataset_id as term, a.user_dataset_id as internal, name as display, 2 as num
+      from ApiDbUserDatasets.installedUserDataset i, ApiDbUserDatasets.UserDatasetAccessControl a,
+         ApiDbUserDatasets.UD_GeneId g
+      where a.user_id = 509318853
+      and a.user_dataset_id = i.user_dataset_id
+      and g.user_dataset_id = i.user_dataset_id
+      and (i.is_invalid is null or i.is_invalid = 0)
+   ) order by num, display
+) o, Error Msg = ORA-00942: table or view does not exist
+
+        at oracle.jdbc.driver.T2CConnection.checkError(T2CConnection.java:1145)
+        ... 79 more
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/popsetSequence/searches/PopsetByStudy/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [studyVQ.withPopsets] of FlatVocabParam [popsetParams.study].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [studyVQ.withPopsets] of FlatVocabParam [popsetParams.study].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [studyVQ.withPopsets] of FlatVocabParam [popsetParams.study].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/popsetSequence/searches/PopsetByTaxon/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [strainVQ.withPopsets] of FlatVocabParam [popsetParams.strain].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [strainVQ.withPopsets] of FlatVocabParam [popsetParams.strain].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [strainVQ.withPopsets] of FlatVocabParam [popsetParams.strain].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByPhenotype/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withPhenotype] of FlatVocabParam [organismParams.organismwithPhenotype].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withPhenotype] of FlatVocabParam [organismParams.organismwithPhenotype].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withPhenotype] of FlatVocabParam [organismParams.organismwithPhenotype].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByPhenotype_phenotype_QIAGEN_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withPhenotype_phenotype_QIAGEN_RSRC] of FlatVocabParam [organismParams.organismwithPhenotype].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withPhenotype_phenotype_QIAGEN_RSRC] of FlatVocabParam [organismParams.organismwithPhenotype].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withPhenotype_phenotype_QIAGEN_RSRC] of FlatVocabParam [organismParams.organismwithPhenotype].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByPhenotype_fgraPH-1_phenotype_Fusarium_Pheno_RSRC/
 +
 .Error
 ----
-
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withPhenotype_fgraPH-1_phenotype_Fusarium_Pheno_RSRC] of FlatVocabParam [organismParams.organismwithPhenotype].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withPhenotype_fgraPH-1_phenotype_Fusarium_Pheno_RSRC] of FlatVocabParam [organismParams.organismwithPhenotype].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withPhenotype_fgraPH-1_phenotype_Fusarium_Pheno_RSRC] of FlatVocabParam [organismParams.organismwithPhenotype].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
 ----
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByPhenotype_phenotype_DATA_RSRC/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withPhenotype_phenotype_DATA_RSRC] of FlatVocabParam [organismParams.organismwithPhenotype].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withPhenotype_phenotype_DATA_RSRC] of FlatVocabParam [organismParams.organismwithPhenotype].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withPhenotype_phenotype_DATA_RSRC] of FlatVocabParam [organismParams.organismwithPhenotype].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByLocation/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.ChromosomeOrderNum] of FlatVocabParam [sharedParams.chromosomeOptional].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.ChromosomeOrderNum] of FlatVocabParam [sharedParams.chromosomeOptional].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.ChromosomeOrderNum] of FlatVocabParam [sharedParams.chromosomeOptional].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/InternalGenesByEcNumber/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.allWithEC] of FlatVocabParam [organismParams.organism].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.allWithEC] of FlatVocabParam [organismParams.organism].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.allWithEC] of FlatVocabParam [organismParams.organism].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByEcNumber/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withEC] of FlatVocabParam [organismParams.organism].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withEC] of FlatVocabParam [organismParams.organism].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withEC] of FlatVocabParam [organismParams.organism].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByHighThroughputPhenotyping/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.HornRNAiSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.HornRNAiSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.HornRNAiSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByBindingSiteFeature/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.tfBindingSite] of FlatVocabParam [organismParams.organism].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.tfBindingSite] of FlatVocabParam [organismParams.organism].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.tfBindingSite] of FlatVocabParam [organismParams.organism].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByMicroarraypfal3D7_microarrayExpression_Derisi_HB3_TimeSeries_RSRC/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.PFTimeSeriesFoldChangeProfileSet] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.PFTimeSeriesFoldChangeProfileSet] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.PFTimeSeriesFoldChangeProfileSet] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByCentromereProximity/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.OrgsWithCentromereGenes] of FlatVocabParam [organismParams.org_with_centromere_genes].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.OrgsWithCentromereGenes] of FlatVocabParam [organismParams.org_with_centromere_genes].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.OrgsWithCentromereGenes] of FlatVocabParam [organismParams.org_with_centromere_genes].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByEqtlProfileSimilarity/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSetFerdig] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSetFerdig] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSetFerdig] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRtPcrFoldChange/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.KissingerRTPCRProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.KissingerRTPCRProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.KissingerRTPCRProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByNonnuclearLocation/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.OrgsWithNonNuclearGenes] of FlatVocabParam [organismParams.org_with_nonnuclear_genes].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.OrgsWithNonNuclearGenes] of FlatVocabParam [organismParams.org_with_nonnuclear_genes].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.OrgsWithNonNuclearGenes] of FlatVocabParam [organismParams.org_with_nonnuclear_genes].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByProfileSimilarity/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByTelomereProximity/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.TelomereChromosomes] of FlatVocabParam [sharedParams.telomere_chromosomes].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.TelomereChromosomes] of FlatVocabParam [sharedParams.telomere_chromosomes].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.TelomereChromosomes] of FlatVocabParam [sharedParams.telomere_chromosomes].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByMicroarraypfal3D7_microarrayExpression_Derisi_HB3_TimeSeries_RSRCPercentile/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.PFTimeSeriesFoldChangeProfileSet] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.PFTimeSeriesFoldChangeProfileSet] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.PFTimeSeriesFoldChangeProfileSet] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByToxoProfileSimilarity/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByGametocyteProfileSimilarity/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSetBirkholtzGametocyte] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSetBirkholtzGametocyte] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSetBirkholtzGametocyte] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByFungiScerProfileSimilarity/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSetFungiScer] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSetFungiScer] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSetFungiScer] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByCryptoRtpcrProfileSimilarity/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByFungiNcrassProfileSimilarity/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSetFungiNcrass] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+        at jdk.internal.reflect.GeneratedMethodAccessor7512.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+        at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+        at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+        at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+        at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+        at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+        at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+        at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.ProjectIdMacroFilter.doFilter(ProjectIdMacroFilter.java:39)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.BetaLegacyFilter.doFilter(BetaLegacyFilter.java:53)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.gusdb.wdk.controller.filter.HttpResponseHeaderLogger.doFilter(HttpResponseHeaderLogger.java:49)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+        at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:223)
+        at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:311)
+        at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:793)
+        at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:722)
+        at org.apache.jk.common.ChannelSocket$SocketConnection.runIt(ChannelSocket.java:915)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:690)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSetFungiNcrass] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+        ... 64 more
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSetFungiNcrass] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+        ... 69 more
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByMr4Reagents/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.Reagents] of FlatVocabParam [geneParams.reagent_type].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+        at jdk.internal.reflect.GeneratedMethodAccessor7512.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+        at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+        at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+        at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+        at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+        at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+        at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+        at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.ProjectIdMacroFilter.doFilter(ProjectIdMacroFilter.java:39)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.BetaLegacyFilter.doFilter(BetaLegacyFilter.java:53)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.gusdb.wdk.controller.filter.HttpResponseHeaderLogger.doFilter(HttpResponseHeaderLogger.java:49)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+        at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:223)
+        at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:311)
+        at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:793)
+        at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:722)
+        at org.apache.jk.common.ChannelSocket$SocketConnection.runIt(ChannelSocket.java:915)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:690)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.Reagents] of FlatVocabParam [geneParams.reagent_type].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+        ... 64 more
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.Reagents] of FlatVocabParam [geneParams.reagent_type].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+        ... 69 more
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqhcapG217B_Sil_Hyphae_Yeast_rnaSeq_RSRC/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.hcapG217B_Sil_Hyphae_Yeast_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+        at jdk.internal.reflect.GeneratedMethodAccessor7512.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+        at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+        at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+        at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+        at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+        at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+        at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+        at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.ProjectIdMacroFilter.doFilter(ProjectIdMacroFilter.java:39)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.BetaLegacyFilter.doFilter(BetaLegacyFilter.java:53)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.gusdb.wdk.controller.filter.HttpResponseHeaderLogger.doFilter(HttpResponseHeaderLogger.java:49)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+        at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:223)
+        at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:311)
+        at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:793)
+        at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:722)
+        at org.apache.jk.common.ChannelSocket$SocketConnection.runIt(ChannelSocket.java:915)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:690)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.hcapG217B_Sil_Hyphae_Yeast_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+        ... 64 more
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.hcapG217B_Sil_Hyphae_Yeast_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+        ... 69 more
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqplutPb01_Pereira_CellsExposion_rnaSeq_RSRC/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.plutPb01_Pereira_CellsExposion_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+        at jdk.internal.reflect.GeneratedMethodAccessor7512.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+        at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+        at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+        at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+        at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+        at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+        at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+        at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.ProjectIdMacroFilter.doFilter(ProjectIdMacroFilter.java:39)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.BetaLegacyFilter.doFilter(BetaLegacyFilter.java:53)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.gusdb.wdk.controller.filter.HttpResponseHeaderLogger.doFilter(HttpResponseHeaderLogger.java:49)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+        at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:223)
+        at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:311)
+        at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:793)
+        at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:722)
+        at org.apache.jk.common.ChannelSocket$SocketConnection.runIt(ChannelSocket.java:915)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:690)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.plutPb01_Pereira_CellsExposion_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+        ... 64 more
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.plutPb01_Pereira_CellsExposion_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+        ... 69 more
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByEQTL_Segments/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.PfSeqId] of FlatVocabParam [sharedParams.pf_seqid].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+        at jdk.internal.reflect.GeneratedMethodAccessor7512.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+        at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+        at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+        at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+        at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+        at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+        at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+        at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.ProjectIdMacroFilter.doFilter(ProjectIdMacroFilter.java:39)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.BetaLegacyFilter.doFilter(BetaLegacyFilter.java:53)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.gusdb.wdk.controller.filter.HttpResponseHeaderLogger.doFilter(HttpResponseHeaderLogger.java:49)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+        at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:223)
+        at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:311)
+        at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:793)
+        at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:722)
+        at org.apache.jk.common.ChannelSocket$SocketConnection.runIt(ChannelSocket.java:915)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:690)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.PfSeqId] of FlatVocabParam [sharedParams.pf_seqid].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+        ... 64 more
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [SharedVQ.PfSeqId] of FlatVocabParam [sharedParams.pf_seqid].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+        ... 69 more
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByFungiCneoProfileSimilarity/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+        at jdk.internal.reflect.GeneratedMethodAccessor7512.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+        at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+        at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+        at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+        at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+        at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+        at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+        at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.ProjectIdMacroFilter.doFilter(ProjectIdMacroFilter.java:39)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.BetaLegacyFilter.doFilter(BetaLegacyFilter.java:53)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.gusdb.wdk.controller.filter.HttpResponseHeaderLogger.doFilter(HttpResponseHeaderLogger.java:49)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+        at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:223)
+        at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:311)
+        at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:793)
+        at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:722)
+        at org.apache.jk.common.ChannelSocket$SocketConnection.runIt(ChannelSocket.java:915)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:690)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+        ... 64 more
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ProfileProfileSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+        ... 69 more
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqcalbSC5314_Desai_GlycerolRole_rnaSeq_RSRC/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.calbSC5314_Desai_GlycerolRole_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+        at jdk.internal.reflect.GeneratedMethodAccessor7512.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+        at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+        at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+        at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+        at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+        at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+        at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+        at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.ProjectIdMacroFilter.doFilter(ProjectIdMacroFilter.java:39)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.BetaLegacyFilter.doFilter(BetaLegacyFilter.java:53)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.gusdb.wdk.controller.filter.HttpResponseHeaderLogger.doFilter(HttpResponseHeaderLogger.java:49)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+        at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:223)
+        at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:311)
+        at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:793)
+        at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:722)
+        at org.apache.jk.common.ChannelSocket$SocketConnection.runIt(ChannelSocket.java:915)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:690)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.calbSC5314_Desai_GlycerolRole_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+        ... 64 more
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.calbSC5314_Desai_GlycerolRole_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+        ... 69 more
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqcneoH99_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCProfileSimilarity/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCProfileSimilarityParamSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+        at jdk.internal.reflect.GeneratedMethodAccessor7512.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+        at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+        at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+        at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+        at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+        at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+        at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+        at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.ProjectIdMacroFilter.doFilter(ProjectIdMacroFilter.java:39)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.BetaLegacyFilter.doFilter(BetaLegacyFilter.java:53)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.gusdb.wdk.controller.filter.HttpResponseHeaderLogger.doFilter(HttpResponseHeaderLogger.java:49)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+        at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:223)
+        at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:311)
+        at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:793)
+        at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:722)
+        at org.apache.jk.common.ChannelSocket$SocketConnection.runIt(ChannelSocket.java:915)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:690)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCProfileSimilarityParamSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+        ... 64 more
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.cneoH99_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCProfileSimilarityParamSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+        ... 69 more
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqscerS288c_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCProfileSimilarity/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.scerS288c_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCProfileSimilarityParamSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+        at jdk.internal.reflect.GeneratedMethodAccessor7512.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+        at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+        at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+        at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+        at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+        at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+        at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+        at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.ProjectIdMacroFilter.doFilter(ProjectIdMacroFilter.java:39)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.BetaLegacyFilter.doFilter(BetaLegacyFilter.java:53)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.gusdb.wdk.controller.filter.HttpResponseHeaderLogger.doFilter(HttpResponseHeaderLogger.java:49)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+        at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:223)
+        at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:311)
+        at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:793)
+        at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:722)
+        at org.apache.jk.common.ChannelSocket$SocketConnection.runIt(ChannelSocket.java:915)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:690)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.scerS288c_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCProfileSimilarityParamSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+        ... 64 more
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.scerS288c_Haase_Kelliher_Cell_Cycle_rnaSeq_RSRCProfileSimilarityParamSet] of FlatVocabParam [geneParams.profile_profile_set].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+        ... 69 more
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqhcapG186AR_Sil_Hyphae_Yeast_rnaSeq_RSRC/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.hcapG186AR_Sil_Hyphae_Yeast_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+        at jdk.internal.reflect.GeneratedMethodAccessor7512.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+        at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+        at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+        at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+        at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+        at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+        at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+        at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.ProjectIdMacroFilter.doFilter(ProjectIdMacroFilter.java:39)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.BetaLegacyFilter.doFilter(BetaLegacyFilter.java:53)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.gusdb.wdk.controller.filter.HttpResponseHeaderLogger.doFilter(HttpResponseHeaderLogger.java:49)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+        at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:223)
+        at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:311)
+        at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:793)
+        at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:722)
+        at org.apache.jk.common.ChannelSocket$SocketConnection.runIt(ChannelSocket.java:915)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:690)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.hcapG186AR_Sil_Hyphae_Yeast_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+        ... 64 more
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.hcapG186AR_Sil_Hyphae_Yeast_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+        ... 69 more
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqncraOR74A_advAndPPMutants_rnaSeq_RSRC/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_advAndPPMutants_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+        at jdk.internal.reflect.GeneratedMethodAccessor7512.invoke(Unknown Source)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+        at org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)
+        at org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:205)
+        at org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)
+        at org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)
+        at org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)
+        at org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
+        at org.glassfish.jersey.internal.Errors.process(Errors.java:267)
+        at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)
+        at org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)
+        at org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)
+        at org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:473)
+        at org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:427)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:388)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:341)
+        at org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:228)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)
+        at org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)
+        at org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.ProjectIdMacroFilter.doFilter(ProjectIdMacroFilter.java:39)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.eupathdb.common.controller.BetaLegacyFilter.doFilter(BetaLegacyFilter.java:53)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.gusdb.wdk.controller.filter.HttpResponseHeaderLogger.doFilter(HttpResponseHeaderLogger.java:49)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:235)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+        at org.apache.jk.server.JkCoyoteHandler.invoke(JkCoyoteHandler.java:223)
+        at org.apache.jk.common.HandlerRequest.invoke(HandlerRequest.java:311)
+        at org.apache.jk.common.ChannelSocket.invoke(ChannelSocket.java:793)
+        at org.apache.jk.common.ChannelSocket.processConnection(ChannelSocket.java:722)
+        at org.apache.jk.common.ChannelSocket$SocketConnection.runIt(ChannelSocket.java:915)
+        at org.apache.tomcat.util.threads.ThreadPool$ControlRunnable.run(ThreadPool.java:690)
+        at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_advAndPPMutants_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+        ... 64 more
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [GeneVQ.ncraOR74A_advAndPPMutants_rnaSeq_RSRCRnaSeqProfiles] of FlatVocabParam [geneParams.profileset_generic].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+        ... 69 more
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqtreeQM6a_Benocci_Plant_Biomass_rnaSeq_RSRC/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqcneoH99_Ko_RNA_Seq_rnaSeq_RSRC/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqcglaCBS138_pHChange_NOStress_rnaSeq_RSRC/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqhcapG217B_G186A_G217B_yeastAndMycelial_rnaSeq_RSRC/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqafumAf293_Losada_normoxia_hypoxia_rnaSeq_RSRC/
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqafumAf293_Hillman_lowOxygen_rnaSeq_RSRC/
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByRNASeqcalbSC5314_Snyder_ComprehensiveAnnotation_rnaSeq_RSRC/
