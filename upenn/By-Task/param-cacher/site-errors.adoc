@@ -76,21 +76,250 @@ WARNING: Could not run against q2.schistodb.net
 == veupathdb.org
 
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/popsetSequence/searches/PopsetByIsolationSource/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [isolationSourceVQ.withPopsets] of FlatVocabParam [popsetParams.isolation_source].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [isolationSourceVQ.withPopsets] of FlatVocabParam [popsetParams.isolation_source].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [isolationSourceVQ.withPopsets] of FlatVocabParam [popsetParams.isolation_source].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/popsetSequence/searches/PopsetByProduct/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [productVQ.withPopsets] of FlatVocabParam [popsetParams.product].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [productVQ.withPopsets] of FlatVocabParam [popsetParams.product].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [productVQ.withPopsets] of FlatVocabParam [popsetParams.product].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/popsetSequence/searches/PopsetByHost/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [hostVQ.withPopsets] of FlatVocabParam [popsetParams.specific_host].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [hostVQ.withPopsets] of FlatVocabParam [popsetParams.specific_host].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [hostVQ.withPopsets] of FlatVocabParam [popsetParams.specific_host].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/popsetSequence/searches/PopsetByCountry/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [countryVQ.withPopsets] of FlatVocabParam [popsetParams.country].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [countryVQ.withPopsets] of FlatVocabParam [popsetParams.country].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [countryVQ.withPopsets] of FlatVocabParam [popsetParams.country].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/genomic-sequence/searches/SequencesByTaxon/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withSequenceStrains] of FlatVocabParam [organismParams.organism].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withSequenceStrains] of FlatVocabParam [organismParams.organism].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [organismVQ.withSequenceStrains] of FlatVocabParam [organismParams.organism].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/dataset/searches/DatasetsByDatasetNames/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [datasetVQ.extDbNames] of FlatVocabParam [datasetParams.dataset_name].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [datasetVQ.extDbNames] of FlatVocabParam [datasetParams.dataset_name].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [datasetVQ.extDbNames] of FlatVocabParam [datasetParams.dataset_name].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/dataset/searches/DatasetsById/
++
+.Error
+----
+org.gusdb.wdk.model.WdkModelException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [datasetVQ.ids] of FlatVocabParam [datasetParams.dataset_id].
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:134)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getVocabInstance(AbstractEnumParam.java:277)
+        at org.gusdb.wdk.model.query.param.AbstractEnumParam.getDefault(AbstractEnumParam.java:290)
+        at org.gusdb.wdk.model.query.param.Param.validate(Param.java:608)
+        at org.gusdb.wdk.model.query.spec.ParameterContainerInstanceSpecBuilder.validateParams(ParameterContainerInstanceSpecBuilder.java:116)
+        at org.gusdb.wdk.model.query.spec.QueryInstanceSpecBuilder.buildValidated(QueryInstanceSpecBuilder.java:68)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpec.<init>(AnswerSpec.java:122)
+        at org.gusdb.wdk.model.answer.spec.AnswerSpecBuilder.build(AnswerSpecBuilder.java:84)
+        at org.gusdb.wdk.service.service.QuestionService.getDisplayableAnswerSpec(QuestionService.java:139)
+        at org.gusdb.wdk.service.service.QuestionService.getQuestionNew(QuestionService.java:128)
+Caused by: org.gusdb.fgputil.cache.ValueProductionException: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [datasetVQ.ids] of FlatVocabParam [datasetParams.dataset_id].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:184)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.fetchItem(FlatVocabularyFetcher.java:83)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:76)
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.getNewValue(FlatVocabularyFetcher.java:26)
+        at org.gusdb.fgputil.cache.InMemoryCache.getValue(InMemoryCache.java:156)
+        at org.gusdb.wdk.model.query.param.FlatVocabParam.getVocabInstance(FlatVocabParam.java:130)
+Caused by: org.gusdb.wdk.model.query.param.WdkEmptyEnumListException: No item returned by the query [datasetVQ.ids] of FlatVocabParam [datasetParams.dataset_id].
+        at org.gusdb.wdk.model.query.param.FlatVocabularyFetcher.populateVocabInstance(FlatVocabularyFetcher.java:169)
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/est/searches/EstsByLocation/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/est/searches/EstsByLibrary/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/genomic-segment/searches/DynSpansBySourceId/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByUserDatasetGeneList/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/popsetSequence/searches/PopsetByStudy/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/popsetSequence/searches/PopsetByTaxon/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByPhenotype/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByPhenotype_phenotype_QIAGEN_RSRC/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByPhenotype_fgraPH-1_phenotype_Fusarium_Pheno_RSRC/
++
+.Error
+----
+
+----
+
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByPhenotype_phenotype_DATA_RSRC/
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/GenesByLocation/
 . https://q1.veupathdb.org/veupathdb.b47/service/record-types/transcript/searches/InternalGenesByEcNumber/
