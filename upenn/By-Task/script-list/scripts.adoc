@@ -1,0 +1,86 @@
+= Site Scripts
+
+[cols="4,4a,4a,^1", options="header"]
+|===
+| Script | Source Dependencies | Actual Dependencies | In Use
+| | | |
+|===
+
+== WDK
+
+=== Model
+
+[cols="4,4a,4a,^1", options="header"]
+|===
+| Script | Source Dependencies | Actual Dependencies | In Use
+
+//
+| QuestionComparison
+|
+| * REST api
+| *&check;*
+
+//
+| QuestionNameUpdater
+| * `WdkModel`
+| * userdb
+| ?
+
+//
+| RemoveBrokenStratsSteps
+| * `WdkModel`
+  * `GuestRemover`
+| * userdb
+  * `GuestRemover`
+| ?
+
+//
+| RetroactiveGuestRemover
+| * `WdkModel`
+| * userdb
+| ?
+
+//
+| RunPublicStrats footnote:[Should be doable with just the REST API]
+| * `WdkModel`
+  * `StepFactory`
+  * `Strategy`
+| * `WdkModel`
+  * `StepFactory`
+  * `Strategy`
+| ?
+
+//
+| SharedStepsResolver
+| * `WdkModel`
+  * `ParamsAndFiltersDbColumnFormat`
+| * userdb
+| ?
+
+//
+| UpdateStepCounts
+| * `WdkModel`
+  * `Step`
+  * `User`
+  * `ModelConfigUserDB`
+| * userdb
+  * `WdkModel`
+  * `Step`
+  * `User`
+  * `ModelConfigUserDB`
+| ?
+
+//
+| StepParamExpander
+| * `WdkModel`
+  * `ParamsAndFiltersDbColumnFormat`
+| * userdb
+| ?
+
+//
+| StepValidator
+|
+|
+|
+
+|===
