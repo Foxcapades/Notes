@@ -119,48 +119,48 @@
 | ?
 
 //
-| {wdk-model-bin-url}/wdkQuestionComparisonReport[wdkQuestionComparisonReport]
-|
+| {wdk-model-bin-url}/wdkQuestionComparisonReport[wdkQuestionComparisonReport~.sh~]
+| {wdk-model-src-url}/model/fix/QuestionComparison.java[QuestionComparison]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkRecord[wdkRecord]
-|
+| {wdk-model-bin-url}/wdkRecord[wdkRecord~.pl~]
+| {wdk-model-src-url}/model/test/RecordTester.java[RecordTester]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkRegressionTest[wdkRegressionTest]
-|
+| {wdk-model-bin-url}/wdkRegressionTest[wdkRegressionTest~.pl~]
+| {blank}
 | ?
 
 //
-| {wdk-model-bin-url}/wdkRemoveBroken[wdkRemoveBroken]
-|
+| {wdk-model-bin-url}/wdkRemoveBroken[wdkRemoveBroken~.pl~]
+| {wdk-model-src-url}/model/fix/RemoveBrokenStratsSteps.java[RemoveBrokenStratsSteps]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkRemoveGuests[wdkRemoveGuests]
-|
+| {wdk-model-bin-url}/wdkRemoveGuests[wdkRemoveGuests~.pl~]
+| {wdk-model-src-url}/model/fix/GuestRemover.java[GuestRemover]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkRemoveGuestsRetroactively[wdkRemoveGuestsRetroactively]
-|
+| {wdk-model-bin-url}/wdkRemoveGuestsRetroactively[wdkRemoveGuestsRetroactively~.pl~]
+| {wdk-model-src-url}/model/fix/RetroactiveGuestRemover.java[RetroactiveGuestRemover]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkReporter[wdkReporter]
-|
+| {wdk-model-bin-url}/wdkReporter[wdkReporter~.pl~]
+| {wdk-model-src-url}/model/report/util/Dumper.java[Dumper]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkReporterHelp[wdkReporterHelp]
-|
+| {wdk-model-bin-url}/wdkReporterHelp[wdkReporterHelp~.pl~]
+| {wdk-model-src-url}/model/report/util/DumperHelp.java[DumperHelp]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkReportQuestionSummary[wdkReportQuestionSummary]
-|
+| {wdk-model-bin-url}/wdkReportQuestionSummary[wdkReportQuestionSummary~.pl~]
+| {wdk-model-src-url}/model/test/QuestionSummaryReporter.java[QuestionSummaryReporter]
 | ?
 
 //
