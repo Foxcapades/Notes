@@ -23,7 +23,7 @@
 
 //
 | {wdk-model-bin-url}/makeTablesAsFiles[makeTablesAsFiles~.pl~]
-| ?
+| {blank}
 | ?
 
 //
@@ -48,7 +48,7 @@
 
 //
 | {wdk-model-bin-url}/wdkCleanbuild[wdkCleanbuild~.csh~]
-|
+| {blank}
 | ?
 
 //
@@ -63,7 +63,7 @@
 
 //
 | {wdk-model-bin-url}/wdkFilterErrors[wdkFilterErrors~.pl~]
-|
+| {blank}
 | ?
 
 //
@@ -73,7 +73,7 @@
 
 //
 | {wdk-model-bin-url}/wdkGuestsReport[wdkGuestsReport~.pl~]
-|
+| {blank}
 | ?
 
 //
@@ -87,33 +87,33 @@
 | ?
 
 //
-| {wdk-model-bin-url}/wdkInvalidStepReport[wdkInvalidStepReport]
-|
+| {wdk-model-bin-url}/wdkInvalidStepReport[wdkInvalidStepReport~.pl~]
+| {wdk-model-src-url}/model/fix/InvalidStepReporter.java[InvalidStepReporter]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkMigrate[wdkMigrate]
-|
+| {wdk-model-bin-url}/wdkMigrate[wdkMigrate~.pl~]
+| {wdk-model-src-url}/model/migrate/Migrator.java[Migrator]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkModelJavadoc[wdkModelJavadoc]
-|
+| {wdk-model-bin-url}/wdkModelJavadoc[wdkModelJavadoc~.pl~]
+| {blank}
 | ?
 
 //
-| {wdk-model-bin-url}/wdkNightlybuild[wdkNightlybuild]
-|
+| {wdk-model-bin-url}/wdkNightlybuild[wdkNightlybuild~.pl~]
+| {blank}
 | ?
 
 //
-| {wdk-model-bin-url}/wdkParseSlowQueryLog[wdkParseSlowQueryLog]
-|
+| {wdk-model-bin-url}/wdkParseSlowQueryLog[wdkParseSlowQueryLog~.pl~]
+| {blank}
 | ?
 
 //
-| {wdk-model-bin-url}/wdkQuery[wdkQuery]
-|
+| {wdk-model-bin-url}/wdkQuery[wdkQuery~.pl~]
+| {wdk-model-src-url}/model/test/QueryTester.java[QueryTester]
 | ?
 
 //
@@ -298,7 +298,7 @@
 | ?
 
 //
-| {wdk-model-src-url}/model/fix/InvalidStepRemover.java[InvalidStepRemover]
+| {wdk-model-src-url}/model/fix/InvalidStepReporter.java[InvalidStepReporter]
 | * `WdkModel`
   * `AbstractEnumParam`
 | * userdb
