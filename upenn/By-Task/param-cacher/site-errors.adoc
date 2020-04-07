@@ -3,6 +3,38 @@
 == All ApiComm Sites Q1 & Q2
 
 . service/record-types/transcript/searches/GenesByMetabolicPathwayIDKegg/
++
+.Error
+----
+Caused by: java.sql.SQLException: Failed to run SQL (name=PathwayVQ.MetbPathwayIDsWithGenesList__create-cache-table):
+CREATE TABLE QueryResult103 AS SELECT 103 AS wdk_instance_id, rownum AS wdk_row_id,  f.* FROM (SELECT o.*  FROM (SELECT DISTINCT n.description ||' ('|| n.name||')' as display,
+                            n.name as term,
+                            n.network_context_id as internal
+            FROM apidb.NetworkContext n, dots.Transcript t,  dots.translatedAaFeature taf,  
+               sres.enzymeClass ec, dots.aaSequenceEnzymeClass asec, ApidbTuning.GeneAttributes ga, 
+               apidb.networkrelationship nr, apidb.networkrelationshiptype nrt, ApiDB.NetworkRelContext nrc, 
+               ApiDB.NetworkRelContextLink nrl, apidb.networknode nn
+            WHERE ga.na_feature_id  = t.parent_id
+            AND t.na_feature_id = taf.na_feature_id
+            AND taf.aa_sequence_id = asec.aa_sequence_id
+            AND asec.enzyme_class_id = ec.enzyme_class_id
+            AND nn.display_label = ec.ec_number
+            AND nr.associated_node_id = nn.network_node_id
+            AND nrc.network_relationship_id = nr.network_relationship_id
+            AND nrt.network_relationship_type_id = nrc.network_relationship_type_id
+            AND nrl.network_rel_context_id = nrc.network_rel_context_id
+            AND nrc.network_context_id = n.network_context_id
+) o) f
+Connect URL: jdbc:oracle:oci:@plas047n
+User: WEBWWW
+        at org.gusdb.fgputil.db.SqlUtils.executeUpdate(SqlUtils.java:256)
+        at org.gusdb.wdk.model.query.SqlQueryInstance.createCacheTableAndInsertResult(SqlQueryInstance.java:93)
+        ... 77 more
+Caused by: java.sql.SQLSyntaxErrorException: ORA-00942: table or view does not exist
+----
++
+Being investigated by Bindu
+
 . service/record-types/transcript/searches/GenesByRNASeqUserDataset/
 . service/record-types/transcript/searches/GenesByUserDatasetAntisense/
 
