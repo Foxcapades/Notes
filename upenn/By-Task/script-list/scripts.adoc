@@ -1,5 +1,5 @@
 = Site Scripts
-:base-url: https://github.com/VEuPathDB/
+:base-url: https://github.com/VEuPathDB
 :wdk-url: {base-url}/WDK/blob/master
 :wdk-model-url: {wdk-url}/Model
 :wdk-model-bin-url: {wdk-model-url}/bin
@@ -27,252 +27,252 @@
 | ?
 
 //
-| {wdk-model-bin-url}/testWdkServiceClient.sh.java[testWdkServiceClient.sh]
+| {wdk-model-bin-url}/testWdkServiceClient.sh[testWdkServiceClient.sh]
 | WdkProcessClientTest footnote:404[File Does not exist]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkBooleanQuestion.java[wdkBooleanQuestion~.pl~]
+| {wdk-model-bin-url}/wdkBooleanQuestion[wdkBooleanQuestion~.pl~]
 | {wdk-model-src-url}/model/test/BooleanQuestionTester.java[BooleanQuestionTester]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkCache.java[wdkCache~.pl~]
+| {wdk-model-bin-url}/wdkCache[wdkCache~.pl~]
 | {wdk-model-src-url}/model/test/CacheCLI.java[CacheCLI]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkCacheModel.java[wdkCacheModel~.pl~]
+| {wdk-model-bin-url}/wdkCacheModel[wdkCacheModel~.pl~]
 | ModelCacher footnote:404[]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkCleanbuild.java[wdkCleanbuild~.csh~]
+| {wdk-model-bin-url}/wdkCleanbuild[wdkCleanbuild~.csh~]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkCountUpdater.java[wdkCountUpdater~.pl~]
-| {wdk-model-src-url}/fix/StepCountUpdater.java[StepCountUpdater]
+| {wdk-model-bin-url}/wdkCountUpdater[wdkCountUpdater~.pl~]
+| {wdk-model-src-url}/model/fix/StepCountUpdater.java[StepCountUpdater]
 | ?
 
 //
-| {wdk-model-bin-url}/wdkExpandStep.java[wdkExpandStep~.pl~]
+| {wdk-model-bin-url}/wdkExpandStep[wdkExpandStep~.pl~]
+| {wdk-model-src-url}/model/fix/StepParamExpander.java[StepParamExpander]
+| ?
+
+//
+| {wdk-model-bin-url}/wdkFilterErrors[wdkFilterErrors~.pl~]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkFilterErrors.java[wdkFilterErrors]
+| {wdk-model-bin-url}/wdkGenerateEmailLists[wdkGenerateEmailLists~.pl~]
+| {wdk-model-src-url}/model/fix/EmailListsGenerator.java[EmailListsGenerator]
+| ?
+
+//
+| {wdk-model-bin-url}/wdkGuestsReport[wdkGuestsReport~.pl~]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkGenerateEmailLists.java[wdkGenerateEmailLists]
+| {wdk-model-bin-url}/wdkHandleUserDatasetEvents[wdkHandleUserDatasetEvents~.pl~]
+| {wdk-model-src-url}/model/user/dataset/event/UserDatasetEventListHandler.java[UserDatasetEventListHandler]
+| *&check;*
+
+//
+| {wdk-model-bin-url}/wdkHistoryRecycle[wdkHistoryRecycle~.pl~]
+| HistoryRecycler footnote:404[]
+| ?
+
+//
+| {wdk-model-bin-url}/wdkInvalidStepReport[wdkInvalidStepReport]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkGuestsReport.java[wdkGuestsReport]
+| {wdk-model-bin-url}/wdkMigrate[wdkMigrate]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkHandleUserDatasetEvents.java[wdkHandleUserDatasetEvents]
+| {wdk-model-bin-url}/wdkModelJavadoc[wdkModelJavadoc]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkHistoryRecycle.java[wdkHistoryRecycle]
+| {wdk-model-bin-url}/wdkNightlybuild[wdkNightlybuild]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkInvalidStepReport.java[wdkInvalidStepReport]
+| {wdk-model-bin-url}/wdkParseSlowQueryLog[wdkParseSlowQueryLog]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkMigrate.java[wdkMigrate]
+| {wdk-model-bin-url}/wdkQuery[wdkQuery]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkModelJavadoc.java[wdkModelJavadoc]
+| {wdk-model-bin-url}/wdkQuestionComparisonReport[wdkQuestionComparisonReport]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkNightlybuild.java[wdkNightlybuild]
+| {wdk-model-bin-url}/wdkRecord[wdkRecord]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkParseSlowQueryLog.java[wdkParseSlowQueryLog]
+| {wdk-model-bin-url}/wdkRegressionTest[wdkRegressionTest]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkQuery.java[wdkQuery]
+| {wdk-model-bin-url}/wdkRemoveBroken[wdkRemoveBroken]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkQuestionComparisonReport.java[wdkQuestionComparisonReport]
+| {wdk-model-bin-url}/wdkRemoveGuests[wdkRemoveGuests]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkRecord.java[wdkRecord]
+| {wdk-model-bin-url}/wdkRemoveGuestsRetroactively[wdkRemoveGuestsRetroactively]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkRegressionTest.java[wdkRegressionTest]
+| {wdk-model-bin-url}/wdkReporter[wdkReporter]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkRemoveBroken.java[wdkRemoveBroken]
+| {wdk-model-bin-url}/wdkReporterHelp[wdkReporterHelp]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkRemoveGuests.java[wdkRemoveGuests]
+| {wdk-model-bin-url}/wdkReportQuestionSummary[wdkReportQuestionSummary]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkRemoveGuestsRetroactively.java[wdkRemoveGuestsRetroactively]
+| {wdk-model-bin-url}/wdkReportRecordSummary[wdkReportRecordSummary]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkReporter.java[wdkReporter]
+| {wdk-model-bin-url}/wdkResolveSharedSteps[wdkResolveSharedSteps]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkReporterHelp.java[wdkReporterHelp]
+| {wdk-model-bin-url}/wdkRunPublicStrats[wdkRunPublicStrats]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkReportQuestionSummary.java[wdkReportQuestionSummary]
+| {wdk-model-bin-url}/wdkSanityTest[wdkSanityTest]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkReportRecordSummary.java[wdkReportRecordSummary]
+| {wdk-model-bin-url}/wdkSanityTestOrig[wdkSanityTestOrig]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkResolveSharedSteps.java[wdkResolveSharedSteps]
+| {wdk-model-bin-url}/wdkSlowQueryPlot[wdkSlowQueryPlot]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkRunPublicStrats.java[wdkRunPublicStrats]
+| {wdk-model-bin-url}/wdkSlowQueryReport[wdkSlowQueryReport]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkSanityTest.java[wdkSanityTest]
+| {wdk-model-bin-url}/wdkSlowRecordPageReport[wdkSlowRecordPageReport]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkSanityTestOrig.java[wdkSanityTestOrig]
+| {wdk-model-bin-url}/wdkSpanLogicSchematic[wdkSpanLogicSchematic]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkSlowQueryPlot.java[wdkSlowQueryPlot]
+| {wdk-model-bin-url}/wdkSqlMungeTest[wdkSqlMungeTest]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkSlowQueryReport.java[wdkSlowQueryReport]
+| {wdk-model-bin-url}/wdkStrategyFixer[wdkStrategyFixer]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkSlowRecordPageReport.java[wdkSlowRecordPageReport]
+| {wdk-model-bin-url}/wdkStrategyStats[wdkStrategyStats]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkSpanLogicSchematic.java[wdkSpanLogicSchematic]
+| {wdk-model-bin-url}/wdkStressResult[wdkStressResult]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkSqlMungeTest.java[wdkSqlMungeTest]
+| {wdk-model-bin-url}/wdkStressTemplate[wdkStressTemplate]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkStrategyFixer.java[wdkStrategyFixer]
+| {wdk-model-bin-url}/wdkStressTest[wdkStressTest]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkStrategyStats.java[wdkStrategyStats]
+| {wdk-model-bin-url}/wdkSummary[wdkSummary]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkStressResult.java[wdkStressResult]
+| {wdk-model-bin-url}/wdkUnitTest[wdkUnitTest]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkStressTemplate.java[wdkStressTemplate]
+| {wdk-model-bin-url}/wdkUser[wdkUser]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkStressTest.java[wdkStressTest]
+| {wdk-model-bin-url}/wdkValidateStep[wdkValidateStep]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkSummary.java[wdkSummary]
+| {wdk-model-bin-url}/wdkXml[wdkXml]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkUnitTest.java[wdkUnitTest]
+| {wdk-model-bin-url}/wdkXmlQuestion[wdkXmlQuestion]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkUser.java[wdkUser]
+| {wdk-model-bin-url}/wsfClient[wsfClient]
 |
 | ?
 
 //
-| {wdk-model-bin-url}/wdkValidateStep.java[wdkValidateStep]
-|
-| ?
-
-//
-| {wdk-model-bin-url}/wdkXml.java[wdkXml]
-|
-| ?
-
-//
-| {wdk-model-bin-url}/wdkXmlQuestion.java[wdkXmlQuestion]
-|
-| ?
-
-//
-| {wdk-model-bin-url}/wsfClient.java[wsfClient]
-|
-| ?
-
-//
-| {wdk-model-bin-url}/xmlToGff.java[xmlToGff]
+| {wdk-model-bin-url}/xmlToGff[xmlToGff]
 |
 | ?
 |===
