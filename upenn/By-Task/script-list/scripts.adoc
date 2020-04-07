@@ -4,6 +4,8 @@
 :wdk-model-url: {wdk-url}/Model
 :wdk-model-bin-url: {wdk-model-url}/bin
 :wdk-model-src-url: {wdk-model-url}/src/main/java/org/gusdb/wdk
+:toc:
+:toclevels: 3
 
 // [cols="4,4a,4a,^1", options="header"]
 // |===
