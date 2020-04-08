@@ -34,25 +34,25 @@
 //
 | {wdk-model-bin-url}/makeTablesAsFiles[makeTablesAsFiles~.pl~]
 | {blank}
-| ?
-|
+| no
+| TRASH - SF
 
 //
 | {wdk-model-bin-url}/testWdkServiceClient.sh[testWdkServiceClient.sh]
 | WdkProcessClientTest footnote:404[File Does not exist]
-| ?
-|
+| no
+| TRASH - SF
 
 //
 | {wdk-model-bin-url}/wdkBooleanQuestion[wdkBooleanQuestion~.pl~]
 | {wdk-model-src-url}/model/test/BooleanQuestionTester.java[BooleanQuestionTester]
 | ?
-|
+| wdk cli - but dont know if still works
 
 //
 | {wdk-model-bin-url}/wdkCache[wdkCache~.pl~]
 | {wdk-model-src-url}/model/test/CacheCLI.java[CacheCLI]
-| ?
+| yes
 |
 
 //
@@ -82,8 +82,8 @@
 //
 | {wdk-model-bin-url}/wdkFilterErrors[wdkFilterErrors~.pl~]
 | {blank}
-| ?
-|
+| yes
+| should be used regularly to analyze logged wdk server errors
 
 //
 | {wdk-model-bin-url}/wdkGenerateEmailLists[wdkGenerateEmailLists~.pl~]
@@ -94,8 +94,8 @@
 //
 | {wdk-model-bin-url}/wdkGuestsReport[wdkGuestsReport~.pl~]
 | {blank}
-| ?
-|
+| yes
+| i think this is used regularly, before we purge guests, to remember some stats
 
 //
 | {wdk-model-bin-url}/wdkHandleUserDatasetEvents[wdkHandleUserDatasetEvents~.pl~]
@@ -106,13 +106,13 @@
 //
 | {wdk-model-bin-url}/wdkHistoryRecycle[wdkHistoryRecycle~.pl~]
 | HistoryRecycler footnote:404[]
-| ?
-|
+| no
+| java class doesn't exist
 
 //
 | {wdk-model-bin-url}/wdkInvalidStepReport[wdkInvalidStepReport~.pl~]
 | {wdk-model-src-url}/model/fix/InvalidStepReporter.java[InvalidStepReporter]
-| ?
+| yes
 |
 
 //
@@ -130,20 +130,20 @@
 //
 | {wdk-model-bin-url}/wdkNightlybuild[wdkNightlybuild~.pl~]
 | {blank}
-| ?
-|
+| no
+| TRASH - SF
 
 //
 | {wdk-model-bin-url}/wdkParseSlowQueryLog[wdkParseSlowQueryLog~.pl~]
 | {blank}
-| ?
-|
+| yes
+| should be used regularly to analyze slow query logs
 
 //
 | {wdk-model-bin-url}/wdkQuery[wdkQuery~.pl~]
 | {wdk-model-src-url}/model/test/QueryTester.java[QueryTester]
-| ?
-|
+| yes
+| wdk cli
 
 //
 | {wdk-model-bin-url}/wdkQuestionComparisonReport[wdkQuestionComparisonReport~.sh~]
@@ -154,14 +154,14 @@
 //
 | {wdk-model-bin-url}/wdkRecord[wdkRecord~.pl~]
 | {wdk-model-src-url}/model/test/RecordTester.java[RecordTester]
-| ?
-|
+| yes
+| wdk cli
 
 //
 | {wdk-model-bin-url}/wdkRegressionTest[wdkRegressionTest~.pl~]
 | {blank}
-| ?
-|
+| no
+| circa 2005
 
 //
 | {wdk-model-bin-url}/wdkRemoveBroken[wdkRemoveBroken~.pl~]
@@ -185,25 +185,25 @@
 | {wdk-model-bin-url}/wdkReporter[wdkReporter~.pl~]
 | {wdk-model-src-url}/model/report/util/Dumper.java[Dumper]
 | ?
-|
+| not sure we need this, given the service
 
 //
 | {wdk-model-bin-url}/wdkReporterHelp[wdkReporterHelp~.pl~]
 | {wdk-model-src-url}/model/report/util/DumperHelp.java[DumperHelp]
 | ?
-|
+| not sure we need this, given the service
 
 //
 | {wdk-model-bin-url}/wdkReportQuestionSummary[wdkReportQuestionSummary~.pl~]
 | {wdk-model-src-url}/model/test/QuestionSummaryReporter.java[QuestionSummaryReporter]
-| ?
-|
+| maybe
+| wdk cli
 
 //
 | {wdk-model-bin-url}/wdkReportRecordSummary[wdkReportRecordSummary~.pl~]
 | {wdk-model-src-url}/model/test/RecordSummaryReporter.java[RecordSummaryReporter]
-| ?
-|
+| maybe
+| wdk cli
 
 //
 | {wdk-model-bin-url}/wdkResolveSharedSteps[wdkResolveSharedSteps~.pl~]
@@ -214,50 +214,50 @@
 //
 | {wdk-model-bin-url}/wdkRunPublicStrats[wdkRunPublicStrats~.pl~]
 | {wdk-model-src-url}/model/fix/RunPublicStrats.java[RunPublicStrats]
-| ?
-|
+| no
+| replaced by new service-based solution
 
 //
 | {wdk-model-bin-url}/wdkSanityTest[wdkSanityTest~.pl~]
 | {wdk-model-src-url}/model/test/sanity/SanityTesterCLI.java[SanityTesterCLI]
-| ?
-|
+| not sure
+| seems to be unmaintainable.  somewhat replaced by new service-based solution
 
 //
 | {wdk-model-bin-url}/wdkSanityTestOrig[wdkSanityTestOrig~.pl~]
 | SanityTester footnote:404[]
-| ?
-|
+| no
+| old
 
 //
 | {wdk-model-bin-url}/wdkSlowQueryPlot[wdkSlowQueryPlot~.pl~]
 | {blank}
-| ?
-|
+| yes
+| ideally used to analyze slow queries
 
 //
 | {wdk-model-bin-url}/wdkSlowQueryReport[wdkSlowQueryReport~.pl~]
 | {blank}
-| ?
+| yes
 |
 
 //
 | {wdk-model-bin-url}/wdkSlowRecordPageReport[wdkSlowRecordPageReport~.pl~]
 | {blank}
 | ?
-|
+| (is this still viable?)
 
 //
 | {wdk-model-bin-url}/wdkSpanLogicSchematic[wdkSpanLogicSchematic~.pl~]
 | {blank}
-| ?
-|
+| no
+| TRASH - SF
 
 //
 | {wdk-model-bin-url}/wdkSqlMungeTest[wdkSqlMungeTest~.pl~]
 | SqlClause footnote:404[]
-| ?
-|
+| no
+| TRASH - SF
 
 //
 | {wdk-model-bin-url}/wdkStrategyFixer[wdkStrategyFixer~.pl~]
@@ -275,25 +275,25 @@
 | {wdk-model-bin-url}/wdkStressResult[wdkStressResult~.pl~]
 | {wdk-model-src-url}/model/test/stress/StressTestAnalyzer.java[StressTestAnalyzer]
 | ?
-|
+| should be replaced by a service-based approach?
 
 //
 | {wdk-model-bin-url}/wdkStressTemplate[wdkStressTemplate~.pl~]
 | {wdk-model-src-url}/model/test/stress/StressTemplater.java[StressTemplater]
 | ?
-|
+| should be replaced by a service-based approach?
 
 //
 | {wdk-model-bin-url}/wdkStressTest[wdkStressTest~.pl~]
 | {wdk-model-src-url}/model/test/stress/StressTester.java[StressTester]
 | ?
-|
+| should be replaced by a service-based approach?
 
 //
 | {wdk-model-bin-url}/wdkSummary[wdkSummary~.pl~]
 | {wdk-model-src-url}/model/test/SummaryTester.java[SummaryTester]
-| ?
-|
+| yes
+| wdk cli
 
 //
 | {wdk-model-bin-url}/wdkUnitTest[wdkUnitTest~.pl~]
@@ -316,26 +316,26 @@
 //
 | {wdk-model-bin-url}/wdkXml[wdkXml~.pl~]
 | {wdk-model-src-url}/model/ModelXmlParser.java[ModelXmlParser]
-| ?
-|
+| yes
+| wdk cli
 
 //
 | {wdk-model-bin-url}/wdkXmlQuestion[wdkXmlQuestion~.pl~]
 | {wdk-model-src-url}/model/test/XmlQuestionTester.java[XmlQuestionTester]
-| ?
-|
+| no
+| dont have xml questions any more?
 
 //
 | {wdk-model-bin-url}/wsfClient[wsfClient~.pl~]
 | WsfClientCLI footnote:404[]
-| ?
-|
+| no
+| no longer use wsf.  need to absorb it.
 
 //
 | {wdk-model-bin-url}/xmlToGff[xmlToGff~.pl~]
 | {blank}
-| ?
-|
+| no
+| TRASH - SF
 
 |===
 
