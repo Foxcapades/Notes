@@ -557,3 +557,49 @@
 |
 
 |===
+
+.Scripts from `src/main/java/org/gusdb/wdk/model/test/sanity`
+[cols="3,3a,3a,^1,^1,5", options="header"]
+|===
+| Script | Source Dependencies | Actual Dependencies | In Use | Can Split | Notes
+
+// Row
+| SanityTesterCLI
+| * <many>
+| * <many>
+| ?
+|
+|
+
+|===
+
+.Scripts from `src/main/java/org/gusdb/wdk/model/test/stress`
+[cols="3,3a,3a,^1,^1,5", options="header"]
+|===
+| Script | Source Dependencies | Actual Dependencies | In Use | Can Split | Notes
+
+// Row
+| StressTemplater
+| * <many>
+| * <many>
+| ?
+|
+|
+
+// Row
+| StressTestAnalyzer
+| * WdkModel
+| * appdb
+| ?
+|
+|
+
+// Row
+| StressTester
+| * <many>
+| * <many>
+| ?
+|
+|
+
+|===
