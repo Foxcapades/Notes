@@ -7,10 +7,18 @@
 :toc:
 :toclevels: 3
 
-// [cols="4,4a,4a,^1", options="header"]
+// .Scripts from `src/main/java/org/gusdb/wdk/model/test`
+// [cols="3,3a,3a,^1,5", options="header"]
 // |===
-// | Script | Source Dependencies | Actual Dependencies | In Use
-// | | | |
+// | Script | Source Dependencies | Actual Dependencies | In Use | Notes
+//
+// // Row
+// | scriptName
+// | srcDeps
+// | actualDeps
+// | inUse
+// | notes
+//
 // |===
 
 == WDK
@@ -399,7 +407,7 @@
 |
 
 //
-| {wdk-model-src-url}/model/fix/RunPublicStrats.java[RunPublicStrats] footnote:[Should be doable with just the REST API]
+| {wdk-model-src-url}/model/fix/RunPublicStrats.java[RunPublicStrats] footnote:[Replaced by script-public-strategy-runner]
 | * `WdkModel`
   * `StepFactory`
   * `Strategy`
@@ -451,6 +459,101 @@
 | * `WdkModel`
 | * userdb
 | ?
+|
+
+|===
+
+.Scripts from `src/main/java/org/gusdb/wdk/model/test`
+[cols="3,3a,3a,^1,^1,5", options="header"]
+|===
+| Script | Source Dependencies | Actual Dependencies | In Use | Can Split | Notes
+
+// Row
+| {wdk-model-src-url}/model/test/CacheCLI.java[CacheCLI]
+| * WdkModel
+  * CacheFactory
+| * WdkModel
+  * CacheFactory
+| ?
+|
+|
+
+// Row
+| {wdk-model-src-url}/model/test/QueryTester.java[QueryTester]
+| * <many>
+| * <many>
+| ?
+|
+|
+
+// Row
+| {wdk-model-src-url}/model/test/QuestionSummaryReporter.java[QuestionSummaryReporter]
+| * WdkModel
+  * Question
+  * QuestionSet
+  * Param
+| * WdkModel
+  * Question
+  * QuestionSet
+  * Param
+| ?
+|
+|
+
+// Row
+| {wdk-model-src-url}/model/test/RecordSummaryReporter.java[RecordSummaryReporter]
+| * WdkModel
+  * Field
+  * RecordClass
+  * RecordClassSet
+  * TableField
+| * WdkModel
+  * Field
+  * RecordClass
+  * RecordClassSet
+  * TableField
+| ?
+|
+|
+
+// Row
+| {wdk-model-src-url}/model/test/RecordTester.java[RecordTester]
+| * <many>
+| * <many>
+| ?
+|
+|
+
+// Row
+| {wdk-model-src-url}/model/test/SummaryTester.java[SummaryTester]
+| * <many>
+| * <many>
+| ?
+|
+|
+
+// Row
+| {wdk-model-src-url}/model/test/TestDBManager.java[TestDBManager]
+| * <many>
+| * <many>
+| ?
+|
+|
+
+// Row
+| {wdk-model-src-url}/model/test/XmlQuestionTester.java[XmlQuestionTester]
+| * Reference
+  * WdkModel
+  * XmlAnswerValue
+  * XmlQuestion
+  * XmlQuestionSet
+| * Reference
+  * WdkModel
+  * XmlAnswerValue
+  * XmlQuestion
+  * XmlQuestionSet
+| ?
+|
 |
 
 |===
