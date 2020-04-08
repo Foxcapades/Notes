@@ -258,74 +258,74 @@
 |
 
 //
-| {wdk-model-bin-url}/wdkStrategyStats[wdkStrategyStats]
-|
+| {wdk-model-bin-url}/wdkStrategyStats[wdkStrategyStats~.pl~]
+| {blank}
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkStressResult[wdkStressResult]
-|
+| {wdk-model-bin-url}/wdkStressResult[wdkStressResult~.pl~]
+| {wdk-model-src-url}/model/test/stress/StressTestAnalyzer.java[StressTestAnalyzer]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkStressTemplate[wdkStressTemplate]
-|
+| {wdk-model-bin-url}/wdkStressTemplate[wdkStressTemplate~.pl~]
+| {wdk-model-src-url}/model/test/stress/StressTemplater.java[StressTemplater]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkStressTest[wdkStressTest]
-|
+| {wdk-model-bin-url}/wdkStressTest[wdkStressTest~.pl~]
+| {wdk-model-src-url}/model/test/stress/StressTester.java[StressTester]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkSummary[wdkSummary]
-|
+| {wdk-model-bin-url}/wdkSummary[wdkSummary~.pl~]
+| {wdk-model-src-url}/model/test/SummaryTester.java[SummaryTester]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkUnitTest[wdkUnitTest]
-|
+| {wdk-model-bin-url}/wdkUnitTest[wdkUnitTest~.pl~]
+| TestUtility footnote:404[]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkUser[wdkUser]
-|
+| {wdk-model-bin-url}/wdkUser[wdkUser~.pl~]
+| UserFactoryTest footnote:404[]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkValidateStep[wdkValidateStep]
-|
+| {wdk-model-bin-url}/wdkValidateStep[wdkValidateStep~.pl~]
+| {wdk-model-src-url}/model/fix/StepValidator.java[StepValidator]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkXml[wdkXml]
-|
+| {wdk-model-bin-url}/wdkXml[wdkXml~.pl~]
+| {wdk-model-src-url}/model/ModelXmlParser.java[ModelXmlParser]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkXmlQuestion[wdkXmlQuestion]
-|
+| {wdk-model-bin-url}/wdkXmlQuestion[wdkXmlQuestion~.pl~]
+| {wdk-model-src-url}/model/test/XmlQuestionTester.java[XmlQuestionTester]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wsfClient[wsfClient]
-|
+| {wdk-model-bin-url}/wsfClient[wsfClient~.pl~]
+| WsfClientCLI footnote:404[]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/xmlToGff[xmlToGff]
-|
+| {wdk-model-bin-url}/xmlToGff[xmlToGff~.pl~]
+| {blank}
 | ?
 |
 
