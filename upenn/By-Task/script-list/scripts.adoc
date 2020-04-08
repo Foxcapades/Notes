@@ -192,68 +192,68 @@
 |
 
 //
-| {wdk-model-bin-url}/wdkReportRecordSummary[wdkReportRecordSummary]
-|
+| {wdk-model-bin-url}/wdkReportRecordSummary[wdkReportRecordSummary~.pl~]
+| {wdk-model-src-url}/model/test/RecordSummaryReporter.java[RecordSummaryReporter]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkResolveSharedSteps[wdkResolveSharedSteps]
-|
+| {wdk-model-bin-url}/wdkResolveSharedSteps[wdkResolveSharedSteps~.pl~]
+| {wdk-model-src-url}/model/fix/SharedStepsResolver.java[SharedStepsResolver]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkRunPublicStrats[wdkRunPublicStrats]
-|
+| {wdk-model-bin-url}/wdkRunPublicStrats[wdkRunPublicStrats~.pl~]
+| {wdk-model-src-url}/model/fix/RunPublicStrats.java[RunPublicStrats]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkSanityTest[wdkSanityTest]
-|
+| {wdk-model-bin-url}/wdkSanityTest[wdkSanityTest~.pl~]
+| {wdk-model-src-url}/model/test/sanity/SanityTesterCLI.java[SanityTesterCLI]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkSanityTestOrig[wdkSanityTestOrig]
-|
+| {wdk-model-bin-url}/wdkSanityTestOrig[wdkSanityTestOrig~.pl~]
+| SanityTester footnote:404[]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkSlowQueryPlot[wdkSlowQueryPlot]
-|
+| {wdk-model-bin-url}/wdkSlowQueryPlot[wdkSlowQueryPlot~.pl~]
+| {blank}
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkSlowQueryReport[wdkSlowQueryReport]
-|
+| {wdk-model-bin-url}/wdkSlowQueryReport[wdkSlowQueryReport~.pl~]
+| {blank}
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkSlowRecordPageReport[wdkSlowRecordPageReport]
-|
+| {wdk-model-bin-url}/wdkSlowRecordPageReport[wdkSlowRecordPageReport~.pl~]
+| {blank}
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkSpanLogicSchematic[wdkSpanLogicSchematic]
-|
+| {wdk-model-bin-url}/wdkSpanLogicSchematic[wdkSpanLogicSchematic~.pl~]
+| {blank}
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkSqlMungeTest[wdkSqlMungeTest]
-|
+| {wdk-model-bin-url}/wdkSqlMungeTest[wdkSqlMungeTest~.pl~]
+| SqlClause footnote:404[]
 | ?
 |
 
 //
-| {wdk-model-bin-url}/wdkStrategyFixer[wdkStrategyFixer]
-|
+| {wdk-model-bin-url}/wdkStrategyFixer[wdkStrategyFixer~.pl~]
+| {wdk-model-src-url}/model/fix/StrategyFixer.java[StrategyFixer]
 | ?
 |
 
