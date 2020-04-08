@@ -19,285 +19,339 @@
 
 ==== Bin
 
-[cols="4,4,^1", options="header"]
+[cols="3,4,^1,5", options="header"]
 |===
-| Script | Source Dependencies | In Use
+| Script | Source Dependencies | In Use | Notes
 
 //
 | {wdk-model-bin-url}/makeTablesAsFiles[makeTablesAsFiles~.pl~]
 | {blank}
 | ?
+|
 
 //
 | {wdk-model-bin-url}/testWdkServiceClient.sh[testWdkServiceClient.sh]
 | WdkProcessClientTest footnote:404[File Does not exist]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkBooleanQuestion[wdkBooleanQuestion~.pl~]
 | {wdk-model-src-url}/model/test/BooleanQuestionTester.java[BooleanQuestionTester]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkCache[wdkCache~.pl~]
 | {wdk-model-src-url}/model/test/CacheCLI.java[CacheCLI]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkCacheModel[wdkCacheModel~.pl~]
 | ModelCacher footnote:404[]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkCleanbuild[wdkCleanbuild~.csh~]
 | {blank}
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkCountUpdater[wdkCountUpdater~.pl~]
 | {wdk-model-src-url}/model/fix/StepCountUpdater.java[StepCountUpdater]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkExpandStep[wdkExpandStep~.pl~]
 | {wdk-model-src-url}/model/fix/StepParamExpander.java[StepParamExpander]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkFilterErrors[wdkFilterErrors~.pl~]
 | {blank}
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkGenerateEmailLists[wdkGenerateEmailLists~.pl~]
 | {wdk-model-src-url}/model/fix/EmailListsGenerator.java[EmailListsGenerator]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkGuestsReport[wdkGuestsReport~.pl~]
 | {blank}
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkHandleUserDatasetEvents[wdkHandleUserDatasetEvents~.pl~]
 | {wdk-model-src-url}/model/user/dataset/event/UserDatasetEventListHandler.java[UserDatasetEventListHandler]
 | *&check;*
+|
 
 //
 | {wdk-model-bin-url}/wdkHistoryRecycle[wdkHistoryRecycle~.pl~]
 | HistoryRecycler footnote:404[]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkInvalidStepReport[wdkInvalidStepReport~.pl~]
 | {wdk-model-src-url}/model/fix/InvalidStepReporter.java[InvalidStepReporter]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkMigrate[wdkMigrate~.pl~]
 | {wdk-model-src-url}/model/migrate/Migrator.java[Migrator]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkModelJavadoc[wdkModelJavadoc~.pl~]
 | {blank}
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkNightlybuild[wdkNightlybuild~.pl~]
 | {blank}
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkParseSlowQueryLog[wdkParseSlowQueryLog~.pl~]
 | {blank}
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkQuery[wdkQuery~.pl~]
 | {wdk-model-src-url}/model/test/QueryTester.java[QueryTester]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkQuestionComparisonReport[wdkQuestionComparisonReport~.sh~]
 | {wdk-model-src-url}/model/fix/QuestionComparison.java[QuestionComparison]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkRecord[wdkRecord~.pl~]
 | {wdk-model-src-url}/model/test/RecordTester.java[RecordTester]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkRegressionTest[wdkRegressionTest~.pl~]
 | {blank}
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkRemoveBroken[wdkRemoveBroken~.pl~]
 | {wdk-model-src-url}/model/fix/RemoveBrokenStratsSteps.java[RemoveBrokenStratsSteps]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkRemoveGuests[wdkRemoveGuests~.pl~]
 | {wdk-model-src-url}/model/fix/GuestRemover.java[GuestRemover]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkRemoveGuestsRetroactively[wdkRemoveGuestsRetroactively~.pl~]
 | {wdk-model-src-url}/model/fix/RetroactiveGuestRemover.java[RetroactiveGuestRemover]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkReporter[wdkReporter~.pl~]
 | {wdk-model-src-url}/model/report/util/Dumper.java[Dumper]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkReporterHelp[wdkReporterHelp~.pl~]
 | {wdk-model-src-url}/model/report/util/DumperHelp.java[DumperHelp]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkReportQuestionSummary[wdkReportQuestionSummary~.pl~]
 | {wdk-model-src-url}/model/test/QuestionSummaryReporter.java[QuestionSummaryReporter]
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkReportRecordSummary[wdkReportRecordSummary]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkResolveSharedSteps[wdkResolveSharedSteps]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkRunPublicStrats[wdkRunPublicStrats]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkSanityTest[wdkSanityTest]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkSanityTestOrig[wdkSanityTestOrig]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkSlowQueryPlot[wdkSlowQueryPlot]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkSlowQueryReport[wdkSlowQueryReport]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkSlowRecordPageReport[wdkSlowRecordPageReport]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkSpanLogicSchematic[wdkSpanLogicSchematic]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkSqlMungeTest[wdkSqlMungeTest]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkStrategyFixer[wdkStrategyFixer]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkStrategyStats[wdkStrategyStats]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkStressResult[wdkStressResult]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkStressTemplate[wdkStressTemplate]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkStressTest[wdkStressTest]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkSummary[wdkSummary]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkUnitTest[wdkUnitTest]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkUser[wdkUser]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkValidateStep[wdkValidateStep]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkXml[wdkXml]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wdkXmlQuestion[wdkXmlQuestion]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/wsfClient[wsfClient]
 |
 | ?
+|
 
 //
 | {wdk-model-bin-url}/xmlToGff[xmlToGff]
 |
 | ?
+|
+
 |===
 
 
 ==== Java
 
 .Scripts from `src/main/java/org/gusdb/wdk/model/fix`
-[cols="4,4a,4a,^1", options="header"]
+[cols="3,3a,3a,^1,5", options="header"]
 |===
-| Script | Source Dependencies | Actual Dependencies | In Use
+| Script | Source Dependencies | Actual Dependencies | In Use | Notes
 
 //
 | {wdk-model-src-url}/model/fix/EmailListsGenerator.java[EmailListsGenerator]
 | * `WdkModel`
 | * userdb
 | ?
+|
 
 //
 | {wdk-model-src-url}/model/fix/GuestRemover.java[GuestRemover]
 | * `WdkModel`
 | * userdb
 | ?
+|
 
 //
 | {wdk-model-src-url}/model/fix/InvalidStepReporter.java[InvalidStepReporter]
@@ -305,24 +359,28 @@
   * `AbstractEnumParam`
 | * userdb
 | ?
+|
 
 //
 | {wdk-model-src-url}/model/fix/OrganismUpdater.java[OrganismUpdater]
 | * `WdkModel`
 | * userdb
 | ?
+|
 
 //
 | {wdk-model-src-url}/model/fix/QuestionComparison.java[QuestionComparison]
 |
 | * REST api
 | *&check;*
+|
 
 //
 | {wdk-model-src-url}/model/fix/QuestionNameUpdater.java[QuestionNameUpdater]
 | * `WdkModel`
 | * userdb
 | ?
+|
 
 //
 | {wdk-model-src-url}/model/fix/RemoveBrokenStratsSteps.java[RemoveBrokenStratsSteps]
@@ -331,12 +389,14 @@
 | * userdb
   * `GuestRemover`
 | ?
+|
 
 //
 | {wdk-model-src-url}/model/fix/RetroactiveGuestRemover.java[RetroactiveGuestRemover]
 | * `WdkModel`
 | * userdb
 | ?
+|
 
 //
 | {wdk-model-src-url}/model/fix/RunPublicStrats.java[RunPublicStrats] footnote:[Should be doable with just the REST API]
@@ -347,6 +407,7 @@
   * `StepFactory`
   * `Strategy`
 | ?
+|
 
 //
 | {wdk-model-src-url}/model/fix/SharedStepsResolver.java[SharedStepsResolver]
@@ -354,6 +415,7 @@
   * `ParamsAndFiltersDbColumnFormat`
 | * userdb
 | ?
+|
 
 //
 | {wdk-model-src-url}/model/fix/StepCountUpdater.java[StepCountUpdater]
@@ -367,6 +429,7 @@
   * `User`
   * `ModelConfigUserDB`
 | ?
+|
 
 //
 | {wdk-model-src-url}/model/fix/StepParamExpander.java[StepParamExpander]
@@ -374,17 +437,20 @@
   * `ParamsAndFiltersDbColumnFormat`
 | * userdb
 | ?
+|
 
 //
 | {wdk-model-src-url}/model/fix/StepValidator.java[StepValidator]
 | * `WdkModel`
 | * userdb
 | ?
+|
 
 //
 | {wdk-model-src-url}/model/fix/StrategyFixer.java[StrategyFixer]
 | * `WdkModel`
 | * userdb
 | ?
+|
 
 |===
