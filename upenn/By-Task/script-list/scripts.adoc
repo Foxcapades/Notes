@@ -603,3 +603,89 @@
 |
 
 |===
+
+
+.Misc Scripts
+[cols="3,3a,3a,^1,^1,5", options="header"]
+|===
+| Script | Source Dependencies | Actual Dependencies | In Use | Can Split | Notes
+
+6+h| `Model/src/main/java/org/gusdb/wdk/model`
+
+// Row
+| WdkSqlScriptRunner
+| * ModelConfig
+  * ModelConfigDB
+  * ModelConfigParser
+| * appdb
+  * acctdb
+  * userdb
+| ?
+|
+|
+
+
+6+h| `Model/src/main/java/org/gusdb/wdk/model/user/dataset/event`
+
+// Row
+| UserDatasetEventListHandler
+| * <many>
+| * <many>
+| ?
+|
+|
+
+6+h| `Model/src/main/java/org/gusdb/wdk/model/fix/table`
+
+// Row
+| TableRowUpdater
+| * <many>
+| * <many>
+| ?
+|
+|
+
+6+h| `Model/src/main/java/org/gusdb/wdk/model/user`
+
+// Row
+| PasswordEncrypter
+| * FgpUtil
+| * md5
+| ?
+|
+| This script is a lie.  MD5 is not encryption.
+
+// Row
+| StrategyAnalysis
+| * <many>
+| * <many>
+| ?
+|
+|
+
+// Row
+| UserCreationScript
+| * WdkModel
+| * userdb
+| ?
+|
+|
+
+6+h| `Model/src/main/java/org/gusdb/wdk/model/migrate`
+
+// Row
+| B33_To_B34_Migration
+|
+|
+| ?
+|
+|
+
+| MigratorController
+|
+|
+| ?
+|
+| Only seems to be used for 12->13, 17->18, 18->19.
+
+|===
